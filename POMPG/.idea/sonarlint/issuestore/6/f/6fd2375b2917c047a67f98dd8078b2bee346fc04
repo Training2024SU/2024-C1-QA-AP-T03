@@ -1,5 +1,7 @@
 
 }
-java:S22098"5Change this instance-reference to a static reference.(ªùùÿÿÿÿ8îúÿœõ1J$89edef92-db9e-4ffb-87ce-3a6f0eb8966a
+java:S2387"5"driver" is the name of a field in "CommonFunctions".(š…ŒÅøÿÿÿÿ8·ˆêõ1J$dd4fe550-ca0b-4adb-97a0-35be8651f8b2
+}
+java:S22098"5Change this instance-reference to a static reference.(ªùùÿÿÿÿ8¼ˆêõ1J$f4d23a86-413c-4f5e-8097-1877b8143ba6
 r
-java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8Ãëûœõ1J$aea85841-bcd9-41c0-9438-14fa6eadbd9a
+java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8¿ˆêõ1J$46a86df1-afcc-4518-a251-1c3d04f8eaa5

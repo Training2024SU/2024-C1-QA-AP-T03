@@ -36,7 +36,7 @@ public class SearchFlightPage extends CommonFunctions {
         PageFactory.initElements(driver, this);
     }
 
-    public void selectRoundTrip() {
+    public void selectOneWayTrip() {
         clickSelection(oneWayTripRadioButton);
     }
 
@@ -63,11 +63,11 @@ public class SearchFlightPage extends CommonFunctions {
 
     // Additional methods can be added here as needed
 
-    public void searchOneFlight (){
+    public void searchOneFlight (String origin, String destination, String date){
         selectRoundOneWay();
-        enterOrigin("MDE");
-        enterDestination("BOG");
-        selectDepartureDate("05/20/2024");
+        enterOrigin(origin);
+        enterDestination(destination);
+        selectDepartureDate(date);
         clickSearch();
 
     }

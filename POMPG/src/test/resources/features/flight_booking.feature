@@ -5,33 +5,31 @@ Feature: Latam Airlines Flight Booking
   So that I can make travel arrangements efficiently.
 
   Background:
-    Given I am initiating a flight booking process on the Latam Airlines website 1 ""
+    Given I am initiating a flight booking process 1 "https://www.latamairlines.com/co/es"
 
-  Scenario Outline: Book a one-way flight
+  @PurchaseFlight
+  Scenario: Book a one-way flight
     When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
     And selects a flight
     But does not purchase seats or luggage
     And adds passenger information and confirms it
     Then they should see a message with the details of the purchase
 
-    Examples:
-      | origin       | destination   | date       | passengers |
-      | Santiago     | Lima          | 2024-06-15 | 3          |
-      | Buenos Aires | Sao Paulo     | 2024-07-20 | 4          |
-      | Mexico City  | Miami         | 2024-08-10 | 2          |
-
+  @ChangeFlight
   Scenario: Change the flight during the purchase process
     When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
     And selects a flight
     When the user changes the selected flight to a new one
     Then they should see the updated flight details
 
+  @PurchaseSeat
   Scenario: Purchase seat during the purchase process
     When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
     And selects a flight
     When the user selects seat options and chooses a seat
     Then they should see the selected seat reflected in the booking
 
+  @PurchaseLuggage
   Scenario: Purchase luggage during the purchase process
     When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
     And selects a flight
