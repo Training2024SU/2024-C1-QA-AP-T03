@@ -6,7 +6,7 @@ import static com.davidbonelo.setup.BrowserSetup.getBrowserDriver;
 
 public class WebSetup {
 
-    private static final String BASE_URL = "https://www.latamairlines.com/co/es";
+    public static final String BASE_URL = "https://www.latamairlines.com/co/es";
     public WebDriver driver;
 
     public WebSetup() {
