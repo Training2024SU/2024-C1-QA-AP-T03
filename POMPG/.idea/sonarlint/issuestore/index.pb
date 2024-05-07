@@ -25,3 +25,9 @@ m
 =src/main/java/co/com/demo/page/functions/CommonFunctions.java,6/c/6c4b338b0daea37c81a98d460a8317c4c50569aa
 x
 Hsrc/test/java/co/com/demo/stepdefinitions/BookFlightStepDefinitions.java,7/b/7b6247efb8f30e598a36b278dd1b0430ddc3eb41
+y
+Isrc/test/java/co/com/demo/stepdefinitions/ChangeFlightStepDefintions.java,5/3/537bfbe51cb84ca54b8c528516a2c1c79bba3e08
+z
+Jsrc/test/java/co/com/demo/stepdefinitions/PurchaseSeatStepDefinitions.java,1/b/1bdfc76eb43c127477e75de23e49b17726010d17
+}
+Msrc/test/java/co/com/demo/stepdefinitions/PurchaseLuggageStepDefinitions.java,b/9/b90ccc1faee22d2e652a4b60086e1e7678b4c851

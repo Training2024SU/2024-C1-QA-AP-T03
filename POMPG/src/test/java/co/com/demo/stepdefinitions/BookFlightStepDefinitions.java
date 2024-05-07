@@ -16,12 +16,11 @@ public class BookFlightStepDefinitions extends WebSetup {
         searchFlightPage = new SearchFlightPage(driver);
     }
 
-    @When("the user searches for a one-way flight from {string} to {string} on {string} for {string} passengers")
-    public void theUserSearchesForAOneWayFlightFromToOnForPassengers(String origin, String destination, String date, String passengers) {
-        // Use the initialized SearchFlightPage object
-        searchFlightPage.selectRoundOneWay();
-        searchFlightPage.selectOneWayTrip();
-        // Perform other actions on SearchFlightPage
+
+    @When("the user searches for a one-way flight")
+    public void theUserSearchesForAOneWayFlight() {
+        searchFlightPage.searchOneFlight();
+
     }
 
     @When("selects a flight")
@@ -42,5 +41,6 @@ public class BookFlightStepDefinitions extends WebSetup {
     @Then("they should see a message with the details of the purchase")
     public void theyShouldSeeAMessageWithTheDetailsOfThePurchase() {
         // Implement verification logic for the purchase details message
+        quitDriver();
     }
 }

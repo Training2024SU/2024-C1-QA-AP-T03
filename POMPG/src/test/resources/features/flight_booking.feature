@@ -9,29 +9,32 @@ Feature: Latam Airlines Flight Booking
 
   @PurchaseFlight
   Scenario: Book a one-way flight
-    When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
+    When the user searches for a one-way flight
     And selects a flight
     But does not purchase seats or luggage
     And adds passenger information and confirms it
     Then they should see a message with the details of the purchase
 
   @ChangeFlight
+  @CriticalPath
   Scenario: Change the flight during the purchase process
-    When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
+    When the user searches for a one-way flight
     And selects a flight
     When the user changes the selected flight to a new one
     Then they should see the updated flight details
 
   @PurchaseSeat
+  @CriticalPath
   Scenario: Purchase seat during the purchase process
-    When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
+    When the user searches for a one-way flight
     And selects a flight
     When the user selects seat options and chooses a seat
     Then they should see the selected seat reflected in the booking
 
   @PurchaseLuggage
+  @CriticalPath
   Scenario: Purchase luggage during the purchase process
-    When the user searches for a one-way flight from "<origin>" to "<destination>" on "<date>" for "<passengers>" passengers
+    When the user searches for a one-way flight
     And selects a flight
     When the user adds luggage to the booking
     Then they should see the cost of the selected luggage
