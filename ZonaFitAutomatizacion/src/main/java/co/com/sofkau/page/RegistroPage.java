@@ -13,9 +13,6 @@ public class RegistroPage extends FunctionCommon {
     @FindBy(xpath = "//span[contains(text(),'Acceder / Registrarse')]")
     private WebElement ACCEDER_REGISTRARSE;
 
-
-
-
     @CacheLookup
     @FindBy(xpath = "//input[@autocomplete='email']")
     private WebElement CAMPO_EMAIL;
@@ -33,6 +30,13 @@ public class RegistroPage extends FunctionCommon {
     @CacheLookup
     @FindBy(xpath = "//*[@id='masthead']/div/div[4]/ul/li[2]/a/span")
     private WebElement MENSAJE_DE_REGISTRO;
+    @CacheLookup
+    @FindBy(xpath = "//div[@class='message-container container alert-color medium-text-center']")
+    private WebElement MENSAJE_DE_REGISTRO_INCORRECTO_CAMPO_VACIO;
+    @CacheLookup
+    @FindBy(xpath = "//div[@class = 'message-container container alert-color medium-text-center']")
+    private WebElement MENSAJE_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE;
+
 
 
     //Constructor
@@ -60,6 +64,18 @@ public class RegistroPage extends FunctionCommon {
 
     public String obtenerMensajeDeIngreso(){
         return getText(MENSAJE_DE_REGISTRO);
+    }
+
+    public String obtenerMensajeDeRegistroIncorrectoCampoVacio(){
+        waitForGeneralPageLoad();
+        waitForElementVisible(MENSAJE_DE_REGISTRO_INCORRECTO_CAMPO_VACIO);
+        return getText(MENSAJE_DE_REGISTRO_INCORRECTO_CAMPO_VACIO);
+    }
+
+    public String obtenerMensajeDeRegistroIncorrectoCuentaExistente(){
+        waitForGeneralPageLoad();
+        waitForElementVisible(MENSAJE_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE);
+        return getText(MENSAJE_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE);
     }
 
 
