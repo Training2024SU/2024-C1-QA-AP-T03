@@ -37,6 +37,11 @@ public class SignInPage extends BasePage {
         continueBtn.click();
     }
 
+    public SignUpPage navigateToSignUpPage() {
+        signUpBtn.click();
+        return new SignUpPage(driver);
+    }
+
     public String getErrorMessage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(alertErrorDiv));
