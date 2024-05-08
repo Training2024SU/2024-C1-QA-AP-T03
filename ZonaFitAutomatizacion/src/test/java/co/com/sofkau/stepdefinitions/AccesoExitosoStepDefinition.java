@@ -35,6 +35,7 @@ public class AccesoExitosoStepDefinition extends WebSetup {
     @Then("deberia ser redirigido a la pagina principal y le debe figurar la sesion iniciada")
     public void deberiaSerRedirigidoAlaPaginaPrincipalConLaSesionIniciada(){
         try{
+            Assertions.assertNotNull(formularioAccesoPage);
             Assertions.assertEquals(MENSAJE_ESPERADO_DE_ACCESO, formularioRegistroPage.obtenerMensajeDeIngreso());
         }catch (Exception e){
             System.out.println(e.getMessage());

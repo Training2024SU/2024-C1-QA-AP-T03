@@ -8,8 +8,9 @@ Feature: Formulario de registro
   Background:
     Given que el usuario selecciona el navegador 1 e ingresa a la pagina
 
+    @rutacritica
     @testregistrocorrecto
-      @registroexitoso
+    @registroexitoso
   Scenario: Inscripcion correcta
     When ingresa su informacion correctamente
     Then deberia ser redirigido a la pagina principal con la sesion iniciada

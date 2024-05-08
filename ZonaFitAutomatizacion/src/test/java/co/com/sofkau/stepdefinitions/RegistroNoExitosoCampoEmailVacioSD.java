@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CAMPO_VACIO;
 
 
-public class RegistroNoExitosoStepDefiniton extends WebSetup{
+public class RegistroNoExitosoCampoEmailVacioSD extends WebSetup{
     Faker faker = new Faker();
     FormularioRegistroPage formularioRegistroPage;
     @When ("intenta registrarse con el campo de correo vacio")
@@ -36,7 +36,6 @@ public class RegistroNoExitosoStepDefiniton extends WebSetup{
     public void deberiaVisualizarMensajeDeError(){
         try{
             Assertions.assertEquals(MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CAMPO_VACIO, formularioRegistroPage.obtenerMensajeDeRegistroIncorrectoCampoVacio());
-
         }catch (Exception e){
             System.out.println(e.getMessage());
         }finally {

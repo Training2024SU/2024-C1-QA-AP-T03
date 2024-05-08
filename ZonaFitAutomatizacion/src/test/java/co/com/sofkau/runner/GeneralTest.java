@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/feature",
         glue = "co.com.sofkau.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@testregistro"
+        tags = "@rutacritica1"
 )
 public class GeneralTest {
 }

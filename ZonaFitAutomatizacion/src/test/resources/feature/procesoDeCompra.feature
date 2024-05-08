@@ -1,13 +1,14 @@
-Feature: Modificar agregar productos en el carrito en Zona Fit
-  Como usuario de Zona Fit
-  Quiero seleccionar productos diferentes, modificar las cantidades
-  Para adquirir sus productos
+Feature: Registro, agregar y modificar productos
+  Yo como usuario no registrado de la pagina Zona Fit
+  Quiero poder registrarme, agregar productos y llenar el formulario de compra
+  Para poder adquirir sus productos.
 
-  @rutacritica
-    @seleccionarproducto
-  Scenario Outline: Modificar cantidades de productos en el carrito
-    Given que el usuario selecciona el navegador <navegador> e ingresa a la pagina
-    When el usuario navega a la pagina de productos
+#Usar 1 para navegador Chrome y 2 para Edge
+
+  Scenario Outline: Registro de nuevo usuario, agregar y modificar cantidades del producto en el carrito
+    Given que el usuario selecciona el navegador 1 e ingresa a la pagina
+    When ingresa su informacion correctamente
+    And el usuario navega a la pagina de productos
     When el usuario ingresa los <num_productos> primeros productos disponibles al carrito
     And el usuario abre el modal del carrito de compras
     And modifica la cantidad del producto <producto_modificado> agregandole <cantidad_modificada>

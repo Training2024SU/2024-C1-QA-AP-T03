@@ -8,6 +8,7 @@ Feature: Formulario de acceso
   Background:
     Given que el usuario selecciona el navegador 1 e ingresa a la pagina
 
+  @rutacritica
   @testingresocorrecto
   Scenario: Acceso correcto
     When ingresa sus datos de usuario registrado, correctamente
