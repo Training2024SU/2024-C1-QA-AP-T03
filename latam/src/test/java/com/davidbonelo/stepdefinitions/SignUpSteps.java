@@ -4,17 +4,22 @@ import com.davidbonelo.models.User;
 import com.davidbonelo.pages.HomePage;
 import com.davidbonelo.pages.SignInPage;
 import com.davidbonelo.pages.SignUpPage;
+import com.davidbonelo.setup.BrowserType;
 import com.davidbonelo.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class SignUpSteps {
-    private SignUpPage signUpPage;
-
     private final WebSetup webSetup;
+    private SignUpPage signUpPage;
 
     public SignUpSteps(WebSetup webSetup) {
         this.webSetup = webSetup;
+    }
+
+    @Given("the User browses the internet using the {string} browser")
+    public void theUserBrowsesTheInternetUsingTheBrowser(String browser) {
+        webSetup.setupDriver(BrowserType.valueOf(browser));
     }
 
     @Given("The user is in the signup page")

@@ -2,7 +2,9 @@
 Feature: User SignIn
 
   Background: Sign in page
-    Given The user is in the login page
+    # The configured browsers are CHROME and FIREFOX
+    Given the User browses the internet using the "FIREFOX" browser
+    And The user is in the login page
 
   Scenario: Successful sign in
     When he accedes with his correct credentials

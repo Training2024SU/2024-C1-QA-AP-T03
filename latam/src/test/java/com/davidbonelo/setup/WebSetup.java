@@ -12,12 +12,11 @@ public class WebSetup {
     public WebSetup() {
     }
 
-    public void setupDriver() {
-        driver = getBrowserDriver(BrowserSetup.BrowserType.CHROME);
+    public void setupDriver(BrowserType browserType) {
+        driver = getBrowserDriver(browserType);
         maximize();
         driver.get(BASE_URL);
     }
-
 
     private void maximize() {
         driver.manage().window().maximize();

@@ -34,8 +34,4 @@ public class BrowserSetup {
             default -> throw new IllegalArgumentException("Incorrect browser type");
         }
     }
-
-    public enum BrowserType {
-        CHROME, FIREFOX
-    }
 }

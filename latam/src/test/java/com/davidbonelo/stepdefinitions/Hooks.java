@@ -12,11 +12,10 @@ public class Hooks {
         this.webSetup = webSetup;
     }
 
-    @Before("@web")
-    public void setupWebDriver() {
-        webSetup.setupDriver();
-
-    }
+//    @Before("@web")
+//    public void setupWebDriver() {
+//        webSetup.setupDriver();
+//    }
 
     @After("@web")
     public void webDriverTearDown() {

@@ -1,5 +1,8 @@
 @web
 Feature: Flights
+  Background: Browser
+    # The configured browsers are CHROME and FIREFOX
+    Given the User browses the internet using the "CHROME" browser
 
   Scenario: See flight offer info
     Given The user is in the home page
