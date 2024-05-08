@@ -22,15 +22,15 @@ public class PassengerInformationPage extends CommonFunctions {
     }
 
     @CacheLookup
-    @FindBy(id = "")
-    private WebElement name;
+    @FindBy(xpath = "//label[@for='passengerDetails-firstName-ADT_1' and contains(text(), 'Nombre')]")
+    private WebElement firstNameLabel;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(xpath = "//label[@for='passengerDetails-lastName-ADT_1' and contains(text(), 'Apellido')]")
     private WebElement lastName;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(xpath = "//input[@aria-label='Ingresa la fecha de nacimiento de pasajero.']")
     private WebElement dateOfBirth;
 
     @CacheLookup
@@ -42,22 +42,22 @@ public class PassengerInformationPage extends CommonFunctions {
     private WebElement country;
 
     @CacheLookup
-    @FindBy(id = "")
-    private WebElement identification;
+    @FindBy(xpath = "//input[@aria-label='ingresa el número de documento de pasajero.']")
+    private WebElement documentNumber;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "//input[@aria-label='Ingresa el email de pasajero.']")
     private WebElement email;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "//input[@aria-label='ingresa el número de teléfono de pasajero.']")
     private WebElement phoneNumber;
 
     @CacheLookup
-    @FindBy(id = "")
-    private WebElement confirmInformation;
+    @FindBy(xpath = "//button[contains(@aria-label, 'Guardar los datos')]")
+    private WebElement saveDataButton;
 
     @CacheLookup
-    @FindBy(id = "")
-    private WebElement addContinue;
+    @FindBy(xpath = "//button[@aria-label='Continuar al paso de pago.']")
+    private WebElement continueToPaymentButton;
 }

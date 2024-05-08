@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -22,15 +23,25 @@ public class SelectFlighPage extends CommonFunctions {
     }
 
     @CacheLookup
-    @FindBy(xpath = "")
+    @FindBy(xpath = "(//span[contains(text(), 'Recomendado')])[1]")
     private WebElement selectFlight;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "bundle-detail-0-flight-select")
     private WebElement selectFLightType;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "button9")
     private WebElement confirmFlight;
 
+    @CacheLookup
+    @FindBy(id = "//span[contains(text(), 'Cambiar tu vuelo')]")
+    private WebElement changeFlight;
+
+
+    public void setSelectFlight(){
+        wait.until(ExpectedConditions.elementToBeClickable(selectFlight)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectFLightType)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(confirmFlight)).click();
+    }
 }

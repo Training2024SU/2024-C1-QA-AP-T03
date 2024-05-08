@@ -22,35 +22,31 @@ public class PurchaseConfirmationPage extends CommonFunctions {
     }
 
     @CacheLookup
-    @FindBy(xpath = "")
-    private WebElement purchaseDetails;
+    @FindBy(xpath = "//span[contains(text(), 'Revisa el detalle de tu compra')]")
+    private WebElement reviewPurchaseDetailSpan;
 
-    @CacheLookup
-    @FindBy(id = "")
-    private WebElement addCrediCard;
+    @FindBy(xpath = "//label[@data-testid='new-credit-card-payment-method-radio-accordion-item--radio__label']")
+    private WebElement addCreditCard;
 
-    @CacheLookup
-    @FindBy(id = "")
+    @FindBy(xpath = "//span[contains(text(), 'Número de tarjeta')]")
     private WebElement InputCreditCard;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "//span[contains(text(), 'Nombre y apellido')]")
     private WebElement fullName;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "//span[contains(text(), 'Expiración')]")
     private WebElement expirationDate;
 
-    @CacheLookup
-    @FindBy(id = "")
+    @FindBy(xpath = "//span[contains(text(), 'Email')]")
     private WebElement emailReceipt;
 
-    @CacheLookup
-    @FindBy(id = "")
+    @FindBy(css = "span[data-testid='checkbox-id--checkbox-styled']")
     private WebElement acceptTermsAndConditions;
 
     @CacheLookup
-    @FindBy(id = "")
+    @FindBy(id = "paymentCTA")
     private WebElement paymentButton;
 
 }

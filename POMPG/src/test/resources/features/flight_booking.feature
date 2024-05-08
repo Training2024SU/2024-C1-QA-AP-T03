@@ -5,7 +5,7 @@ Feature: Latam Airlines Flight Booking
   So that I can make travel arrangements efficiently.
 
   Background:
-    Given I am initiating a flight booking process 2 "https://www.latamairlines.com/co/es"
+    Given I am initiating a flight booking process 1 "https://www.latamairlines.com/co/es"
 
   @PurchaseFlight
   Scenario: Book a one-way flight

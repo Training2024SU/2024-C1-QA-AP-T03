@@ -26,9 +26,5 @@ public class RecapBookPage extends CommonFunctions {
 
     @CacheLookup
     @FindBy(id = "")
-    private WebElement changeFlight;
-
-    @CacheLookup
-    @FindBy(id = "")
     private WebElement redirectSeatsSelection;
 }
