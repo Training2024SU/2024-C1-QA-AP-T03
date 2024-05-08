@@ -1,7 +1,7 @@
 package co.com.sofkau.stepdefinitions;
 
 import com.github.javafaker.Faker;
-import co.com.sofkau.page.RegistroPage;
+import co.com.sofkau.page.FormularioRegistroPage;
 import co.com.sofkau.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Assertions;
 
 import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_REGISTRO;
 
-public class RegistroStepDefinition extends WebSetup{
-    RegistroPage registroPage;
+public class RegistroExitosoStepDefinition extends WebSetup{
+    FormularioRegistroPage formularioRegistroPage;
     Faker faker = new Faker();
 
     @Given("que el usuario selecciona el navegador {int} e ingresa a la pagina")
@@ -33,10 +33,10 @@ public class RegistroStepDefinition extends WebSetup{
 
             // Crear una instancia de la página de registro
 
-            registroPage = new RegistroPage(driver);
+            formularioRegistroPage = new FormularioRegistroPage(driver);
 
             // Llamar al método llenarFormulario con los valores
-            registroPage.llenarFormulario(email, password, confirmPassword);
+            formularioRegistroPage.llenarFormularioRegistro(email, password, confirmPassword);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -46,7 +46,7 @@ public class RegistroStepDefinition extends WebSetup{
     @Then("deberia ser redirigido a la pagina principal con la sesion iniciada")
     public void deberiaSerRedirigidoALaPaginaPrincipalConLaSesionIniciada() {
         try{
-            Assertions.assertEquals(MENSAJE_ESPERADO_DE_REGISTRO, registroPage.obtenerMensajeDeIngreso());
+            Assertions.assertEquals(MENSAJE_ESPERADO_DE_REGISTRO, formularioRegistroPage.obtenerMensajeDeIngreso());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }finally {

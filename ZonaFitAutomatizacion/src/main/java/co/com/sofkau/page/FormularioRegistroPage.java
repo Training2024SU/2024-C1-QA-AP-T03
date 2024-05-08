@@ -7,7 +7,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegistroPage extends FunctionCommon {
+public class FormularioRegistroPage extends FunctionCommon {
     //Localizadores
     @CacheLookup
     @FindBy(xpath = "//span[contains(text(),'Acceder / Registrarse')]")
@@ -40,13 +40,13 @@ public class RegistroPage extends FunctionCommon {
 
 
     //Constructor
-    public RegistroPage(WebDriver driver) {
+    public FormularioRegistroPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
     //Funciones
-    public void llenarFormulario(String email, String password, String confirmPassword) {
+    public void llenarFormularioRegistro(String email, String password, String confirmPassword) {
         try {
             tiempoDeEspera(); // Aplicar espera implícita antes de cada interacción
 

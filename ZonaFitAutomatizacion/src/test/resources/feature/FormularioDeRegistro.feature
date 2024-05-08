@@ -1,7 +1,7 @@
 Feature: Formulario de registro
-  Yo, como usuario de la pagina zona fit
+  Yo, como usuario sin registrar en la pagina zona fit
   quiero llenar el formulario de registro
-  para obtener los beneficios de la página
+  para poder ingresar y obtener los beneficios de la página
 
 #Usar 1 para navegador Chrome y 2 para Edge
 
