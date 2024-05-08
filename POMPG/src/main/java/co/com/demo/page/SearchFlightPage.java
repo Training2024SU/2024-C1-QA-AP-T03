@@ -55,8 +55,17 @@ public class SearchFlightPage extends CommonFunctions {
     private WebElement departureDateInput;
 
     @CacheLookup
+    @FindBy(id = "arrivalDate")
+    private WebElement arrivalDateInput;
+
+    @CacheLookup
     @FindBy(xpath = "//td[@aria-label='viernes, 10 de mayo de 2024']")
     private WebElement departureDateSelection;
+
+    @CacheLookup
+    @FindBy(xpath = "//td[@aria-label='domingo, 12 de mayo de 2024']")
+    private WebElement arrivalDateSelection;
+
 
     @CacheLookup
     @FindBy(id = "btnAddPassengerCTA")
@@ -98,6 +107,14 @@ public class SearchFlightPage extends CommonFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(IncreasePassengerAmount)).click();
     }
 
+    public void selectDepartureAndReturnDate() {
+        wait.until(ExpectedConditions.elementToBeClickable(departureDateInput)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(departureDateSelection)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(arrivalDateSelection)).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(arrivalDateInput)).click();
+
+    }
+
     public void clickSearch() {
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
     }
@@ -107,6 +124,14 @@ public class SearchFlightPage extends CommonFunctions {
         enterOrigin("medellin");
         enterDestination("bogota");
         selectDepartureDate();
+        increasePassengers();
+        clickSearch();
+    }
+
+    public void searchRoundFlight() {
+        enterOrigin("medellin");
+        enterDestination("bogota");
+        selectDepartureAndReturnDate();
         increasePassengers();
         clickSearch();
     }
