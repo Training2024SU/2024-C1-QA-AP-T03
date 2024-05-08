@@ -1,20 +1,25 @@
 package co.com.sofka.page;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+
+import java.security.Key;
 
 public class CommonFunctions {
     protected final WebDriver driver;
+    protected final Actions builder;
 
     public CommonFunctions(WebDriver driver) {
         this.driver = driver;
+        this.builder = new Actions(driver);
     }
 
     protected void typeInto(By locator, String text) {
-        driver.findElement(locator).sendKeys(text);
+        driver.findElement(locator).sendKeys(text, Keys.ENTER);
     }
 
     protected void typeInto(WebElement element, String text) {
-        element.sendKeys(text);
+        element.sendKeys(text, Keys.ENTER);
     }
 
     protected void clickSelection(By locator) {

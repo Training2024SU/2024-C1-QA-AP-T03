@@ -12,8 +12,12 @@ Feature: Flight Reservation on Despegar.com
     And confirms their personal information
     Then should receive a confirmation message
     Examples:
-      | webBrowser | fromDestiny | toDestiny                                | fromDate   | toDate     | nPassengers |
-      #| CHROME     | New York    | London    | 2024-06-01 | 2024-06-10 | 1           |
-      | "CHROME"   | "Bogota"    | "Cartagena de Indias, Bolívar, Colombia" | 2024-07-15 | 2024-07-25 | 3           |
+      | webBrowser | fromDestiny | toDestiny     | fromDate   | toDate     | nPassengers |
+      | "CHROME"   | "Bogota"    | "Santa marta" | 2024-07-15 | 2024-07-25 | 3           |
+
+      #| "EDGE"     | "Bogota"    | "Santa marta" | 2024-07-15 | 2024-07-25 | 3           |
+      #| "EDGE"     | "Medellin"  | "Cancun"      | 2024-05-19 | 2024-07-25 | 4           |
+      #| "EDGE"     | "Ibague"  | "New York"      | 2024-05-19 | 2024-07-25 | 4           |
+
 
 

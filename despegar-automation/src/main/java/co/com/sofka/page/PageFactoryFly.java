@@ -18,10 +18,18 @@ public class PageFactoryFly extends CommonFunctions {
     @CacheLookup
     @FindBy(xpath = "(//input[@placeholder='Ingresa desde dónde viajas'])[1]")
     private WebElement ORIGIN_INPUT;
+
     @CacheLookup
     @FindBy(xpath = "(//input[@placeholder='Ingresa hacia dónde viajas'])[1]")
     private WebElement DESTINY_INPUT;
 
+    @CacheLookup
+    @FindBy(xpath = "(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")
+    private WebElement FIRST_OPTION;
+
+    @CacheLookup
+    @FindBy(xpath = "(//div[@class = 'ac-container '])[1]")
+    private WebElement PIVOT_CITY_DIV;
 
     String MONTH_OPTION = "(//div[@class='sbox5-monthgrid-title-month'])[1]";
     String DYNAMIC_DAY_OPTION = "(//div[@class = 'sbox5-monthgrid']//div[text() = '%s'])[1]";
@@ -34,6 +42,7 @@ public class PageFactoryFly extends CommonFunctions {
     @CacheLookup
     @FindBy(xpath = "(//input[@placeholder='Vuelta'])[1]")
     private WebElement INPUT_BACK;
+
 
     @CacheLookup
     @FindBy(xpath = "(//a[@class='calendar-arrow-right '])[1]")
@@ -54,6 +63,10 @@ public class PageFactoryFly extends CommonFunctions {
     @FindBy(xpath = "//a[@class = 'sbox5-3-btn -md -primary']")
     private WebElement CONFIRM_NUMBER_PASSENGERS_BTN;
 
+    @CacheLookup
+    @FindBy(xpath = "//em[normalize-space()='Buscar']")
+    private WebElement CONFIRM_DETAILS;
+
 
     private final Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
@@ -62,17 +75,39 @@ public class PageFactoryFly extends CommonFunctions {
         PageFactory.initElements(driver, this);
     }
 
-
     public void selectSource(String source) {
+        clickSelection(ORIGIN_INPUT);
         cleanField(ORIGIN_INPUT);
         typeInto(ORIGIN_INPUT, source);
+        wait.until(d -> FIRST_OPTION.isDisplayed());
+        clickSelection(FIRST_OPTION);
     }
 
+
+    /**
+     * Selects a target option by typing it slowly into the DESTINY_INPUT field.
+     * This method utilizes Thread.sleep to pause the execution to simulate slow typing.
+     * The reason for using Thread.sleep is that typing too fast may cause the popup
+     * not to appear. Additionally, driver.manage.timeout does not work solely for
+     * waiting in this scenario.
+     * @param target The target option to be selected.
+     */
     public void selectTarget(String target) {
-        cleanField(DESTINY_INPUT);
-        typeInto(DESTINY_INPUT, target);
-        Actions actions = new Actions(driver);
-        actions.sendKeys(Keys.ENTER);
+        try {
+            clickSelection(DESTINY_INPUT);
+            // Slowly type each character of the target option
+            for (int i = 0; i < target.length(); i++) {
+                char character = target.charAt(i);
+                typeInto(DESTINY_INPUT, String.valueOf(character));
+                Thread.sleep(100); // Pause for 100 milliseconds between each character
+            }
+            // Wait for the PIVOT_CITY_DIV to be displayed before continuing
+            wait.until(d -> PIVOT_CITY_DIV.isDisplayed());
+            DESTINY_INPUT.sendKeys(Keys.ENTER); // Press ENTER after typing is complete
+        } catch (Exception e) {
+            // Propagate any exceptions as RuntimeExceptions
+            throw new RuntimeException(e);
+        }
     }
 
     public void selectFromDate(Integer fromYear, Integer fromMonth, Integer fromDay) {
@@ -102,7 +137,7 @@ public class PageFactoryFly extends CommonFunctions {
     public void selectPassengers(Integer passengers) {
         clickSelection(INPUT_PASSENGERS);
         wait.until(d -> CONFIRM_NUMBER_PASSENGERS_BTN.isDisplayed());
-        while (passengers > 1){
+        while (passengers > 1) {
             clickSelection(INCREASE_NUMBER_PASSENGERS_BTN);
             passengers--;
         }
@@ -112,5 +147,9 @@ public class PageFactoryFly extends CommonFunctions {
 
     public void confirmDate() {
         clickSelection(ACCEPT_DATE_BTN);
+    }
+
+    public void confirmDetails() {
+        clickSelection(CONFIRM_DETAILS);
     }
 }

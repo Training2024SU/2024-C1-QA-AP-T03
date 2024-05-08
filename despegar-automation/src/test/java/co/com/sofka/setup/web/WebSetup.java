@@ -1,4 +1,4 @@
-package co.com.sofka.setup;
+package co.com.sofka.setup.web;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,9 +21,9 @@ public class WebSetup {
 
     private void edgeConfiguration() {
         EdgeOptions edgeOptions = new EdgeOptions();
-        //edgeOptions.setCapability("ms:inPrivate", true);
-        //edgeOptions.setCapability("ms:edgeChromium", true);
-        //edgeOptions.setCapability("ms:edgeOptions", "--headless");
+        edgeOptions.setCapability("ms:inPrivate", true);
+        edgeOptions.setCapability("ms:edgeChromium", true);
+        edgeOptions.setCapability("ms:edgeOptions", "--headless");
         driver = new EdgeDriver(edgeOptions);
         configureBrowser();
     }
@@ -38,6 +38,8 @@ public class WebSetup {
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--disable-notifications");
+////        chromeOptions.addArguments("--headless");
+//        chromeOptions.addArguments("--use_subprocess");
         driver = new ChromeDriver(chromeOptions);
         configureBrowser();
     }
