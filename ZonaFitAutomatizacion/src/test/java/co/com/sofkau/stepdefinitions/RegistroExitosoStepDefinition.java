@@ -46,6 +46,7 @@ public class RegistroExitosoStepDefinition extends WebSetup{
     @Then("deberia ser redirigido a la pagina principal con la sesion iniciada")
     public void deberiaSerRedirigidoALaPaginaPrincipalConLaSesionIniciada() {
         try{
+            Assertions.assertNotNull(formularioRegistroPage);
             Assertions.assertEquals(MENSAJE_ESPERADO_DE_REGISTRO, formularioRegistroPage.obtenerMensajeDeIngreso());
         }catch (Exception e){
             System.out.println(e.getMessage());

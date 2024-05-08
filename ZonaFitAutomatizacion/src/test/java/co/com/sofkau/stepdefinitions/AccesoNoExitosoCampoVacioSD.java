@@ -1,24 +1,20 @@
 package co.com.sofkau.stepdefinitions;
 
 import co.com.sofkau.page.FormularioAccesoPage;
-import co.com.sofkau.page.FormularioRegistroPage;
 import co.com.sofkau.setup.WebSetup;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CAMPO_VACIO;
 
-import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_ACCESO;
-
-
-public class AccesoExitosoStepDefinition extends WebSetup {
+public class AccesoNoExitosoCampoVacioSD extends WebSetup {
     FormularioAccesoPage formularioAccesoPage;
-    FormularioRegistroPage formularioRegistroPage;
-    @When("ingresa sus datos de usuario registrado, correctamente")
-    public void ingresaSusDatosDeUsuarioRegistrado(){
+    @When("ingresa sus datos pero deja el campo del password vacio")
+    public void ingresaSusDatosPeroDejaElCampoDelPasswordVacio(){
         try {
             // Generar datos existentes
             String emailRegistrado = "prueba@correo.com";
-            String passwordUsuario = "prueba123";
+            String passwordUsuario = "";
 
             // Crear una instancia de la página de acceso
 
@@ -30,17 +26,17 @@ public class AccesoExitosoStepDefinition extends WebSetup {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
 
-    @Then("deberia ser redirigido a la pagina principal y le debe figurar la sesion iniciada")
-    public void deberiaSerRedirigidoAlaPaginaPrincipalConLaSesionIniciada(){
+    }
+    @Then("deberia recibir un mensaje de error y no deberia iniciarse su sesion")
+    public void deberiaRecibirUnMensajeDeError(){
         try{
-            Assertions.assertEquals(MENSAJE_ESPERADO_DE_ACCESO, formularioRegistroPage.obtenerMensajeDeIngreso());
+            Assertions.assertEquals(MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CAMPO_VACIO, formularioAccesoPage.obtenerMensajeDeAccesoIncorrectoCuentaCampoVacio());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }finally {
             quiteDriver();
         }
+
     }
 }
-

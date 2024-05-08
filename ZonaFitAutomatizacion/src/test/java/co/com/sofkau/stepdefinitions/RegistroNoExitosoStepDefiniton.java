@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CAMPO_VACIO;
 
 
-public class RegistroIncorrectoStepDefiniton extends WebSetup{
+public class RegistroNoExitosoStepDefiniton extends WebSetup{
     Faker faker = new Faker();
     FormularioRegistroPage formularioRegistroPage;
     @When ("intenta registrarse con el campo de correo vacio")

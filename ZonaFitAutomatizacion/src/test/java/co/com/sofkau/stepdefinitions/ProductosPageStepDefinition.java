@@ -18,7 +18,7 @@ public class ProductosPageStepDefinition extends WebSetup {
         productosPage.navegarAProductos();
     }
 
-    @When("el usuario agrega los {int} primeros productos disponibles al carrito")
+    @When("el usuario ingresa los {int} primeros productos disponibles al carrito")
     public void agregarProductosAlCarrito(int cantidadDeProdutos){
         productosPage.seleccionarProductos(cantidadDeProdutos);
     }

@@ -22,6 +22,13 @@ public class FormularioAccesoPage extends FunctionCommon{
     @CacheLookup
     @FindBy(xpath = "//button[@class = 'woocommerce-button button woocommerce-form-login__submit']")
     private WebElement BOTON_ACCEDER;
+    @CacheLookup
+    @FindBy(xpath = "//div[@class = 'message-container container alert-color medium-text-center']")
+    private WebElement MENSAJE_DE_ACCESOO_INCORRECTO_CUENTA_NO_EXISTENTE;
+    @CacheLookup
+    @FindBy(xpath = "//div[@class ='message-container container alert-color medium-text-center']")
+    private WebElement MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO;
+
 
 
     //Constructor
@@ -44,4 +51,16 @@ public class FormularioAccesoPage extends FunctionCommon{
             System.out.println("Error al llenar el formulario de acceso: " + e.getMessage());
         }
     }
+    public String obtenerMensajeDeAccesoIncorrectoCuentaNoExistente(){
+        waitForGeneralPageLoad();
+        waitForElementVisible(MENSAJE_DE_ACCESOO_INCORRECTO_CUENTA_NO_EXISTENTE);
+        return getText(MENSAJE_DE_ACCESOO_INCORRECTO_CUENTA_NO_EXISTENTE);
+    }
+    public String obtenerMensajeDeAccesoIncorrectoCuentaCampoVacio(){
+        waitForGeneralPageLoad();
+        waitForElementVisible(MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO);
+        return getText(MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO);
+    }
+
+
 }

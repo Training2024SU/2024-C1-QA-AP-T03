@@ -9,7 +9,18 @@ Feature: Formulario de acceso
     Given que el usuario selecciona el navegador 1 e ingresa a la pagina
 
   @testingresocorrecto
-  @ingresoexitoso
   Scenario: Acceso correcto
     When ingresa sus datos de usuario registrado, correctamente
     Then deberia ser redirigido a la pagina principal y le debe figurar la sesion iniciada
+
+  @testingresoincorrecto
+  @ingresonoexitosousuarionoregistrado
+  Scenario: Acceso no exitoso, usuario no registrado
+    When ingresa sus datos pero no se ha registrado
+    Then deberia visualizar un mensaje de error y no deberia iniciarse su sesion
+
+  @testingresoincorrecto
+  @ingresonoexitosocampovacio
+  Scenario: Acceso no exitoso, campo vacio
+    When ingresa sus datos pero deja el campo del password vacio
+    Then deberia recibir un mensaje de error y no deberia iniciarse su sesion
