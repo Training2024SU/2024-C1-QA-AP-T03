@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class SelectFlighPage extends CommonFunctions {
+public class SelectFlightPage extends CommonFunctions {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public SelectFlighPage(WebDriver driver) {
+    public SelectFlightPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -31,32 +31,27 @@ public class SelectFlighPage extends CommonFunctions {
     private WebElement selectFLightType;
 
     @CacheLookup
-    @FindBy(id = "")
-    private WebElement confirmFlight;
-
-    @CacheLookup
     @FindBy(xpath = "//span[contains(text(), 'Cambiar tu vuelo')]")
     private WebElement changeFlight;
 
-    @CacheLookup
-    @FindBy(xpath = "")
-    private WebElement fare;
 
     @CacheLookup
     @FindBy(id = "button9")
     private WebElement redirectSeatsSelection;
 
 
-    public void setSelectFlight(){
+    public void selectFlight(){
         wait.until(ExpectedConditions.elementToBeClickable(selectFlight)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selectFLightType)).click();
         wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection)).click();
+    }
 
-        //wait.until(ExpectedConditions.elementToBeClickable(changeFlight)).click();
+    public void selectNewFlight(){
+        wait.until(ExpectedConditions.elementToBeClickable(selectFlight)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectFLightType)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(changeFlight)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectFlight)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectFLightType)).click();
 
-        //wait.until(ExpectedConditions.elementToBeClickable(confirmFlight)).click();
-        //scrollTo(redirectSeatsSelection);
-        //wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection));
-        //clickSelection(redirectSeatsSelection);
     }
 }

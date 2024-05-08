@@ -48,8 +48,14 @@ public class SelectSeatPage  extends CommonFunctions {
     @FindBy(css = "button[data-testid='buttonChooseLater--button']")
     private WebElement chooseLaterSeats;
 
+    @CacheLookup
+    @FindBy(id = "button9")
+    private WebElement redirectSeatsSelection;
+
+
 
     public void selectSeats(){
+        wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selectSeat)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selecAnothertSeat)).click();
         wait.until(ExpectedConditions.elementToBeClickable(confirmSeats)).click();

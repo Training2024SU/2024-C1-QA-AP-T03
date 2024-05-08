@@ -16,11 +16,9 @@ Feature: Latam Airlines Flight Booking
     Then they should see a message with the details of the purchase
 
   @ChangeFlight
-  @CriticalPath
   Scenario: Change the flight during the purchase process
     When the user searches for a one-way flight
-    And selects a flight
-    When the user changes the selected flight to a new one
+    And changes the flight he choose
     Then they should see the updated flight details
 
   @PurchaseSeat

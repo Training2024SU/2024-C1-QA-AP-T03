@@ -9,10 +9,6 @@ c
 3src/test/java/co/com/demo/runner/GenericRunner.java,c/8/c84527a190a461f3fdaafd1fdeccf8d51d1e68ed
 d
 4src/main/java/co/com/demo/page/SearchFlightPage.java,6/f/6fd2375b2917c047a67f98dd8078b2bee346fc04
-c
-3src/main/java/co/com/demo/page/SelectFlighPage.java,0/b/0bf27089deac11e5bd00a81d0c159b9f62275b6e
-a
-1src/main/java/co/com/demo/page/RecapBookPage.java,5/1/5184fdd117fd6490c828dbb6bd571df5edcc6c1b
 b
 2src/main/java/co/com/demo/page/SelectSeatPage.java,1/1/11d2d6a2b17506991e5d6cb621e537e2dce65c76
 g
@@ -25,9 +21,13 @@ m
 =src/main/java/co/com/demo/page/functions/CommonFunctions.java,6/c/6c4b338b0daea37c81a98d460a8317c4c50569aa
 x
 Hsrc/test/java/co/com/demo/stepdefinitions/BookFlightStepDefinitions.java,7/b/7b6247efb8f30e598a36b278dd1b0430ddc3eb41
-y
-Isrc/test/java/co/com/demo/stepdefinitions/ChangeFlightStepDefintions.java,5/3/537bfbe51cb84ca54b8c528516a2c1c79bba3e08
 z
 Jsrc/test/java/co/com/demo/stepdefinitions/PurchaseSeatStepDefinitions.java,1/b/1bdfc76eb43c127477e75de23e49b17726010d17
 }
 Msrc/test/java/co/com/demo/stepdefinitions/PurchaseLuggageStepDefinitions.java,b/9/b90ccc1faee22d2e652a4b60086e1e7678b4c851
+z
+Jsrc/test/java/co/com/demo/stepdefinitions/ChangeFlightStepDefinitions.java,f/0/f014503da14d1cf0ab47c06dfc950d60cb89b050
+d
+4src/main/java/co/com/demo/page/SelectFlightPage.java,a/e/ae4b5c3961a9d412e7c6bd86dc019c54b6464dba
+{
+Ksrc/test/java/co/com/demo/stepdefinitions/ChangeBookingStepDefinitions.java,2/f/2f0e8ed18a8eb9b1cf6e297872b642b190d62da6
