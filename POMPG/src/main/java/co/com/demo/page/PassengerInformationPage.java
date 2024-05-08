@@ -28,7 +28,7 @@ public class PassengerInformationPage extends CommonFunctions {
 
     @CacheLookup
     @FindBy(id = "passengerDetails-firstName-ADT_2")
-    private WebElement secondfirstName;
+    private WebElement secondFirstName;
 
     @CacheLookup
     @FindBy(id = "passengerDetails-lastName-ADT_1")
@@ -79,6 +79,11 @@ public class PassengerInformationPage extends CommonFunctions {
     private WebElement saveDataButton;
 
     @CacheLookup
+    @FindBy(id = "passengerFormSubmitButtonADT_2")
+    private WebElement secondSaveDataButton;
+
+
+    @CacheLookup
     @FindBy(xpath = "//button[@aria-label='Continuar al paso de pago.']")
     private WebElement continueToPaymentButton;
 
@@ -113,6 +118,38 @@ public class PassengerInformationPage extends CommonFunctions {
         phoneNumber.sendKeys(phoneUser);
     }
 
+    public void enterSecondName(String name) {
+        wait.until(ExpectedConditions.elementToBeClickable(secondFirstName)).click();
+        secondFirstName.sendKeys(name);
+    }
+
+    public void enterSecondLastName(String surname) {
+        wait.until(ExpectedConditions.elementToBeClickable(secondLastName)).click();
+        secondLastName.sendKeys(surname);
+    }
+
+    public void enterSecondDateOfBirth(String dateBirth) {
+        wait.until(ExpectedConditions.elementToBeClickable(seconddateOfBirth)).click();
+        seconddateOfBirth.sendKeys(dateBirth);
+    }
+
+    public void enterSecondIdentification(String id) {
+        scrollTo(secondIdentification);
+        clickSelection(secondIdentification);
+        secondIdentification.sendKeys(id);
+    }
+
+    public void enterSecondEmail(String emailUser) {
+        wait.until(ExpectedConditions.elementToBeClickable(secondEmail)).click();
+        secondEmail.sendKeys(emailUser);
+    }
+
+    public void enterSecondPhoneNumber(String phoneUser) {
+        wait.until(ExpectedConditions.elementToBeClickable(secondPhoneNumber)).click();
+        secondPhoneNumber.sendKeys(phoneUser);
+    }
+
+
 
     public void enterPassengerInformation(){
         enterName("Martin");
@@ -121,6 +158,15 @@ public class PassengerInformationPage extends CommonFunctions {
         enterIdentification("1214567983");
         enterEmail("dm34mgm@gmail.com");
         enterPhoneNumber("324332456");
+        clickSelection(reuseContactDataButton);
+        clickSelection(saveDataButton);
+        enterSecondName("Andres");
+        enterSecondLastName("Jimenez");
+        enterSecondDateOfBirth("01-01-2000");
+        enterSecondIdentification("987654321");
+        clickSelection(secondSaveDataButton);
+
+
     }
 
 }
