@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 abstract public class BasePage {
-    private final JavascriptExecutor jse;
     protected final WebDriver driver;
+    private final JavascriptExecutor jse;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -16,7 +16,7 @@ abstract public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    protected void clickElement(By locator){
+    protected void clickElement(By locator) {
         driver.findElement(locator).click();
     }
 
@@ -26,5 +26,9 @@ abstract public class BasePage {
 
     protected void scrollTo(WebElement element) {
         jse.executeScript("arguments[0].scrollIntoView()", element);
+    }
+
+    protected String getText(By locator) {
+        return driver.findElement(locator).getText();
     }
 }

@@ -1,10 +1,14 @@
 package com.davidbonelo.stepdefinitions;
 
+import com.davidbonelo.pages.CustomizePage;
+import com.davidbonelo.pages.FlightSummaryPage;
 import com.davidbonelo.pages.FlightsResultPage;
 import com.davidbonelo.pages.HomePage;
+import com.davidbonelo.pages.SeatsPage;
 import com.davidbonelo.pages.components.ClassCard;
 import com.davidbonelo.pages.components.FlightCard;
 import com.davidbonelo.setup.WebSetup;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,7 +22,9 @@ public class FlightSteps {
     private final WebSetup webSetup;
     HomePage homePage;
     FlightsResultPage flightsResultPage;
+    SeatsPage seatsPage;
     FlightCard flight;
+    CustomizePage customizePage;
 
     public FlightSteps(WebSetup webSetup) {
         this.webSetup = webSetup;
@@ -68,4 +74,30 @@ public class FlightSteps {
         }
         classes.forEach(ClassCard::getPrice);
     }
+
+    @And("he sets the amount of passengers to {int}")
+    public void heSetsTheAmountOfPassengersTo(int passengerAmount) {
+        flightsResultPage.setPassengersAmount(passengerAmount);
+    }
+
+    @When("he selects one flight with any type of class")
+    public void heSelectsOneFlightWithAnyTypeOfClass() {
+        heSelectsOneFlightToSeeItsDetails();
+//        ClassCard classCard = pickRandomItem(flight.getClassesAvailable());
+//        classCard.select();
+        flight.getClassesAvailable().get(0).select();
+    }
+
+    @And("he chooses the {int} seats from the available ones")
+    public void heChoosesTheQuantitySeatsFromTheAvailableOnes(int quantity) {
+        seatsPage = new FlightSummaryPage(webSetup.driver).navigateToSeatsPage();
+        seatsPage.selectSeats(quantity);
+        customizePage = seatsPage.confirmAndContinue();
+    }
+
+    @Then("he should see the payment summary for the tickets")
+    public void heShouldSeeThePaymentSummaryForTheTickets() {
+        Assertions.assertNotNull(customizePage.getFinalPrice());
+    }
+
 }
