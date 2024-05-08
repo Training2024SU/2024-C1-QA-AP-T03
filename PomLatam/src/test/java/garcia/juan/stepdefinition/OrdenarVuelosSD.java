@@ -15,14 +15,7 @@ public class OrdenarVuelosSD extends WebSetUp {
     public void el_usuario_realizo_una_busqueda_de_vuelos_en_la_pagina_de_latam() {
         generalSetUp(2);
         mainPage = new MainPage(driver);
-        try{
-            mainPage.quedarseColombia();
-            mainPage.acceptCookies();
-            Thread.sleep(2000);
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-            Assertions.fail();
-        }
+
     }
     @When("selecciona selecciona ordenar por el criterio {string}")
     public void selecciona_selecciona_ordenar_por_el_criterio(String string) {

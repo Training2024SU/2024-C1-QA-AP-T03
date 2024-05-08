@@ -64,9 +64,6 @@ public class MainPage extends FunctionsCommon {
     @FindBy(id = "btnSearchCTA")
     private WebElement SEARCH_BUTTON;
 
-
-
-
     private String MES_ANHO= "//div[contains(@class, 'CalendarMonth') and @data-visible='true']/div[@class='CalendarMonth_caption CalendarMonth_caption_1']/strong[text()='%s']";
     private String DAY_PICKER = "//td[contains(@class, 'CalendarDay') and contains(@aria-label, '%s de %s')]";
 
@@ -76,8 +73,8 @@ public class MainPage extends FunctionsCommon {
 //    @FindBy(xpath = "//div[contains(@class, 'CalendarMonth_caption')]/strong[text()='"+ mesAnho +"']")
 //    private WebElement MES_FECHA
 
-
     //Methods
+
     public void quedarseColombia(){
         try {
             clickSelection(COUNTRY_BUTTON);
