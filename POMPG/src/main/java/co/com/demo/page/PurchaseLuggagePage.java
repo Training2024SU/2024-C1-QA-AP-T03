@@ -38,6 +38,18 @@ public class PurchaseLuggagePage extends CommonFunctions {
     @FindBy(id = "button-cart-confirm")
     private WebElement addContinue;
 
+    @CacheLookup
+    @FindBy(id = "BAGS-continue-button")
+    private WebElement noluggageButton1;
+
+    @CacheLookup
+    @FindBy(id = "PRIORITY_BOARDING-continue-button")
+    private WebElement noluggageButton2;
+
+    @CacheLookup
+    @FindBy(id = "")
+    private WebElement noluggageButton3 ;
+
 
     public void addLuggage(){
         wait.until(ExpectedConditions.elementToBeClickable(selectLuggage)).click();
@@ -45,6 +57,14 @@ public class PurchaseLuggagePage extends CommonFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(continueBtn)).click();;
         wait.until(ExpectedConditions.elementToBeClickable(addContinue)).click();
     }
+
+    public void continueWithoutLuggage(){
+        wait.until(ExpectedConditions.elementToBeClickable(noluggageButton1)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(noluggageButton2)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(addContinue)).click();
+
+    }
+
 
 
 }

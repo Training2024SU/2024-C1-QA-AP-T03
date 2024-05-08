@@ -42,6 +42,8 @@ public class BookFlightStepDefinitions extends WebSetup {
         // Implement logic for not purchasing seats or luggage
         selectSeatPage = new SelectSeatPage(driver);
         selectSeatPage.continueWithoutSeats();
+        purchaseLuggagePage = new PurchaseLuggagePage(driver);
+        purchaseLuggagePage.continueWithoutLuggage();
 
     }
 
