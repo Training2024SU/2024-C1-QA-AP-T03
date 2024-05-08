@@ -16,8 +16,9 @@ public class BuscarVuelosSD extends WebSetUp {
         generalSetUp(2);
         mainPage = new MainPage(driver);
         try{
+            mainPage.quedarseColombia();
             mainPage.acceptCookies();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (Exception e){
             System.out.println(e.getMessage());
             Assertions.fail();
@@ -25,23 +26,28 @@ public class BuscarVuelosSD extends WebSetUp {
 //
     }
     @When("selecciona el origen {string}, destino {string}, fecha de salida {string} y fecha de regreso {string}")
-    public void selecciona_el_origen_destino_fecha_de_salida_y_fecha_de_regreso(String origen, String destino, String string3, String string4) throws InterruptedException {
+    public void selecciona_el_origen_destino_fecha_de_salida_y_fecha_de_regreso(String origen, String destino, String fecha1, String fecha2) throws InterruptedException {
 
         try{
             mainPage.insertOrigenAndDestino(origen,destino);
-            Thread.sleep(5000);
+            mainPage.buscarFecha(fecha1,fecha2);
+
+
         } catch (Exception e){
             System.out.println(e.getMessage());
+            quiteDriver();
             Assertions.fail();
+
         }
 
     }
-    @When("hace click al boton de buscar")
-    public void hace_click_al_boton_de_buscar() {
-
+    @When("selecciona la opcion de buscar")
+    public void selecciona_la_opcion_de_buscar() {
+    mainPage.realizaBusqueda();
     }
     @Then("el usuario debería ver una lista de vuelos disponibles")
-    public void el_usuario_debería_ver_una_lista_de_vuelos_disponibles() {
+    public void el_usuario_debería_ver_una_lista_de_vuelos_disponibles() throws InterruptedException {
+        Thread.sleep(3000);
         quiteDriver();
     }
 

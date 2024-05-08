@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class WebSetUp {
-    private static final String LATAM_URL ="https://www.latamairlines.com";
+    private static final String LATAM_URL ="https://www.latamairlines.com/co/es";
 
     protected static WebDriver driver;
 
@@ -28,7 +28,6 @@ public class WebSetUp {
                 maximize();
                 break;
         }
-
     }
     protected void generalSetUp(int navegador){
         setUpWebDriverUrl(navegador);
