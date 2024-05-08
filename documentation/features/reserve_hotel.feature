@@ -6,7 +6,7 @@ Feature: Hotel Reservation on Despegar.com
   Scenario Outline: Successfully reserve a hotel
     Given the User is on despegar.com using <webBrowser>
     When navigates to hotel page
-    And selects a hotel ubicated on <toDestiny>
+    And selects a hotel on <toDestiny>
     And departs on <fromDate> returning on <toDate> for <nPassengers> passengers
     And confirms the chosen hotel details
     And confirms their personal information

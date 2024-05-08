@@ -95,17 +95,14 @@ public class PageFactoryFly extends CommonFunctions {
     public void selectTarget(String target) {
         try {
             clickSelection(DESTINY_INPUT);
-            // Slowly type each character of the target option
             for (int i = 0; i < target.length(); i++) {
                 char character = target.charAt(i);
                 typeInto(DESTINY_INPUT, String.valueOf(character));
-                Thread.sleep(100); // Pause for 100 milliseconds between each character
+                Thread.sleep(100);
             }
-            // Wait for the PIVOT_CITY_DIV to be displayed before continuing
             wait.until(d -> PIVOT_CITY_DIV.isDisplayed());
-            DESTINY_INPUT.sendKeys(Keys.ENTER); // Press ENTER after typing is complete
+            DESTINY_INPUT.sendKeys(Keys.ENTER);
         } catch (Exception e) {
-            // Propagate any exceptions as RuntimeExceptions
             throw new RuntimeException(e);
         }
     }

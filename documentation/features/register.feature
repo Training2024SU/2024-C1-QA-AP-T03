@@ -14,14 +14,14 @@ Feature: User registration on despegar.com
       | webBrowser |
       | "EDGE"     |
 
-
   Scenario Outline: Creation Incorrect
     Given the User is on despegar.com using <webBrowser>
     When navigates to authentication page
     And enters its data incorrectly
     And confirm its data
-    Then should receive an error messagge
+    Then should receive an error message
     Examples:
       | webBrowser |
       | "EDGE"     |
+
 
