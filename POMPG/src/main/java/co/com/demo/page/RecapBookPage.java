@@ -20,11 +20,5 @@ public class RecapBookPage extends CommonFunctions {
         PageFactory.initElements(driver, this);
     }
 
-    @CacheLookup
-    @FindBy(xpath = "")
-    private WebElement fare;
 
-    @CacheLookup
-    @FindBy(id = "")
-    private WebElement redirectSeatsSelection;
 }

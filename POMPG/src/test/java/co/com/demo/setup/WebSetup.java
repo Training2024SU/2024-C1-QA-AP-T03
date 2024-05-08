@@ -1,10 +1,16 @@
 package co.com.demo.setup;
 
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Set;
 
 public class WebSetup {
 
@@ -16,8 +22,9 @@ public class WebSetup {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
                 chromeOptions.addArguments("--no-new-window");
-                chromeOptions.addArguments("--disable-popup-blocking"); // Deshabilitar bloqueo de pop-ups
+                chromeOptions.addArguments("--disable-popup-blocking");
                 chromeOptions.addArguments("--incognito");
+                chromeOptions.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case 2:
@@ -43,5 +50,28 @@ public class WebSetup {
 
     private void maximizeWindow() {
         driver.manage().window().maximize();
+    }
+
+    protected void switchToNewTab() {
+        String mainWindowHandle = driver.getWindowHandle();
+
+        // Esperar hasta que se abra una nueva pestaña
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+        // Obtener todas las manijas de ventana después de abrir la nueva pestaña
+        Set<String> allWindowHandles = driver.getWindowHandles();
+
+        // Iterar sobre las manijas de ventana para identificar la nueva pestaña
+        String newWindowHandle = "";
+        for (String handle : allWindowHandles) {
+            if (!handle.equals(mainWindowHandle)) {
+                newWindowHandle = handle;
+                break;
+            }
+        }
+
+        // Cambiar el enfoque a la nueva pestaña
+        driver.switchTo().window(newWindowHandle);
     }
 }

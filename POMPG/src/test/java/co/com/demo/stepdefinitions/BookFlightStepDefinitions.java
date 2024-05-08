@@ -1,7 +1,9 @@
 package co.com.demo.stepdefinitions;
 
+import co.com.demo.page.PurchaseLuggagePage;
 import co.com.demo.page.SearchFlightPage;
 import co.com.demo.page.SelectFlighPage;
+import co.com.demo.page.SelectSeatPage;
 import co.com.demo.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,6 +13,8 @@ import io.cucumber.java.en.When;
 public class BookFlightStepDefinitions extends WebSetup {
     private SearchFlightPage searchFlightPage;
     private SelectFlighPage selecFlightPage;
+    private PurchaseLuggagePage purchaseLuggagePage;
+    private SelectSeatPage selectSeatPage;
 
 
     @Given("I am initiating a flight booking process {int} {string}")
@@ -20,16 +24,14 @@ public class BookFlightStepDefinitions extends WebSetup {
         searchFlightPage = new SearchFlightPage(driver);
     }
 
-
-
     @When("the user searches for a one-way flight")
     public void theUserSearchesForAOneWayFlight() {
         searchFlightPage.searchOneFlight();
-
     }
 
     @When("selects a flight")
     public void selectsAFlight() {
+        switchToNewTab();
         // Implement flight selection logic
         selecFlightPage = new SelectFlighPage(driver);
         selecFlightPage.setSelectFlight();
@@ -38,6 +40,9 @@ public class BookFlightStepDefinitions extends WebSetup {
     @When("does not purchase seats or luggage")
     public void doesNotPurchaseSeatsOrLuggage() {
         // Implement logic for not purchasing seats or luggage
+        selectSeatPage = new SelectSeatPage(driver);
+        selectSeatPage.continueWithoutSeats();
+
     }
 
     @When("adds passenger information and confirms it")

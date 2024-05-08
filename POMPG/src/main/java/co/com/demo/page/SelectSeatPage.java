@@ -39,10 +39,28 @@ public class SelectSeatPage  extends CommonFunctions {
     @FindBy(id = "")
     private WebElement addContinue;
 
+
+    @CacheLookup
+    @FindBy(id = "btn-confirm-and-continue")
+    private WebElement continueWithoutSeats;
+
+    @CacheLookup
+    @FindBy(css = "button[data-testid='buttonChooseLater--button']")
+    private WebElement chooseLaterSeats;
+
+
     public void selectSeats(){
         wait.until(ExpectedConditions.elementToBeClickable(selectSeat)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selecAnothertSeat)).click();
         wait.until(ExpectedConditions.elementToBeClickable(confirmSeats)).click();
     }
+
+
+    public void continueWithoutSeats(){
+        wait.until(ExpectedConditions.elementToBeClickable(continueWithoutSeats)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(chooseLaterSeats)).click();
+
+    }
+
 }
 

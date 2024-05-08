@@ -22,26 +22,41 @@ public class SelectFlighPage extends CommonFunctions {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//*[@id='WrapperCardFlight2']/div")
     @CacheLookup
-    @FindBy(xpath = "(//span[contains(text(), 'Recomendado')])[1]")
     private WebElement selectFlight;
 
     @CacheLookup
-    @FindBy(id = "bundle-detail-0-flight-select")
+    @FindBy(id = "bundle-detail-1-flight-select")
     private WebElement selectFLightType;
 
     @CacheLookup
-    @FindBy(id = "button9")
+    @FindBy(id = "")
     private WebElement confirmFlight;
 
     @CacheLookup
-    @FindBy(id = "//span[contains(text(), 'Cambiar tu vuelo')]")
+    @FindBy(xpath = "//span[contains(text(), 'Cambiar tu vuelo')]")
     private WebElement changeFlight;
+
+    @CacheLookup
+    @FindBy(xpath = "")
+    private WebElement fare;
+
+    @CacheLookup
+    @FindBy(id = "button9")
+    private WebElement redirectSeatsSelection;
 
 
     public void setSelectFlight(){
         wait.until(ExpectedConditions.elementToBeClickable(selectFlight)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selectFLightType)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(confirmFlight)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection)).click();
+
+        //wait.until(ExpectedConditions.elementToBeClickable(changeFlight)).click();
+
+        //wait.until(ExpectedConditions.elementToBeClickable(confirmFlight)).click();
+        //scrollTo(redirectSeatsSelection);
+        //wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection));
+        //clickSelection(redirectSeatsSelection);
     }
 }

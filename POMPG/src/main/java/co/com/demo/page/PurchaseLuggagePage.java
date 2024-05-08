@@ -38,10 +38,13 @@ public class PurchaseLuggagePage extends CommonFunctions {
     @FindBy(id = "button-cart-confirm")
     private WebElement addContinue;
 
+
     public void addLuggage(){
         wait.until(ExpectedConditions.elementToBeClickable(selectLuggage)).click();
         scrollTo(continueBtn);
         wait.until(ExpectedConditions.elementToBeClickable(continueBtn)).click();;
         wait.until(ExpectedConditions.elementToBeClickable(addContinue)).click();
     }
+
+
 }
