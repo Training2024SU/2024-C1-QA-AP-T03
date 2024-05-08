@@ -1,3 +1,7 @@
 
-…
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ŸŒÔá8öœô›õ1J$996a6447-f3d1-4f91-a2e9-ad5962e547b4
+}
+java:S2387"5"driver" is the name of a field in "CommonFunctions".(š…ŒÅøÿÿÿÿ8®Õã¬õ1J$a183ba3d-63b9-4754-9466-106392bad5f7
+r
+java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8±Õã¬õ1J$d0842051-0d73-48be-b6e3-0a644c97b7cd
+p
+java:S1068"(Remove this unused "wait" private field.(íÒá§ùÿÿÿÿ8±Õã¬õ1J$87a971fb-7fce-458a-aa75-1c0c5fd421ca

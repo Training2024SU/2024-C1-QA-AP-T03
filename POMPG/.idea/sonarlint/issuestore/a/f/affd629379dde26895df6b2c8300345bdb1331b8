@@ -1,3 +1,8 @@
 
-„
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ãÊö~8ı¬œõ1J$95cf480e-18c5-4da9-9986-5fa9c096c255
+¡	java:S116""ZRename this field "InputCreditCard" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù²ÂŒúÿÿÿÿ8Õ–‰®õ1J$ecbe0d4f-f411-47b3-b93b-c3140aa44b33
+}
+java:S2387"5"driver" is the name of a field in "CommonFunctions".(š…ŒÅøÿÿÿÿ8×–‰®õ1J$39937c26-d94c-49bb-9bef-6bae76a52e67
+r
+java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8Û–‰®õ1J$b9aff8f3-9e3d-4e78-b9ed-38bb864252f9
+p
+java:S1068"(Remove this unused "wait" private field.(íÒá§ùÿÿÿÿ8Ü–‰®õ1J$149ea80a-c74c-4bbe-840b-cc0785ec25f5

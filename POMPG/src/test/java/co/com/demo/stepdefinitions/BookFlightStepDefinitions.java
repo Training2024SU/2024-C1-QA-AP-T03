@@ -6,8 +6,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
 public class BookFlightStepDefinitions extends WebSetup {
     private SearchFlightPage searchFlightPage;
+
 
     @Given("I am initiating a flight booking process {int} {string}")
     public void iAmInitiatingAFlightBookingProcess(Integer tipoDriver, String url) {
@@ -15,6 +17,7 @@ public class BookFlightStepDefinitions extends WebSetup {
         // Initialize the SearchFlightPage
         searchFlightPage = new SearchFlightPage(driver);
     }
+
 
 
     @When("the user searches for a one-way flight")
@@ -41,6 +44,6 @@ public class BookFlightStepDefinitions extends WebSetup {
     @Then("they should see a message with the details of the purchase")
     public void theyShouldSeeAMessageWithTheDetailsOfThePurchase() {
         // Implement verification logic for the purchase details message
-        quitDriver();
+
     }
 }

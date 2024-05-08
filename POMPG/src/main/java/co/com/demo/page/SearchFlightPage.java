@@ -6,45 +6,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
-import java.time.format.DateTimeFormatter;
 
 public class SearchFlightPage extends CommonFunctions {
 
     private WebDriver driver;
+    private WebDriverWait wait;
+
+    public SearchFlightPage(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        PageFactory.initElements(driver, this);
+    }
 
     @CacheLookup
     @FindBy(xpath = "//div[@class='sc-fhOrUh frWrti']")
     private WebElement bodyPage;
 
-    // One way or round trip selection
     @CacheLookup
     @FindBy(id = "btnTripTypeCTA")
     private WebElement roundTripOrOneWay;
 
-    // One way selection
     @CacheLookup
     @FindBy(id = "btnTripType0")
     private WebElement oneWayTripRadioButton;
-
-    @CacheLookup
-    @FindBy(id = "btnAddPassengerCTA")
-    private WebElement selectPassengerOption;
-
-    @CacheLookup
-    @FindBy(css = "span[data-test='adult_added_a11y']")
-    private WebElement selectPassengerAmount;
-
-    @CacheLookup
-    @FindBy(id = "btnItemAutoComplete_0")
-    private WebElement selectOrigin;
-
-    @CacheLookup
-    @FindBy(id = "btnItemAutoComplete_0")
-    private WebElement selectDestination;
 
     @CacheLookup
     @FindBy(id = "txtInputOrigin_field")
@@ -55,61 +43,71 @@ public class SearchFlightPage extends CommonFunctions {
     private WebElement destinationInput;
 
     @CacheLookup
+    @FindBy(id = "btnItemAutoComplete_0")
+    private WebElement selectOrigin;
+
+    @CacheLookup
+    @FindBy(id = "btnItemAutoComplete_0")
+    private WebElement selectDestination;
+
+    @CacheLookup
     @FindBy(id = "departureDate")
     private WebElement departureDateInput;
+
+    @CacheLookup
+    @FindBy(xpath = "//td[@aria-label='viernes, 10 de mayo de 2024']")
+    private WebElement departureDateSelection;
+
+    @CacheLookup
+    @FindBy(id = "btnAddPassengerCTA")
+    private WebElement selectPassengerOption;
+
+    @CacheLookup
+    @FindBy(id = "btnPlusAdults")
+    private WebElement IncreasePassengerAmount;
 
     @CacheLookup
     @FindBy(id = "btnSearchCTA")
     private WebElement searchButton;
 
-    public SearchFlightPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
 
     public void selectOneWayTrip() {
-        clickSelection(roundTripOrOneWay);
-        clickSelection(oneWayTripRadioButton);
+        wait.until(ExpectedConditions.elementToBeClickable(roundTripOrOneWay)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(oneWayTripRadioButton)).click();
     }
 
     public void enterOrigin(String origin) {
-        clickSelection(originInput);
-        // Explicit wait
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // Espera hasta 10 segundos
-        wait.until(ExpectedConditions.elementToBeClickable(originInput));
-        typeInto(originInput,origin);
-        clickSelection(selectOrigin);
+        wait.until(ExpectedConditions.elementToBeClickable(originInput)).click();
+        originInput.sendKeys(origin);
+        wait.until(ExpectedConditions.elementToBeClickable(selectOrigin)).click();
     }
 
     public void enterDestination(String destination) {
-        clickSelection(destinationInput);
-        typeInto(destinationInput, destination);
-        clickSelection(selectDestination);
+        wait.until(ExpectedConditions.elementToBeClickable(destinationInput)).click();
+        destinationInput.sendKeys(destination);
+        wait.until(ExpectedConditions.elementToBeClickable(selectDestination)).click();
     }
 
-    public void increasePassengers(){
-        clickSelection(selectPassengerOption);
-        clickSelection(bodyPage);
-        //clickSelection(selectPassengerAmount);
+    public void selectDepartureDate() {
+        wait.until(ExpectedConditions.elementToBeClickable(departureDateInput)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(departureDateSelection)).click();
     }
 
-    public void selectDepartureDate(String date) {
-        String formattedDate = date.format(String.valueOf(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
-        typeInto(departureDateInput, formattedDate);
+    public void increasePassengers() {
+        wait.until(ExpectedConditions.elementToBeClickable(selectPassengerOption)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(IncreasePassengerAmount)).click();
     }
 
     public void clickSearch() {
-        clickSelection(searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
     }
 
-    public void searchOneFlight (){
+    public void searchOneFlight() {
         selectOneWayTrip();
         enterOrigin("medellin");
         enterDestination("bogota");
+        selectDepartureDate();
+        increasePassengers();
         clickSearch();
-
     }
-
 }

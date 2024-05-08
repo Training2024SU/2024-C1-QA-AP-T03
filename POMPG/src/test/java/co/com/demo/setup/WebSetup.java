@@ -1,9 +1,13 @@
 package co.com.demo.setup;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.Collections;
 
 public class WebSetup {
 
@@ -13,6 +17,8 @@ public class WebSetup {
         switch (driverSelection){
             case 1:
                 ChromeOptions co = new ChromeOptions();
+                co.setPageLoadStrategy(PageLoadStrategy.NORMAL); // Configurar la estrategia de carga de página
+                co.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation")); // Deshabilitar la detección de automatización
                 driver = new ChromeDriver(co);
                 break;
             case 2:

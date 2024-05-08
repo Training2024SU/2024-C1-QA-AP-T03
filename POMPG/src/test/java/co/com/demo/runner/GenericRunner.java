@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
         glue = "co.com.demo.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         //tags = "@CriticalPath"
+
         tags = "@PurchaseFlight"
         //tags = "@PurchaseSeat"
         //tags = "@PurchaseLuggage"
