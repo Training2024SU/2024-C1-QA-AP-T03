@@ -1,9 +1,6 @@
 package co.com.demo.stepdefinitions;
 
-import co.com.demo.page.PurchaseLuggagePage;
-import co.com.demo.page.SearchFlightPage;
-import co.com.demo.page.SelectFlighPage;
-import co.com.demo.page.SelectSeatPage;
+import co.com.demo.page.*;
 import co.com.demo.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,6 +12,7 @@ public class BookFlightStepDefinitions extends WebSetup {
     private SelectFlighPage selecFlightPage;
     private PurchaseLuggagePage purchaseLuggagePage;
     private SelectSeatPage selectSeatPage;
+    private PassengerInformationPage passengerInformationPage;
 
 
     @Given("I am initiating a flight booking process {int} {string}")
@@ -50,6 +48,9 @@ public class BookFlightStepDefinitions extends WebSetup {
     @When("adds passenger information and confirms it")
     public void addsPassengerInformationAndConfirmsIt() {
         // Implement logic for adding passenger information and confirmation
+        passengerInformationPage = new PassengerInformationPage(driver);
+        passengerInformationPage.enterPassengerInformation();
+
     }
 
     @Then("they should see a message with the details of the purchase")
