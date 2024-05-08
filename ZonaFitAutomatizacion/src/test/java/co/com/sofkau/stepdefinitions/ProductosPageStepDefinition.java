@@ -1,0 +1,50 @@
+package co.com.sofkau.stepdefinitions;
+
+import co.com.sofkau.page.ProductosPage;
+import co.com.sofkau.setup.WebSetup;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
+
+
+public class ProductosPageStepDefinition extends WebSetup {
+
+    ProductosPage productosPage;
+
+    @When("el usuario navega a la pagina de productos")
+    public void navegarAProductos(){
+        productosPage =  new ProductosPage(driver);
+
+        productosPage.navegarAProductos();
+    }
+
+    @When("el usuario agrega los {int} primeros productos disponibles al carrito")
+    public void agregarProductosAlCarrito(int cantidadDeProdutos){
+        productosPage.seleccionarProductos(cantidadDeProdutos);
+    }
+
+    @When("el usuario abre el modal del carrito de compras")
+    public void el_usuario_abre_el_modal_del_carrito_de_compras() {
+        productosPage.abrirModalCarritoDeCompras();
+    }
+    @When("modifica la cantidad del producto {int} agregandole {int}")
+    public void modifica_la_cantidad_del_producto_agregandole(Integer producto, Integer cantidad) {
+        productosPage.modificarCarritoConProductoYCantidad(producto, cantidad);
+    }
+    @Then("el usuario confirma los cambios en las cantidades del producto {int} es {int}")
+    public void el_usuario_confirma_los_cambios_en_las_cantidades(Integer producto, Integer cantidad) {
+        int cantidadDeProducto = productosPage.obtenerCantidadDeProduto(producto);
+        Assertions.assertEquals(cantidadDeProducto, cantidad);
+    }
+    @Then("el precio del carrito de compras deberia reflejar las nuevas cantidades de los productos")
+    public void el_carrito_de_compras_deberia_reflejar_las_nuevas_cantidades_de_los_productos() {
+
+        double totalSumatoriaCadaProducto = productosPage.obtenerSumatoriaDePrecios();
+        double totalDelCarrito = productosPage.obtenerTotalDePrecios();
+
+        Assertions.assertEquals(totalDelCarrito, totalSumatoriaCadaProducto);
+
+        driver.quit();
+    }
+
+}
