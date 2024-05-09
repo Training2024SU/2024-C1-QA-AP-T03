@@ -152,4 +152,6 @@ public class MainPage extends FunctionsCommon {
     public void realizaBusqueda() {
         clickSelection(SEARCH_BUTTON);
     }
+
+
 }

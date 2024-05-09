@@ -3,6 +3,8 @@ Feature: Compra completa
   quiero realizar una compra en Latam
   para hacer uso de su servicio de transporte
 
+
+  @CompraIdaVuelta
   Scenario:
     Given el usuario se encuentra en la pagina de inicio de Latam
     When busca el vuelo sin seleccionar adicionales
@@ -12,5 +14,20 @@ Feature: Compra completa
       | nombre    | apellido   | fecha_nacimiento | sexo | nacionalidad | tipo_doc | no_doc     | email             | codigo  | numero     |
       | Pedro     | Navaja     | 1998-08-1        | M    | Colombia     | Cedula   | 1023546897 | carlos@gmail.com  | 57      | 3154568956 |
     And inserta su metodo de pago
+      | numero              | cvv   | fecha   |
+      | 5471300000000003    | 666   | 07/2027 |
     Then deberia recibir el mensaje de que su reserva fue completada la información respectiva
 
+  @CompraIda
+  Scenario:
+    Given el usuario se encuentra en la pagina de inicio de Latam
+    When busca el vuelo sin seleccionar adicionales
+      | origen    | destino   | fecha_salida |
+      | Lima      | Buenos Aires | 2024-08-1  |
+    And diligencia el formulario de los pasajeros
+      | nombre    | apellido   | fecha_nacimiento | sexo | nacionalidad | tipo_doc | no_doc     | email             | codigo  | numero     |
+      | Pedro     | Navaja     | 1998-08-1        | M    | Colombia     | Cedula   | 1023546897 | carlos@gmail.com  | 57      | 3154568956 |
+    And inserta su metodo de pago
+      | numero              | cvv   | fecha   |
+      | 5471300000000003    | 666   | 07/2027 |
+    Then deberia recibir el mensaje de que su reserva fue completada la información respectiva

@@ -1,6 +1,7 @@
 package garcia.juan.stepdefinition;
 
 import garcia.juan.page.MainPage;
+import garcia.juan.page.VuelosDisponiblesPage;
 import garcia.juan.setup.WebSetUp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Assertions;
 public class CompraCompletaSD extends WebSetUp {
 
     MainPage mainPage;
+    VuelosDisponiblesPage vuelosDisponiblesPage;
 
     private String origen, destino, fecha1, fecha2;
 
@@ -44,6 +46,11 @@ public class CompraCompletaSD extends WebSetUp {
         }
         Thread.sleep(2000);
         mainPage.realizaBusqueda();
+
+        Thread.sleep(8000);
+        vuelosDisponiblesPage = new VuelosDisponiblesPage(driver);
+        vuelosDisponiblesPage.clickVueloRecomendado();
+
     }
 
     @When("diligencia el formulario de los pasajeros")
