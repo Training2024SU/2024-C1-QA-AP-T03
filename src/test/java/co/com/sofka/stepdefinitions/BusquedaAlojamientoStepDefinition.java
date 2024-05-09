@@ -87,7 +87,7 @@ public class BusquedaAlojamientoStepDefinition extends WebSetup {
             quiteDriver();
             Assertions.fail();
         }finally {
-            Thread.sleep(6500);
+//            Thread.sleep(6500);
             quiteDriver();
         }
     }

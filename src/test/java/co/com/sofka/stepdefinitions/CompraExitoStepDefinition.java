@@ -1,44 +1,90 @@
 package co.com.sofka.stepdefinitions;
 
+import co.com.sofka.model.FormPersonaModel;
+import co.com.sofka.page.AgregarCarritoPage;
+import co.com.sofka.page.DatosUsuarioPage;
+import co.com.sofka.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 
-public class CompraExitoStepDefinition {
+import static co.com.sofka.setup.UrlLibrary.URL_HOME_EXITO;
+import static co.com.sofka.util.util.generarFormularioPersonaAleatorio;
+
+public class CompraExitoStepDefinition extends WebSetup {
+
+    AgregarCarritoPage carritoPage;
+
+    DatosUsuarioPage datosUsuarioPage;
+
+    FormPersonaModel personaModel;
+
     @Given("que el usuario está en la página de inicio del Éxito desde el navegador {string}")
     public void queElUsuarioEstáEnLaPáginaDeInicioDelÉxito(String navegador) {
         try {
-            System.out.println("Autenticacion");
-
+            generalSetUp(navegador,URL_HOME_EXITO);
         } catch (Exception e) {
-            System.out.println();
             System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
         }
     }
     @When("el usuario elige un producto en promoción y lo agrega al carrito")
     public void elUsuarioEligeUnProductoEnPromociónYLoAgregaAlCarrito() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        try {
+            personaModel = generarFormularioPersonaAleatorio();
+            carritoPage = new AgregarCarritoPage(driver,personaModel.getCorreo());
+            carritoPage.elegirProducto();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
+        }
     }
     @When("el usuario indica la cantidad del producto y llena formulario de informacion personal")
     public void elUsuarioIndicaLaCantidadDelProductoYLlenaFormularioDeInformacionPersonal() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        try {
+            carritoPage.elegirCantidadProductos();
+            datosUsuarioPage = new DatosUsuarioPage(driver,personaModel);
+            datosUsuarioPage.llenarFormularioInfoPersona();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
+        }
     }
     @When("selecciona la opción de envío {string}")
     public void seleccionaLaOpciónDeEnvío(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        try {
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
+        }
     }
     @When("completa la información de pago")
     public void completaLaInformaciónDePago() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        try {
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
+        }
     }
     @Then("se debería mostrar un mensaje de confirmación de la compra")
     public void seDeberíaMostrarUnMensajeDeConfirmaciónDeLaCompra() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        try {
+//            Thread.sleep(20000);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
+        }finally {
+            quiteDriver();
+        }
     }
 
 

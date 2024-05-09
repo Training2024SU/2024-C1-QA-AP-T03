@@ -8,6 +8,7 @@ Feature: Consultar cómics en la API de Marvel
   Background:
     Given que el usuario tiene acceso a la API Marvel
 
+  @service
   @getComic
   Scenario: Consultar un cómic existente con ISBN por ID
     When realiza una solicitud GET para buscar el cómic con el ID 1405

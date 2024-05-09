@@ -8,6 +8,7 @@ Feature: Consultar personajes en la API de Marvel
   Background:
     Given que el usuario tiene acceso a la API de Marvel
 
+    @service
     @ApiCharacters
   Scenario: Consultar un personaje existente por ID
     When realiza una solicitud GET para buscar el personaje con el ID 1009610

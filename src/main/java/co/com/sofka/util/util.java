@@ -1,5 +1,6 @@
 package co.com.sofka.util;
 
+import co.com.sofka.model.FormPersonaModel;
 import co.com.sofka.model.FormularioModel;
 import net.datafaker.Faker;
 
@@ -158,6 +159,18 @@ public class util {
         SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm");
         // Formatear la fecha y devolver solo la hora en formato de cadena
         return formatoHora.format(fecha);
+    }
+
+    public static FormPersonaModel generarFormularioPersonaAleatorio() {
+        Faker faker = new Faker();
+
+        String correo = faker.internet().emailAddress();
+        String nombre = faker.name().firstName();
+        String apellido = faker.name().lastName();
+        String numerodoc = "1"+faker.number().digits(9);
+        String celular = "3"+faker.number().digits(9);
+
+        return new FormPersonaModel(correo, nombre, apellido, numerodoc, celular);
     }
 
 }

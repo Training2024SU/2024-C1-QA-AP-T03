@@ -17,7 +17,7 @@ public class OrganizarVueloStepDefinition extends WebSetup {
     public void queElUsuarioEstáEnLaPáginaResultadosDeVueloDeDespegarComDesdeElNavegador(String navegador) {
         try {
             generalSetUp(navegador,URL_RESULT_VUELO);
-            Thread.sleep(10000);
+//            Thread.sleep(10000);
         }catch (Exception e){
             System.out.println(e.getMessage());
             quiteDriver();
@@ -64,7 +64,8 @@ public class OrganizarVueloStepDefinition extends WebSetup {
             quiteDriver();
             Assertions.fail();
         }finally {
-            Thread.sleep(10000);
+//            Thread.sleep(10000);
+            quiteDriver();
         }
     }
 
