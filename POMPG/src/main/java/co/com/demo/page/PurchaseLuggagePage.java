@@ -18,12 +18,12 @@ public class PurchaseLuggagePage extends CommonFunctions {
     public PurchaseLuggagePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         PageFactory.initElements(driver, this);
     }
 
     @CacheLookup
-    @FindBy(xpath = "btn-up-segment-MDE-BOG-bag-15-passenger-ADT_1")
+    @FindBy(id = "btn-up-segment-MDE-BOG-bag-23-passenger-ADT_1")
     private WebElement selectLuggage;
 
     @CacheLookup
@@ -53,8 +53,8 @@ public class PurchaseLuggagePage extends CommonFunctions {
 
     public void addLuggage(){
         wait.until(ExpectedConditions.elementToBeClickable(selectLuggage)).click();
-        scrollTo(continueBtn);
-        wait.until(ExpectedConditions.elementToBeClickable(continueBtn)).click();;
+        wait.until(ExpectedConditions.elementToBeClickable(noluggageButton1)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(noluggageButton2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addContinue)).click();
     }
 

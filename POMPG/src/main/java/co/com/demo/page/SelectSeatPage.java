@@ -47,12 +47,9 @@ public class SelectSeatPage  extends CommonFunctions {
     @FindBy(id = "buttonChooseNow")
     private WebElement chooseNowSeats;
 
-
-
     @CacheLookup
     @FindBy(id = "button9")
     private WebElement redirectSeatsSelection;
-
 
 
     public void selectSeats(){
