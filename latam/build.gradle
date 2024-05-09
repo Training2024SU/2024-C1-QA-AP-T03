@@ -27,6 +27,7 @@ dependencies {
 
     implementation 'org.seleniumhq.selenium:selenium-java:4.20.0'
     implementation 'net.datafaker:datafaker:2.2.2'
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
 }
 
 test {
