@@ -8,6 +8,8 @@ public class UrlLibrary {
 
     public static final String URL_HOME_DESPEGAR = "https://www.despegar.com.co";
 
+    public static final String URL_RESULT_VUELO = "https://www.despegar.com.co/vuelos/BOG/CUN?from=SB&di=3#showModal";
+
 }
 
 

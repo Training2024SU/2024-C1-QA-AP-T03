@@ -16,13 +16,13 @@ public class WebSetup {
         switch (optionDriver) {
             case 1 -> {
                 ChromeOptions optChrome = new ChromeOptions();
-                optChrome.addArguments("--incognito");
-                optChrome.addArguments("--disable-notifications");
-                driver = new ChromeDriver();
+                optChrome.addArguments("incognito");
+                optChrome.addArguments("disable-notifications");
+                driver = new ChromeDriver(optChrome);
             }
             case 2 -> {
                 EdgeOptions opt = new EdgeOptions();
-                opt.addArguments("--disable-notifications");
+                opt.addArguments("disable-notifications");
                 opt.addArguments("inprivate");
 
                 driver = new EdgeDriver(opt);

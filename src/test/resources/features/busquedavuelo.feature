@@ -16,6 +16,6 @@ Feature: Búsqueda de vuelos en Despegar.com
     Examples:
     | origen                            | destino                           | fecha_salida    | fecha_regreso   | personas |
     |"Bogotá, Bogotá D.C., Colombia"    |"Cancún, Quintana Roo, México"     | "2024-05-20"    | "2024-06-20"    | 3        |
-#    | "Lima, Peru"                      | "Miami, Florida, Estados Unidos"  | "2024-05-20"    | "2024-08-20"    | 3        |
-#    | "Santiago, Chile"                 | "Buenos Aires, Argentina"         | "2024-06-10"    | "2024-09-20"    | 3        |
-#    | "Buenos Aires, Argentina"         | "Paris, France"                   | "2024-07-05"    | "2024-07-15"    | 3        |
+    | "Lima, Peru"                      | "Miami, Florida, Estados Unidos"  | "2024-05-20"    | "2024-08-20"    | 4        |
+    | "Santiago, Chile"                 | "Buenos Aires, Argentina"         | "2024-06-10"    | "2024-09-20"    | 3        |
+    | "Buenos Aires, Argentina"         | "Paris, France"                   | "2024-07-05"    | "2024-08-15"    | 4        |

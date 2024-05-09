@@ -72,10 +72,18 @@ public class FormVueloPage extends FunctionsCommon {
 
     private final By CLOSE_NOT = By.xpath("//div[contains(@class,'login-incentive--button-close')]");
 
+    private final By prueba = By.xpath("//i[@class='header-icon shifu-3-icon-question-circle']");
+
     public void llenarFormularioBuscarViaje(FormularioBuscarVuelo vuelo){
         this.vueloForm = vuelo;
         ewait.until(ExpectedConditions.elementToBeClickable(CLOSE_NOT));
             clickSelection(CLOSE_NOT);
+        clickSelection(prueba);
+                try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         clickSelection(RADIO_BUTTON_OP);
         scrollTo(RADIO_BUTTON_OP);
         clickSelection(CAMPO_ORIGEN);
@@ -90,16 +98,13 @@ public class FormVueloPage extends FunctionsCommon {
         ewait.until(ExpectedConditions.elementToBeClickable(SELECT_CIUDAD));
         typeKey(CAMPO_DESTINO, Keys.ENTER);
         llenarDatePicker();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
 
     }
 
     public void ingresarNumPersonas(){
         clickSelection(INPUT_PASAJEROS);
+        ewait.until(ExpectedConditions.elementToBeClickable(BTN_ADD_PASAJEROS));
         for (int i = 0; i < vueloForm.getNumPersonas()-1; i++) {
                 clickSelection(BTN_ADD_PASAJEROS);
         }
@@ -116,9 +121,11 @@ public class FormVueloPage extends FunctionsCommon {
         By dayLocatorRegreso = dayLocator(vueloForm.getFechaRegreso());
         for (int i = 0; i < 11; i++) {
             if ((!findElements(dayLocatorIda).isEmpty())) {
+                ewait.until(ExpectedConditions.elementToBeClickable(dayLocatorIda));
                 clickSelection(dayLocatorIda);
             }
             if((!findElements(dayLocatorRegreso).isEmpty())){
+                ewait.until(ExpectedConditions.elementToBeClickable(dayLocatorRegreso));
                 clickSelection(dayLocatorRegreso);
                 break;
             }

@@ -22,7 +22,6 @@ public class BusquedaVueloStepDefinition extends WebSetup {
     @Given("que el usuario está en la página de inicio de Despegar.com desde el navegador {string}")
     public void queElUsuarioEstáEnLaPáginaDeInicioDeDespegarComDesdeElNavegador(String string) {
         try {
-            System.out.println("@Given: que el administrador se encuentra en la página de gestion de usuarios");
             generalSetUp(1,URL_HOME_DESPEGAR);
             formVueloPage= new FormVueloPage(driver);
             form = new FormularioBuscarVuelo();

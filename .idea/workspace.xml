@@ -5,37 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786f2df0-ad97-44d0-8a16-b8b7fecc704d" name="Changes" comment="data table save">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/model/CharacterModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/model/ComicModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/jsonparser/JsonCommon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/ApiRest/configurationRequest/ParamsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/ApiRest/configurationRequest/Services.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/ApiRest/getApis/CharacterGetApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/ApiRest/getApis/ComicGetApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/CharacterStepDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ComicStepDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/serviceCharacterMarvel.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/serviceComicMarver.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/OrganizarVueloStepDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/organizarresultadosvuelo.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/model/UsuarioModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/AlertaPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/DatePickerPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/FormularioPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/TableroSorteablePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/WebTablePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/DemoQATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/DemoQATest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/AlertasStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/DataTableStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/DatePickerStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/FormularioStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/FormularioStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/TableroStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/alert.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/datatable.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/datepicker.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/demoqa.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/interaction.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/FormVueloPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/FormVueloPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/DemoQATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/DespegarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/UrlLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/UrlLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/WebSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/WebSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/BusquedaVueloStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/BusquedaVueloStepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/busquedavuelo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/busquedavuelo.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +92,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="DemoQATest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DespegarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demoqatesting.test" />
       <extension name="coverage">
         <pattern>
@@ -122,7 +101,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="co.com.sofka.runner" />
-      <option name="MAIN_CLASS_NAME" value="co.com.sofka.runner.DemoQATest" />
+      <option name="MAIN_CLASS_NAME" value="co.com.sofka.runner.DespegarTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,7 +109,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DemoQATest" />
+        <item itemvalue="JUnit.DespegarTest" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +127,7 @@
       <workItem from="1714665384329" duration="4923000" />
       <workItem from="1715105276972" duration="375000" />
       <workItem from="1715105833126" duration="10951000" />
-      <workItem from="1715168732571" duration="40590000" />
+      <workItem from="1715168732571" duration="55536000" />
     </task>
     <task id="LOCAL-00001" summary="date picker">
       <option name="closed" value="true" />
@@ -183,39 +162,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/BusquedaVueloStepDefinition.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/BusquedaVueloStepDefinition.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ComicStepDefinition.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ComicStepDefinition.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ComicStepDefinition.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ComicStepDefinition.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ComicStepDefinition.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="58" />
+          <url>file://$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
