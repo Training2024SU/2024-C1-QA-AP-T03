@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
         //tags = "@PurchaseLuggage"
         //tags = "@ChangeFlight"
         //tags = "Oneway"
-        tags = "@PingCheck"
+        tags = "@Ping"
+
 )
 
 public class GenericRunner {
