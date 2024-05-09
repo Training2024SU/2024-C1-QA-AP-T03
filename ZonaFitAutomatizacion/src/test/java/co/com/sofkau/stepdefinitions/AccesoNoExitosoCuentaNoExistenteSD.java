@@ -7,7 +7,7 @@ import co.com.sofkau.setup.WebSetup;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CUENTA_NO_EXISTENTE;
+import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CUENTA_NO_EXISTENTE;
 
 public class AccesoNoExitosoCuentaNoExistenteSD extends WebSetup {
     Faker faker = new Faker();
@@ -40,6 +40,4 @@ public class AccesoNoExitosoCuentaNoExistenteSD extends WebSetup {
             quiteDriver();
         }
     }
-
-
 }

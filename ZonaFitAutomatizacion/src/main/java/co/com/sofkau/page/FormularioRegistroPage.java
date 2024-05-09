@@ -77,7 +77,4 @@ public class FormularioRegistroPage extends FunctionCommon {
         waitForElementVisible(MENSAJE_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE);
         return getText(MENSAJE_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE);
     }
-
-
-
 }

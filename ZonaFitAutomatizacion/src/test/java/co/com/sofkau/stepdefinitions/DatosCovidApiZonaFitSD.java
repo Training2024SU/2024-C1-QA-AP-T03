@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Assertions;
 public class DatosCovidApiZonaFitSD {
 
     private Response response;
-
     @When("el usuario realiza una solicitud GET para ver informacion sobre el Covid en todos los estados")
     public void realizaUnaSolicitudGetParaVerInformacionSobreElCovidEnTodosLosEstados() {
         try {

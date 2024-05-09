@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.Constantes.MENSAJE_ESPERADO_DE_ACCESO;
+import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO;
 
 
 public class AccesoExitosoStepDefinition extends WebSetup {
@@ -21,7 +21,6 @@ public class AccesoExitosoStepDefinition extends WebSetup {
             String passwordUsuario = "prueba123";
 
             // Crear una instancia de la página de acceso
-
             formularioAccesoPage = new FormularioAccesoPage(driver);
 
             // Llamar al método llenarFormulario con los valores

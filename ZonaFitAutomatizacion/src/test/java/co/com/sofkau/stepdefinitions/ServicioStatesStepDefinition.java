@@ -11,16 +11,18 @@ import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 public class ServicioStatesStepDefinition extends WebSetup {
     Faker faker = new Faker();
-    String randomStateCode;
+    String StateCode;
     private Response response;
 
     @Given("el usuario ingresa un codigo de estado especifico")
     public void ingresarCodigoEstadoEspecifico() {
         // Generar un código de estado aleatorio en minúscula utilizando Java Faker
-        randomStateCode = faker.address().stateAbbr().toLowerCase();
-        System.out.println("Código de estado: " + randomStateCode);
+        StateCode = faker.address().stateAbbr().toLowerCase();
+        System.out.println("Código de estado: " + StateCode);
     }
 
     @When("realiza una solicitud GET para ver informacion sobre el Covid en dicho estado")
@@ -28,11 +30,11 @@ public class ServicioStatesStepDefinition extends WebSetup {
         try {
             response = RestAssured.given()
                     .contentType(ContentType.JSON)
-                    .get("https://api.covidtracking.com/v2/states/" + randomStateCode + "/daily.json");
+                    .get("https://api.covidtracking.com/v2/states/" + StateCode + "/daily.json");
 
             System.out.println("Código de estado de la respuesta: " + response.getStatusCode());
             System.out.println("Cuerpo de la respuesta: " + response.getBody().asString());
-            response.then().log().all(); // Imprime el cuerpo de la respuesta para debugging
+            response.then().log().all(); // Imprime el cuerpo de la respuesta
         } catch (Exception e) {
             System.out.println("Error al realizar la solicitud GET: " + e.getMessage());
         }
@@ -41,12 +43,13 @@ public class ServicioStatesStepDefinition extends WebSetup {
     @Then("el servicio deberia responder con un estado HTTP 200 OK y recibir todos los datos historicos para dicha zona")
     public void verificarRespuestaServicio() {
         try {
-            // Verificar que la solicitud obtenga una respuesta exitosa (código de estado HTTP 200 OK)
+            // Verificar que la solicitud obtenga una respuesta exitosa (código HTTP 200 OK)
             Assertions.assertEquals(HttpStatus.SC_OK, response.getStatusCode(), "El servicio no respondió con el código de estado 200 OK");
 
             // Verificar que la respuesta contenga datos históricos
             Assertions.assertTrue(response.getBody().asString().contains("meta"));
             Assertions.assertTrue(response.getBody().asString().contains("data"));
+
         } catch (Exception e) {
             System.out.println("Error al verificar la respuesta del servicio: " + e.getMessage());
         }

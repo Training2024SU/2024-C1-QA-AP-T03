@@ -23,11 +23,11 @@ public class ServicioStatesIncorrectoSP {
         System.out.println("Código de estado: " + "");
 
     }
-    @Then ("el servicio deberia responder con un estado HTTP 404 y no recibiria todos los datos historicos para dicha zona")
+    @Then ("el servicio deberia responder con un estado HTTP 404 y no recibiria los datos historicos para dicha zona")
     public void elServicioDeberiaResponderConUnEstadoDeError(){
         try {
-            // Verificar que la solicitud obtenga una respuesta exitosa (código de estado HTTP 200 OK)
-            Assertions.assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusCode(), "El servicio no respondió con el código de estado 200 OK");
+            // Verificar que la solicitud obtenga una respuesta exitosa (código de estado HTTP 404 OK)
+            Assertions.assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusCode(), "El servicio no respondió con el código de estado 404 OK");
         } catch (Exception e) {
             System.out.println("Error al verificar la respuesta del servicio: " + e.getMessage());
         }

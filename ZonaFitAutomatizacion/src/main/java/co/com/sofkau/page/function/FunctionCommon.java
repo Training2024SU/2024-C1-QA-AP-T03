@@ -1,16 +1,13 @@
 package co.com.sofkau.page.function;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 public class FunctionCommon {
-    protected WebDriver driver;
+    protected static WebDriver driver;
     private WebElement locator;
 
     public FunctionCommon(WebDriver driver) {
@@ -27,9 +24,11 @@ public class FunctionCommon {
         locator.sendKeys(value);
     }
 
-    protected void esperarAElementoVisible(WebElement element){
+    protected void typeEntryKey(WebElement locator){
+        locator.sendKeys(Keys.ENTER);
     }
-    protected void clickSelection(WebElement element) {
+
+    protected static void clickSelection(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
@@ -58,9 +57,5 @@ public class FunctionCommon {
     protected void waitForElementVisible(WebElement element){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(element));
-
     }
-
-
-
 }

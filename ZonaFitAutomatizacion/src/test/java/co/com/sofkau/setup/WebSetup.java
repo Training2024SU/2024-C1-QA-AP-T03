@@ -54,7 +54,4 @@ public class WebSetup {
         driver.manage().window().maximize();
     }
 
-    public void navegarA(String pagina){
-        driver.get(pagina);
-    }
 }

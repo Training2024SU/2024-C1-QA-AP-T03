@@ -29,8 +29,6 @@ public class FormularioAccesoPage extends FunctionCommon{
     @FindBy(xpath = "//div[@class ='message-container container alert-color medium-text-center']")
     private WebElement MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO;
 
-
-
     //Constructor
     public FormularioAccesoPage(WebDriver driver) {
         super(driver);
@@ -42,7 +40,6 @@ public class FormularioAccesoPage extends FunctionCommon{
             tiempoDeEspera(); // Aplicar espera implícita antes de cada interacción
 
             clickSelection(ACCEDER_REGISTRARSE);
-
             scrollTo(CAMPO_EMAIL_REGISTRADO);
             typeInto(CAMPO_EMAIL_REGISTRADO, emailRegistrado);
             typeInto(CAMPO_PASSWORD_REGISTRADO, passwordUsuario);
@@ -61,6 +58,4 @@ public class FormularioAccesoPage extends FunctionCommon{
         waitForElementVisible(MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO);
         return getText(MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO);
     }
-
-
 }
