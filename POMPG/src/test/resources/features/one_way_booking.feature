@@ -1,8 +1,8 @@
-Feature: Latam Airlines Flight Booking
+Feature:  Latam Airlines One-Way Flight Booking
 
   As a traveler,
   I want to book a one-way flight on the Latam Airlines website,
-  So that I can make travel arrangements efficiently.
+  So that I can efficiently plan my travel.
 
   Background:
     Given I am initiating a flight booking process 2 "https://www.latamairlines.com/co/es"
@@ -18,5 +18,5 @@ Feature: Latam Airlines Flight Booking
     Examples:
       | origin    | destination |
       | Medellin  | Bogota      |
-      #| Cali      | Pereira    |
-      #| Barranquilla | Valledupar |
+      | Cali      | Pereira    |
+      | Barranquilla | Valledupar |

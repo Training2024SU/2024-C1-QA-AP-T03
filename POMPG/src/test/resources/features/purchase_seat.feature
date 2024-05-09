@@ -1,8 +1,8 @@
-Feature: Buying seats
+Feature: Buying Seats on Latam Airlines
 
   As a traveler,
-  I want to book a one-way flight on the Latam Airlines website,
-  So that I can make travel arrangements efficiently.
+  I want to purchase seats during my flight booking on the Latam Airlines website,
+  So that I can efficiently choose my preferred seating arrangements.
 
   Background:
     Given I am initiating a flight booking and a seat purchase 2 "https://www.latamairlines.com/co/es"

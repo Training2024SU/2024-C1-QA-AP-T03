@@ -34,17 +34,20 @@ public class PurchaseLuggageStepDefinitions extends WebSetup {
         }
     }
 
-    @When("the user looking for a flight from {string} to {string}")
+
+    @When("the user looking for a  flight from {string} to {string}")
     public void theUserLookingForAFlightFromTo(String origin, String destination) {
-        try {
-            searchFlightPage.searchOneFlight(origin, destination);
-            switchToNewTab();
-        } catch (Exception e) {
-            System.out.println("Error during flight search: " + e.getMessage());
-            quitDriver();
-            Assertions.fail("Failed during flight search: " + e.getMessage());
+            try {
+                searchFlightPage.searchOneFlight(origin, destination);
+                switchToNewTab();
+            } catch (Exception e) {
+                System.out.println("Error during flight search: " + e.getMessage());
+                quitDriver();
+                Assertions.fail("Failed during flight search: " + e.getMessage());
+            }
         }
-    }
+
+
 
     @When("choose a flight")
     public void chooseAFlight() {

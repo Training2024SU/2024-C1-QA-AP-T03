@@ -1,8 +1,9 @@
-Feature: Selecting new flights
+Feature:  Changing Flights During Purchase Process
 
   As a traveler,
-  I want to book a one-way flight on the Latam Airlines website,
-  So that I can make travel arrangements efficiently.
+  I want to change my selected one-way flight during the purchase process on the Latam Airlines website,
+  So that I can update my travel arrangements efficiently.
+
 
   Background:
     Given I am initiating a flight booking process for a oneway 2 "https://www.latamairlines.com/co/es"
@@ -16,5 +17,5 @@ Feature: Selecting new flights
 
     Examples:
       | origin    | destination |
-      | Barranquilla  | Bogota      |
+      | Barranquilla  | Bogota  |
 

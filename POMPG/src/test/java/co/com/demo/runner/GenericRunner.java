@@ -12,10 +12,11 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         //tags = "@CriticalPath"
         //tags = "@PurchaseSeat"
-        //tags = "@PurchaseLuggage"
+        tags = "@PurchaseLuggage"
         //tags = "@ChangeFlight"
-        tags = "@Oneway"
+        //tags = "@Oneway"
         //tags = "@Ping"
+
 
 )
 

@@ -1,8 +1,8 @@
-Feature: Buying luggage
+Feature: Buying Luggage on Latam Airlines
 
   As a traveler,
-  I want to book a one-way flight on the Latam Airlines website,
-  So that I can make travel arrangements efficiently.
+  I want to purchase luggage during my flight booking on the Latam Airlines website,
+  So that I can efficiently plan my travel and include baggage requirements.
 
   Background:
     Given I am initiating a flight booking and a luggage purchase 2 "https://www.latamairlines.com/co/es"
