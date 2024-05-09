@@ -18,5 +18,5 @@ Feature: Realizar pedido
    Examples:
       | navegador | num_productos |
       | 1         | 1             |
-      #| 2         | 3             |
+      | 2         | 3             |
 

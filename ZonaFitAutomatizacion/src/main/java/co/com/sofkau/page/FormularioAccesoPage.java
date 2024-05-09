@@ -49,12 +49,10 @@ public class FormularioAccesoPage extends FunctionCommon{
         }
     }
     public String obtenerMensajeDeAccesoIncorrectoCuentaNoExistente(){
-        waitForGeneralPageLoad();
         waitForElementVisible(MENSAJE_DE_ACCESOO_INCORRECTO_CUENTA_NO_EXISTENTE);
         return getText(MENSAJE_DE_ACCESOO_INCORRECTO_CUENTA_NO_EXISTENTE);
     }
     public String obtenerMensajeDeAccesoIncorrectoCuentaCampoVacio(){
-        waitForGeneralPageLoad();
         waitForElementVisible(MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO);
         return getText(MENSAJE_DE_ACCESOO_INCORRECTO_CAMPO_VACIO);
     }
