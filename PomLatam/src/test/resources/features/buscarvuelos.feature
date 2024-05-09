@@ -12,6 +12,6 @@ Feature: Busqueda de vuelo en la página de Latam
     Then el usuario debería ver una lista de vuelos disponibles
     Examples:
   | origen    | destino   | fecha_salida | fecha_regreso |
-  | Lima      | Buenos Aires | 2024-08-1   | 2024-10-1    |
+  | Lima      | Buenos Aires | 2024-08-1   | 2025-01-11   |
   | Medellin  | Bogota       | 2024-08-1   | 2024-10-1    |
 
