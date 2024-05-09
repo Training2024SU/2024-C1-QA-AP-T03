@@ -7,7 +7,10 @@ import co.com.demo.util.util;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
+
+import static co.com.demo.stepdefinitions.ConstantExecution.FLIGHT_DETAILS;
 
 public class BookFlightStepDefinitions extends WebSetup {
     private SearchFlightPage searchFlightPage;
@@ -15,6 +18,7 @@ public class BookFlightStepDefinitions extends WebSetup {
     private PurchaseLuggagePage purchaseLuggagePage;
     private SelectSeatPage selectSeatPage;
     private PassengerInformationPage passengerInformationPage;
+    private PurchaseConfirmationPage purchaseConfirmationPage;
 
     @Given("I am initiating a flight booking process {int} {string}")
     public void iAmInitiatingAFlightBookingProcess(Integer tipoDriver, String url) {
@@ -26,6 +30,8 @@ public class BookFlightStepDefinitions extends WebSetup {
             purchaseLuggagePage = new PurchaseLuggagePage(driver);
             selectSeatPage = new SelectSeatPage(driver);
             passengerInformationPage = new PassengerInformationPage(driver);
+            purchaseLuggagePage = new PurchaseLuggagePage(driver);
+            purchaseConfirmationPage = new PurchaseConfirmationPage(driver);
         }catch (Exception e){
             System.out.println("Error during setup" + e.getMessage());
             quitDriver();
@@ -85,7 +91,19 @@ public class BookFlightStepDefinitions extends WebSetup {
 
     @Then("they should see a message with the details of the purchase")
     public void theyShouldSeeAMessageWithTheDetailsOfThePurchase() {
+        try {
+            String actualMessage = purchaseConfirmationPage.getFlightDetailsMessage();
+            Assert.assertEquals(FLIGHT_DETAILS, actualMessage);
+        } catch (Exception e) {
+            System.out.println("Error during message verification: " + e.getMessage());
+            quitDriver();
+            Assertions.fail("Failed to verify registration message: " + e.getMessage());
+        } finally {
+            quitDriver();
+        }
+    }
+
 
     }
 
-}
+
