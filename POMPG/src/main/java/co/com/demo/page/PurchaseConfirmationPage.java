@@ -1,6 +1,7 @@
 package co.com.demo.page;
 
 import co.com.demo.page.functions.CommonFunctions;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -25,6 +26,28 @@ public class PurchaseConfirmationPage extends CommonFunctions {
     @FindBy(xpath = "//h2[contains(@class, 'expanded-title') and contains(text(), 'Detalle de viaje')]")
     private WebElement flightDetails;
 
+    @CacheLookup
+    @FindBy(xpath = "//span[text()='FULL']")
+    private WebElement newTicker;
+
+    @FindBy(xpath = "//span[contains(text(), 'Equipaje') and contains(text(), 'Total: 0 Peso colombiano')]")
+    private WebElement luggageTotal;
+
+    @FindBy(xpath = "//span[contains(text(), 'Asientos') and contains(text(), 'Total: 0 Peso colombiano')]")
+    private WebElement seatsTotal;
+
+
+    public String getSeatsTotalText() {
+        return luggageTotal.getText();
+    }
+
+    public String getLuggageTotalText() {
+        return luggageTotal.getText();
+    }
+
+    public String getNewTickerText() {
+        return newTicker.getText();
+    }
     public String getFlightDetailsMessage(){
         return getText(flightDetails);
     }

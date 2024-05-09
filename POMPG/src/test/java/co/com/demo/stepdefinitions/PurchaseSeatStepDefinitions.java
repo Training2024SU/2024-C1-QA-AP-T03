@@ -12,6 +12,7 @@ public class PurchaseSeatStepDefinitions extends WebSetup {
     private SearchFlightPage searchFlightPage;
     private SelectFlightPage selectFlightPage;
     private SelectSeatPage selectSeatPage;
+    private PurchaseLuggagePage purchaseLuggagePage;
 
     @Given("I am initiating a flight booking and a seat purchase {int} {string}")
     public void iAmInitiatingAFlightBookingAndASeatPurchase(Integer tipoDriver, String url) {
@@ -21,6 +22,7 @@ public class PurchaseSeatStepDefinitions extends WebSetup {
             searchFlightPage = new SearchFlightPage(driver);
             selectFlightPage = new SelectFlightPage(driver);
             selectSeatPage = new SelectSeatPage(driver);
+            purchaseLuggagePage = new PurchaseLuggagePage(driver);
         } catch (Exception e) {
             System.out.println("Error during setup: " + e.getMessage());
             quitDriver();
@@ -55,6 +57,7 @@ public class PurchaseSeatStepDefinitions extends WebSetup {
     public void theUserSelectsSeatOptionsAndChoosesASeat() {
         try {
             selectSeatPage.selectSeats();
+            purchaseLuggagePage.continueWithoutLuggage();
         } catch (Exception e) {
             System.out.println("Error selecting seats: " + e.getMessage());
             quitDriver();

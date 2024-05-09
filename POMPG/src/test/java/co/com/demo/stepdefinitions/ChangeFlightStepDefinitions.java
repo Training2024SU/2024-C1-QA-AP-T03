@@ -5,12 +5,16 @@ import co.com.demo.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
+
+import static co.com.demo.stepdefinitions.ConstantExecution.NEW_TICKET;
 
 public class ChangeFlightStepDefinitions extends WebSetup {
 
     private SearchFlightPage searchFlightPage;
     private SelectFlightPage selectFlightPage;
+    private PurchaseConfirmationPage purchaseConfirmationPage;
 
     @Given("I am initiating a flight booking process for a oneway {int} {string}")
     public void iAmInitiatingAFlightBookingProcessForAOneway(Integer tipoDriver, String url) {
@@ -19,6 +23,7 @@ public class ChangeFlightStepDefinitions extends WebSetup {
             // Initialize all page objects needed for flight booking
             searchFlightPage = new SearchFlightPage(driver);
             selectFlightPage = new SelectFlightPage(driver);
+            purchaseConfirmationPage = new PurchaseConfirmationPage(driver);
         } catch (Exception e) {
             System.out.println("Error during setup: " + e.getMessage());
             quitDriver();
@@ -52,7 +57,15 @@ public class ChangeFlightStepDefinitions extends WebSetup {
 
     @Then("they should see the updated flight details")
     public void theyShouldSeeTheUpdatedFlightDetails() {
-        // Implementación de la lógica de verificación de los detalles del vuelo actualizado
-        // Puedes agregar código de aserción o validación aquí para verificar los detalles del vuelo actualizado
+        try {
+            String actualMessage = purchaseConfirmationPage.getNewTickerText();
+            Assert.assertEquals(NEW_TICKET, actualMessage);
+        } catch (Exception e) {
+            System.out.println("Error during message verification: " + e.getMessage());
+            quitDriver();
+            Assertions.fail("Failed to verify registration message: " + e.getMessage());
+        } finally {
+            quitDriver();
+        }
     }
 }
