@@ -7,12 +7,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
+import static co.com.demo.stepdefinitions.ConstantExecution.LUGGAGE_TOTAL;
+
 public class PurchaseLuggageStepDefinitions extends WebSetup {
 
     private SearchFlightPage searchFlightPage;
     private SelectFlightPage selectFlightPage;
     private PurchaseLuggagePage purchaseLuggagePage;
     private SelectSeatPage selectSeatPage;
+    private PurchaseConfirmationPage purchaseConfirmationPage;
 
     @Given("I am initiating a flight booking and a luggage purchase {int} {string}")
     public void iAmInitiatingAFlightBookingAndALuggagePurchase(Integer tipoDriver, String url) {
@@ -23,6 +26,7 @@ public class PurchaseLuggageStepDefinitions extends WebSetup {
             selectFlightPage = new SelectFlightPage(driver);
             purchaseLuggagePage = new PurchaseLuggagePage(driver);
             selectSeatPage = new SelectSeatPage(driver);
+            purchaseConfirmationPage = new PurchaseConfirmationPage(driver);
         } catch (Exception e) {
             System.out.println("Error during setup: " + e.getMessage());
             quitDriver();
@@ -65,9 +69,21 @@ public class PurchaseLuggageStepDefinitions extends WebSetup {
         }
     }
 
+
     @Then("they should see the cost of the selected luggage")
     public void theyShouldSeeTheCostOfTheSelectedLuggage() {
-        // Implementación de la lógica de verificación del costo del equipaje seleccionado
-        // Puedes agregar código de aserción o validación aquí para verificar el costo del equipaje seleccionado
+        try {
+            String actualMessage = purchaseConfirmationPage.getLuggageTotalText();
+            if (actualMessage.contains(LUGGAGE_TOTAL)) {
+                System.out.println("Error: The selected luggage cost is zero.");
+                Assertions.fail("The selected luggage cost is zero.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error during luggage cost verification: " + e.getMessage());
+            Assertions.fail("Error during luggage cost verification: " + e.getMessage());
+        } finally {
+            quitDriver();
+        }
     }
+
 }

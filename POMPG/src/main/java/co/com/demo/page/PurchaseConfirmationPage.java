@@ -48,6 +48,7 @@ public class PurchaseConfirmationPage extends CommonFunctions {
     public String getNewTickerText() {
         return newTicker.getText();
     }
+
     public String getFlightDetailsMessage(){
         return getText(flightDetails);
     }
