@@ -84,7 +84,7 @@ public class CompraCompletaSD extends WebSetUp {
     }
     @Then("deberia recibir el mensaje de que su reserva fue completada la información respectiva")
     public void deberiaRecibirElMensajeDeQueSuReservaFueCompletadaLaInformaciónRespectiva() throws InterruptedException {
-        //Thread.sleep(10000); //para ver como termina
+        Thread.sleep(10000); //para ver como termina
         quiteDriver();
     }
 
