@@ -1,5 +1,6 @@
 @web
 Feature: Flights
+
   Background: Browser
     # The configured browsers are CHROME and FIREFOX
     Given the User browses the internet using the "CHROME" browser
@@ -23,3 +24,10 @@ Feature: Flights
     Examples:
       | quantity |
       | 2        |
+
+  @critical_path
+  Scenario: Buy flight tickets
+    Given The user is in the home page
+    When he configures a flight filling all the information
+    And he completes the payment process
+    Then he should get a confirmation of the purchase

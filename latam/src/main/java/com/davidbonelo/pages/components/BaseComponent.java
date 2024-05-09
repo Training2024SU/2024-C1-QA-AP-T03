@@ -21,4 +21,12 @@ public abstract class BaseComponent {
     protected void clickElement(WebElement element) {
         element.click();
     }
+
+    protected void typeInto(By locator, String text) {
+        typeInto(root.findElement(locator), text);
+    }
+
+    protected void typeInto(WebElement element, String text) {
+        element.sendKeys(text);
+    }
 }

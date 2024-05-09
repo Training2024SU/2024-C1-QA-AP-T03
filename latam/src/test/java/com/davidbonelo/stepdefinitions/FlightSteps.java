@@ -4,6 +4,8 @@ import com.davidbonelo.pages.CustomizePage;
 import com.davidbonelo.pages.FlightSummaryPage;
 import com.davidbonelo.pages.FlightsResultPage;
 import com.davidbonelo.pages.HomePage;
+import com.davidbonelo.pages.PassengersDataPage;
+import com.davidbonelo.pages.PaymentPage;
 import com.davidbonelo.pages.SeatsPage;
 import com.davidbonelo.pages.components.ClassCard;
 import com.davidbonelo.pages.components.FlightCard;
@@ -17,6 +19,8 @@ import org.junit.jupiter.api.Assertions;
 import java.util.List;
 
 import static com.davidbonelo.Utils.pickRandomItem;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class FlightSteps {
     private final WebSetup webSetup;
@@ -25,6 +29,7 @@ public class FlightSteps {
     SeatsPage seatsPage;
     FlightCard flight;
     CustomizePage customizePage;
+    PaymentPage paymentPage;
 
     public FlightSteps(WebSetup webSetup) {
         this.webSetup = webSetup;
@@ -100,4 +105,25 @@ public class FlightSteps {
         Assertions.assertNotNull(customizePage.getFinalPrice());
     }
 
+    @When("he configures a flight filling all the information")
+    public void heConfiguresAFlightFillingAllTheInformation() {
+        int passengers = 2;
+        heSelectsOneDestinationFromTheOffers();
+        heSetsTheAmountOfPassengersTo(passengers);
+        heSelectsOneFlightWithAnyTypeOfClass();
+        heChoosesTheQuantitySeatsFromTheAvailableOnes(passengers);
+        PassengersDataPage passengersDataPage = customizePage.continueWithoutCustomizations();
+        passengersDataPage.fillPassengersData();
+        paymentPage = passengersDataPage.continueToPayment();
+    }
+
+    @And("he completes the payment process")
+    public void heCompletesThePaymentProcess() {
+        System.out.println(paymentPage.getTotalCost());
+        assertThat(paymentPage.getTotalCost(), notNullValue());
+    }
+
+    @Then("he should get a confirmation of the purchase")
+    public void heShouldGetAConfirmationOfThePurchase() {
+    }
 }

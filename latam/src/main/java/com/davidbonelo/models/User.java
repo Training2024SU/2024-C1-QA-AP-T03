@@ -5,7 +5,6 @@ import net.datafaker.Faker;
 import net.datafaker.providers.base.Options;
 
 import java.time.LocalDate;
-import java.util.Locale;
 
 public class User {
     private String id;
@@ -33,7 +32,7 @@ public class User {
     }
 
     public static User createFakeUser() {
-        Faker faker = new Faker(new Locale("es"));
+        Faker faker = new Faker();
         Options opt = faker.options();
         User user = new User();
         user.setId(faker.numerify("#########"));
