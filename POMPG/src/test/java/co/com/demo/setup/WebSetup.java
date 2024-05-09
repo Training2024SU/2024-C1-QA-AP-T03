@@ -55,14 +55,11 @@ public class WebSetup {
     protected void switchToNewTab() {
         String mainWindowHandle = driver.getWindowHandle();
 
-        // Esperar hasta que se abra una nueva pestaña
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
-        // Obtener todas las manijas de ventana después de abrir la nueva pestaña
         Set<String> allWindowHandles = driver.getWindowHandles();
 
-        // Iterar sobre las manijas de ventana para identificar la nueva pestaña
         String newWindowHandle = "";
         for (String handle : allWindowHandles) {
             if (!handle.equals(mainWindowHandle)) {
@@ -70,8 +67,6 @@ public class WebSetup {
                 break;
             }
         }
-
-        // Cambiar el enfoque a la nueva pestaña
         driver.switchTo().window(newWindowHandle);
     }
 }
