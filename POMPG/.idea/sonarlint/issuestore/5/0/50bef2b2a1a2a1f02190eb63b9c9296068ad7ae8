@@ -1,5 +1,9 @@
 
+¥
+java:S4165"bRemove this useless assignment; "user" already holds the assigned value along all execution paths.(»¶¤İ8Ã„Êàõ1J$54cfc10d-756a-4eb1-b4bd-446d5d4aa899
 }
-java:S2387"5"driver" is the name of a field in "CommonFunctions".(š…ŒÅøÿÿÿÿ8´ÿ¶Èõ1J$e73852a9-3c14-40cd-b518-21d22fc02b3e
+java:S2387"5"driver" is the name of a field in "CommonFunctions".(š…ŒÅøÿÿÿÿ8‚èÈàõ1J$b06f75d5-ae60-4b0e-a9f8-ff195dc7a4d7
 r
-java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8Éÿ¶Èõ1J$942a1388-f147-49f1-a315-cfe959649c85
+java:S1656"/Remove or correct this useless self-assignment.(»¶¤İ8’èÈàõ1J$8c558560-9a4f-4c6e-9951-24f1baa778a5
+r
+java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8“èÈàõ1J$0105166a-e925-4842-8051-c60925d55934

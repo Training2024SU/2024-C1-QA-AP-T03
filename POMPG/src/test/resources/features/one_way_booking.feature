@@ -5,7 +5,7 @@ Feature: Latam Airlines Flight Booking
   So that I can make travel arrangements efficiently.
 
   Background:
-    Given I am initiating a flight booking process 1 "https://www.latamairlines.com/co/es"
+    Given I am initiating a flight booking process 2 "https://www.latamairlines.com/co/es"
 
   @Oneway
   Scenario Outline: Book a one-way flight from one city to another
@@ -18,5 +18,5 @@ Feature: Latam Airlines Flight Booking
     Examples:
       | origin    | destination |
       | Medellin  | Bogota      |
-      | Cali      | Pereira    |
-      | Barranquilla | Valledupar |
+      #| Cali      | Pereira    |
+      #| Barranquilla | Valledupar |

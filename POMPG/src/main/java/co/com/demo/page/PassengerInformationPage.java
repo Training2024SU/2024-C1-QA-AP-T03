@@ -1,5 +1,6 @@
 package co.com.demo.page;
 
+import co.com.demo.model.Passenger;
 import co.com.demo.page.functions.CommonFunctions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,10 +15,12 @@ import java.time.Duration;
 public class PassengerInformationPage extends CommonFunctions {
     private WebDriver driver;
     private WebDriverWait wait;
+    private Passenger user;
 
     public PassengerInformationPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
+        this.user = user;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
@@ -92,9 +95,19 @@ public class PassengerInformationPage extends CommonFunctions {
         firstName.sendKeys(name);
     }
 
+    public void enterSecondName(String name) {
+        wait.until(ExpectedConditions.elementToBeClickable(secondFirstName)).click();
+        secondFirstName.sendKeys(name);
+    }
+
     public void enterLastName(String surname) {
         wait.until(ExpectedConditions.elementToBeClickable(lastName)).click();
         lastName.sendKeys(surname);
+    }
+
+    public void enterSecondLastName(String surname) {
+        wait.until(ExpectedConditions.elementToBeClickable(secondLastName)).click();
+        secondLastName.sendKeys(surname);
     }
 
     public void enterDateOfBirth(String dateBirth){
@@ -102,10 +115,22 @@ public class PassengerInformationPage extends CommonFunctions {
         dateOfBirth.sendKeys(dateBirth);
     }
 
+    public void enterSecondDateOfBirth(String dateBirth){
+        wait.until(ExpectedConditions.elementToBeClickable(seconddateOfBirth)).click();
+        seconddateOfBirth.sendKeys(dateBirth);
+    }
+
+
     public void enterIdentification(String id){
         scrollTo(identification);
         clickSelection(identification);
         identification.sendKeys(id);
+    }
+
+    public void enterSecondIdentification(String id){
+        scrollTo(secondIdentification);
+        clickSelection(secondIdentification);
+        secondIdentification.sendKeys(id);
     }
 
     public void enterEmail(String emailUser){
@@ -118,16 +143,25 @@ public class PassengerInformationPage extends CommonFunctions {
         phoneNumber.sendKeys(phoneUser);
     }
 
-    public void enterPassengerInformation(){
-        enterName("Martin");
-        enterLastName("Perez");
-        enterDateOfBirth("17-03-1997");
-        enterIdentification("1214567983");
-        enterEmail("dm34mgm@gmail.com");
-        enterPhoneNumber("324332456");
+    public void enterPassengerInformation(Passenger user) {
+        enterName(user.getName());
+        enterLastName(user.getLastName());
+        enterDateOfBirth(user.getDateOfBirth());
+        enterIdentification(user.getIdentification());
+        enterEmail(user.getEmail());
+        enterPhoneNumber(user.getPhoneNumber());
         clickSelection(reuseContactDataButton);
         clickSelection(saveDataButton);
+    }
+
+    public void enterSecondPassengerInformation(Passenger user){
+        enterSecondName(user.getName());
+        enterSecondLastName(user.getLastName());
+        enterSecondDateOfBirth(user.getDateOfBirth());
+        enterSecondIdentification(user.getIdentification());
+        wait.until(ExpectedConditions.elementToBeClickable(secondSaveDataButton)).click();
+    }
 
     }
 
-}
+

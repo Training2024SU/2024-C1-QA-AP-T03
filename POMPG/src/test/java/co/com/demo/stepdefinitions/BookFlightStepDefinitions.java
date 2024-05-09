@@ -1,7 +1,9 @@
 package co.com.demo.stepdefinitions;
 
+import co.com.demo.model.Passenger;
 import co.com.demo.page.*;
 import co.com.demo.setup.WebSetup;
+import co.com.demo.util.util;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,8 +48,12 @@ public class BookFlightStepDefinitions extends WebSetup {
 
     @When("adds passenger information and confirms it")
     public void addsPassengerInformationAndConfirmsIt() {
-        // Implement logic for adding passenger information and confirmation using existing page
-        passengerInformationPage.enterPassengerInformation();
+        Passenger user = util.createPassenger();
+        passengerInformationPage.enterPassengerInformation(user);
+
+        Passenger secondUser = util.createadditionalPassenger();
+        passengerInformationPage.enterSecondPassengerInformation(secondUser);
+
     }
 
     @Then("they should see a message with the details of the purchase")
