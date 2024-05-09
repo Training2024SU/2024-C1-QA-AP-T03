@@ -8,6 +8,7 @@ Feature: Selecting new flights
     Given I am initiating a flight booking process for a oneway 2 "https://www.latamairlines.com/co/es"
 
   @ChangeFlight
+  @CriticalPath
   Scenario: Change the flight during the purchase process
     When the user searches for a one-way flight available
     And selects a new flight

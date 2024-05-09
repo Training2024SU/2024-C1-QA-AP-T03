@@ -9,8 +9,9 @@ Feature: Buying seats
 
 
   @PurchaseSeat
-Scenario: Purchase seat during the purchase process
-  When the user searches for a flight
-  And selects it
-  When the user selects seat options and chooses a seat
-  Then they should see the selected seat reflected in the booking
+  @CriticalPath
+  Scenario: Purchase seat during the purchase process
+    When the user searches for a flight
+    And selects it
+    When the user selects seat options and chooses a seat
+    Then they should see the selected seat reflected in the booking

@@ -12,7 +12,6 @@ public class PurchaseLuggageStepDefinitions extends WebSetup {
     private SelectFlightPage selectFlightPage;
     private PurchaseLuggagePage purchaseLuggagePage;
     private SelectSeatPage selectSeatPage;
-    private PassengerInformationPage passengerInformationPage;
 
     @Given("I am initiating a flight booking and a luggage purchase {int} {string}")
     public void iAmInitiatingAFlightBookingAndALuggagePurchase(Integer tipoDriver, String url) {
@@ -22,7 +21,7 @@ public class PurchaseLuggageStepDefinitions extends WebSetup {
         selectFlightPage = new SelectFlightPage(driver);
         purchaseLuggagePage = new PurchaseLuggagePage(driver);
         selectSeatPage = new SelectSeatPage(driver);
-        passengerInformationPage = new PassengerInformationPage(driver);
+
 
     }
     @When("the user looking for a  flight")

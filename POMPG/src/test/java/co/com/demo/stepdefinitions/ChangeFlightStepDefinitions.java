@@ -10,9 +10,6 @@ public class ChangeFlightStepDefinitions extends WebSetup {
 
     private SearchFlightPage searchFlightPage;
     private SelectFlightPage selectFlightPage;
-    private PurchaseLuggagePage purchaseLuggagePage;
-    private SelectSeatPage selectSeatPage;
-    private PassengerInformationPage passengerInformationPage;
 
     @Given("I am initiating a flight booking process for a oneway {int} {string}")
     public void iAmInitiatingAFlightBookingProcessForAOneway(Integer tipoDriver, String url) {
@@ -20,9 +17,6 @@ public class ChangeFlightStepDefinitions extends WebSetup {
         // Initialize all page objects needed for flight booking
         searchFlightPage = new SearchFlightPage(driver);
         selectFlightPage = new SelectFlightPage(driver);
-        purchaseLuggagePage = new PurchaseLuggagePage(driver);
-        selectSeatPage = new SelectSeatPage(driver);
-        passengerInformationPage = new PassengerInformationPage(driver);
     }
     @When("the user searches for a one-way flight available")
     public void theUserSearchesForAOneWayFlightAvailable() {
@@ -35,7 +29,6 @@ public class ChangeFlightStepDefinitions extends WebSetup {
     public void selectsANewFlight() {
         // Use existing selectFlightPage instance to select a flight
         selectFlightPage.selectNewFlight();
-
 
     }
     @Then("they should see the updated flight details")

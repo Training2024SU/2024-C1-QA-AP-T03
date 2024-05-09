@@ -8,6 +8,7 @@ Feature: Buying luggage
     Given I am initiating a flight booking and a luggage purchase 2 "https://www.latamairlines.com/co/es"
 
   @PurchaseLuggage
+  @CriticalPath
   Scenario: Purchase luggage during the purchase process
     When the user looking for a  flight
     And choose a flight

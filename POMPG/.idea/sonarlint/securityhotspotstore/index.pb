@@ -32,3 +32,9 @@ z
 Jsrc/test/java/co/com/demo/stepdefinitions/PurchaseSeatStepDefinitions.java,1/b/1bdfc76eb43c127477e75de23e49b17726010d17
 }
 Msrc/test/java/co/com/demo/stepdefinitions/PurchaseLuggageStepDefinitions.java,b/9/b90ccc1faee22d2e652a4b60086e1e7678b4c851
+z
+Jsrc/test/java/co/com/demo/stepdefinitions/BitcoinPriceStepDefinitions.java,8/0/801565d90f90a752b101d85ad239ac1225c6b801
+x
+Hsrc/test/java/co/com/demo/stepdefinitions/TokenPriceStepDefinitions.java,6/f/6fe64105d6cf700eeb9168f2c8b5ca3b804959a1
+w
+Gsrc/test/java/co/com/demo/stepdefinitions/PingCheckStepDefinitions.java,a/e/aead4ed6b0bb823740dcec97e6243331349e49ac

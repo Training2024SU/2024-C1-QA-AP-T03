@@ -10,9 +10,7 @@ public class PurchaseSeatStepDefinitions extends WebSetup {
 
     private SearchFlightPage searchFlightPage;
     private SelectFlightPage selectFlightPage;
-    private PurchaseLuggagePage purchaseLuggagePage;
     private SelectSeatPage selectSeatPage;
-    private PassengerInformationPage passengerInformationPage;
 
     @Given("I am initiating a flight booking and a seat purchase {int} {string}")
     public void iAmInitiatingAFlightBookingAndASeatPurchase(Integer tipoDriver, String url) {
@@ -20,9 +18,7 @@ public class PurchaseSeatStepDefinitions extends WebSetup {
         // Initialize all page objects needed for flight booking
         searchFlightPage = new SearchFlightPage(driver);
         selectFlightPage = new SelectFlightPage(driver);
-        purchaseLuggagePage = new PurchaseLuggagePage(driver);
         selectSeatPage = new SelectSeatPage(driver);
-        passengerInformationPage = new PassengerInformationPage(driver);
 
     }
     @When("the user searches for a flight")
