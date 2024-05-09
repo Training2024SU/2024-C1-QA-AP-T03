@@ -61,7 +61,6 @@ public class SelectSeatPage  extends CommonFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(confirmSeats)).click();
     }
 
-
     public void continueWithoutSeats(){
         wait.until(ExpectedConditions.elementToBeClickable(continueWithoutSeats)).click();
         wait.until(ExpectedConditions.elementToBeClickable(chooseLaterSeats)).click();

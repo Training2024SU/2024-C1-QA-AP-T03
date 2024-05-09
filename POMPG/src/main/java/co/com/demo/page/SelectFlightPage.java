@@ -30,7 +30,6 @@ public class SelectFlightPage extends CommonFunctions {
     @CacheLookup
     private WebElement selectNewFlight;
 
-
     @CacheLookup
     @FindBy(id = "bundle-detail-1-flight-select")
     private WebElement selectFLightType;
@@ -39,13 +38,9 @@ public class SelectFlightPage extends CommonFunctions {
     @FindBy(id = "bundle-detail-2-flight-select")
     private WebElement selectNewFLightType;
 
-
-
-
     @CacheLookup
     @FindBy(xpath = "//span[contains(text(), 'Cambiar tu vuelo')]")
     private WebElement changeFlight;
-
 
     @CacheLookup
     @FindBy(id = "button9")
@@ -64,7 +59,6 @@ public class SelectFlightPage extends CommonFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(changeFlight)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selectNewFlight)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selectNewFLightType)).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection)).click();
 
     }
 }

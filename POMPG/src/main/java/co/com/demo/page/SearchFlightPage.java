@@ -23,10 +23,6 @@ public class SearchFlightPage extends CommonFunctions {
     }
 
     @CacheLookup
-    @FindBy(xpath = "//div[@class='sc-fhOrUh frWrti']")
-    private WebElement bodyPage;
-
-    @CacheLookup
     @FindBy(id = "btnTripTypeCTA")
     private WebElement roundTripOrOneWay;
 
@@ -54,9 +50,6 @@ public class SearchFlightPage extends CommonFunctions {
     @FindBy(id = "departureDate")
     private WebElement departureDateInput;
 
-    @CacheLookup
-    @FindBy(id = "arrivalDate")
-    private WebElement arrivalDateInput;
 
     @CacheLookup
     @FindBy(xpath = "//td[@aria-label='viernes, 10 de mayo de 2024']")
@@ -65,7 +58,6 @@ public class SearchFlightPage extends CommonFunctions {
     @CacheLookup
     @FindBy(xpath = "//td[@aria-label='domingo, 12 de mayo de 2024']")
     private WebElement arrivalDateSelection;
-
 
     @CacheLookup
     @FindBy(id = "btnAddPassengerCTA")
@@ -105,14 +97,6 @@ public class SearchFlightPage extends CommonFunctions {
     public void increasePassengers() {
         wait.until(ExpectedConditions.elementToBeClickable(selectPassengerOption)).click();
         wait.until(ExpectedConditions.elementToBeClickable(IncreasePassengerAmount)).click();
-    }
-
-    public void selectDepartureAndReturnDate() {
-        wait.until(ExpectedConditions.elementToBeClickable(departureDateInput)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(departureDateSelection)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(arrivalDateSelection)).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(arrivalDateInput)).click();
-
     }
 
     public void clickSearch() {

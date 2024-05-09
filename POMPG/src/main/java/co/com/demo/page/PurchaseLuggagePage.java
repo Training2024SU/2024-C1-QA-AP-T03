@@ -31,10 +31,6 @@ public class PurchaseLuggagePage extends CommonFunctions {
     private WebElement fare;
 
     @CacheLookup
-    @FindBy(id = "BAGS-continue-button")
-    private WebElement continueBtn;
-
-    @CacheLookup
     @FindBy(id = "button-cart-confirm")
     private WebElement addContinue;
 
@@ -45,10 +41,6 @@ public class PurchaseLuggagePage extends CommonFunctions {
     @CacheLookup
     @FindBy(id = "PRIORITY_BOARDING-continue-button")
     private WebElement noluggageButton2;
-
-    @CacheLookup
-    @FindBy(id = "")
-    private WebElement noluggageButton3 ;
 
 
     public void addLuggage(){
