@@ -1,5 +1,6 @@
 package co.com.sofkau.stepdefinitions;
 
+import co.com.sofkau.setup.WebSetup;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -7,9 +8,10 @@ import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 
-public class ServicioStatesStepDefinition {
+public class ServicioStatesStepDefinition extends WebSetup {
     Faker faker = new Faker();
     String randomStateCode;
     private Response response;
@@ -40,7 +42,7 @@ public class ServicioStatesStepDefinition {
     public void verificarRespuestaServicio() {
         try {
             // Verificar que la solicitud obtenga una respuesta exitosa (código de estado HTTP 200 OK)
-            Assertions.assertEquals(200, response.getStatusCode(), "El servicio no respondió con el código de estado 200 OK");
+            Assertions.assertEquals(HttpStatus.SC_OK, response.getStatusCode(), "El servicio no respondió con el código de estado 200 OK");
 
             // Verificar que la respuesta contenga datos históricos
             Assertions.assertTrue(response.getBody().asString().contains("meta"));
