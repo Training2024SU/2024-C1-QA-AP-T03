@@ -14,9 +14,9 @@ public class OrganizarVueloStepDefinition extends WebSetup {
 
     ResultadoVueloPage resultadoVueloPage;
     @Given("que el usuario está en la página resultados de vuelo de Despegar.com desde el navegador {string}")
-    public void queElUsuarioEstáEnLaPáginaResultadosDeVueloDeDespegarComDesdeElNavegador(String string) {
+    public void queElUsuarioEstáEnLaPáginaResultadosDeVueloDeDespegarComDesdeElNavegador(String navegador) {
         try {
-            generalSetUp(2,URL_RESULT_VUELO);
+            generalSetUp(navegador,URL_RESULT_VUELO);
             Thread.sleep(10000);
         }catch (Exception e){
             System.out.println(e.getMessage());

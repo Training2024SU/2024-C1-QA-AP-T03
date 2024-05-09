@@ -2,13 +2,23 @@ package co.com.sofka.model;
 
 import java.util.Date;
 
-public class FormularioBuscarVuelo {
+public class FormularioBuscarCommon {
 
     private String origen;
     private String destino;
     private Date fechaSalida;
     private Date fechaRegreso;
     private int numPersonas;
+
+    private int numHabitaciones;
+
+    public int getNumHabitaciones() {
+        return numHabitaciones;
+    }
+
+    public void setNumHabitaciones(int numHabitaciones) {
+        this.numHabitaciones = numHabitaciones;
+    }
 
     public String getOrigen() {
         return origen;

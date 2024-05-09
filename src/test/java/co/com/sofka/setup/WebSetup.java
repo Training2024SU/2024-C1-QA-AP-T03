@@ -12,22 +12,20 @@ public class WebSetup {
     protected WebDriver driver;
 
 
-    private void setUpWebDriverUrl(int optionDriver, String url) {
+    private void setUpWebDriverUrl(String optionDriver, String url) {
         switch (optionDriver) {
-            case 1 -> {
+            case "Chrome" -> {
                 ChromeOptions optChrome = new ChromeOptions();
                 optChrome.addArguments("incognito");
                 optChrome.addArguments("disable-notifications");
                 driver = new ChromeDriver(optChrome);
             }
-            case 2 -> {
+            case "Edge" -> {
                 EdgeOptions opt = new EdgeOptions();
                 opt.addArguments("disable-notifications");
                 opt.addArguments("inprivate");
 
                 driver = new EdgeDriver(opt);
-            } case 3 -> {
-                driver = new FirefoxDriver();
             }
             default -> {
 
@@ -39,7 +37,7 @@ public class WebSetup {
 
     }
 
-    public void generalSetUp(int op, String url) {
+    public void generalSetUp(String op, String url) {
         setUpWebDriverUrl(op, url);
     }
 

@@ -16,18 +16,17 @@ import java.time.Duration;
 import java.util.Calendar;
 import java.util.Date;
 
-public class FormVueloPage extends FunctionsCommon {
+public class FormularioAlojamientoPage extends FunctionsCommon {
 
-    private WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(2));
-
-    private boolean flagClose = false;
-
-    private FormularioBuscarCommon vueloForm;
-
-    public FormVueloPage(WebDriver driver) {
+    public FormularioAlojamientoPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver,this);
     }
+
+    private WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+    private FormularioBuscarCommon alojamientoForm;
+
 
     // localizadores
     @CacheLookup
@@ -35,7 +34,7 @@ public class FormVueloPage extends FunctionsCommon {
     private WebElement CAMPO_ORIGEN;
 
     @CacheLookup
-    @FindBy(xpath = "//div[span[text()='Tramo 1']]//input[contains(@placeholder, 'hacia')]")
+    @FindBy(xpath = "//input[contains(@placeholder, 'alojamiento')]")
     private WebElement CAMPO_DESTINO;
 
     @CacheLookup
@@ -74,46 +73,49 @@ public class FormVueloPage extends FunctionsCommon {
 
     private final By CLOSE_NOT = By.xpath("//div[contains(@class,'login-incentive--button-close')]");
 
-    private final By prueba = By.xpath("//i[@class='header-icon shifu-3-icon-question-circle']");
+    private final By ALOJAMIENTO_BUTTON = By.xpath("//i[@title='Alojamientos']");
 
-    public void llenarFormularioBuscarViaje(FormularioBuscarCommon vuelo){
-        this.vueloForm = vuelo;
-        waitCloseMessage();
-        clickSelection(RADIO_BUTTON_OP);
-        scrollTo(RADIO_BUTTON_OP);
-        clickSelection(CAMPO_ORIGEN);
-        clearInput(CAMPO_ORIGEN);
-        typeInto(CAMPO_ORIGEN,vueloForm.getOrigen());
-        ewait.until(ExpectedConditions.elementToBeClickable(SELECT_CIUDAD));
-        typeKey(CAMPO_ORIGEN, Keys.ENTER);
+    public void llenarFormularioBuscarAlojamineto(FormularioBuscarCommon alojamiento){
+        this.alojamientoForm = alojamiento;
+//        try {
+//            Thread.sleep(20000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+        scrollTo(CAMPO_DESTINO);
+//        clickSelection(CAMPO_ORIGEN);
+//        clearInput(CAMPO_ORIGEN);
+//        typeInto(CAMPO_ORIGEN, alojamientoForm.getOrigen());
+//        ewait.until(ExpectedConditions.elementToBeClickable(SELECT_CIUDAD));
+//        typeKey(CAMPO_ORIGEN, Keys.ENTER);
+        ewait.until(ExpectedConditions.elementToBeClickable(CAMPO_DESTINO));
         clickSelection(CAMPO_DESTINO);
         ewait.until(ExpectedConditions.visibilityOf(SELECT_IMAGE));
         clearInput(CAMPO_DESTINO);
-        typeInto(CAMPO_DESTINO,vueloForm.getDestino());
+        typeInto(CAMPO_DESTINO, alojamientoForm.getDestino());
         ewait.until(ExpectedConditions.elementToBeClickable(SELECT_CIUDAD));
         typeKey(CAMPO_DESTINO, Keys.ENTER);
-        waitCloseMessage();
         llenarDatePicker();
+
     }
 
     public void ingresarNumPersonas(){
-        ewait.until(ExpectedConditions.elementToBeClickable(INPUT_PASAJEROS));
         clickSelection(INPUT_PASAJEROS);
         ewait.until(ExpectedConditions.elementToBeClickable(BTN_ADD_PASAJEROS));
-        for (int i = 0; i < vueloForm.getNumPersonas()-1; i++) {
-                clickSelection(BTN_ADD_PASAJEROS);
+        for (int i = 0; i < alojamientoForm.getNumPersonas()-1; i++) {
+            clickSelection(BTN_ADD_PASAJEROS);
         }
     }
 
-    public void buscarVuelo(){
+    public void buscarAlojamiento(){
         clickSelection(BTN_BUSCAR);
     }
 
 
     public void llenarDatePicker(){
         clickSelection(INPUT_IDA);
-        By dayLocatorIda = dayLocator(vueloForm.getFechaSalida());
-        By dayLocatorRegreso = dayLocator(vueloForm.getFechaRegreso());
+        By dayLocatorIda = dayLocator(alojamientoForm.getFechaSalida());
+        By dayLocatorRegreso = dayLocator(alojamientoForm.getFechaRegreso());
         for (int i = 0; i < 11; i++) {
             if ((!findElements(dayLocatorIda).isEmpty())) {
                 ewait.until(ExpectedConditions.elementToBeClickable(dayLocatorIda));
@@ -126,7 +128,7 @@ public class FormVueloPage extends FunctionsCommon {
             }
 
             ewait.until(ExpectedConditions.elementToBeClickable(ARROW_RIGHT));
-                clickSelection(ARROW_RIGHT);
+            clickSelection(ARROW_RIGHT);
 
         }
     }
@@ -151,17 +153,17 @@ public class FormVueloPage extends FunctionsCommon {
 
     }
 
-    public void waitCloseMessage(){
+    public void seleccionarAlojamiento(){
         try {
-            if(!flagClose){
-                // Esperar hasta que el elemento esté presente en la página
-                ewait.until(ExpectedConditions.elementToBeClickable(CLOSE_NOT));
-                clickSelection(CLOSE_NOT);
-                flagClose = true;
-            }
+            // Esperar hasta que el elemento esté presente en la página
+            ewait.until(ExpectedConditions.elementToBeClickable(CLOSE_NOT));
+
+            clickSelection(CLOSE_NOT);
         } catch (org.openqa.selenium.TimeoutException ignored) {
 
         }
+
+        clickSelection(ALOJAMIENTO_BUTTON);
     }
 
 }

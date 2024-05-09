@@ -1,14 +1,12 @@
 package co.com.sofka.stepdefinitions;
 
-import co.com.sofka.model.FormularioBuscarVuelo;
+import co.com.sofka.model.FormularioBuscarCommon;
 import co.com.sofka.page.FormVueloPage;
 import co.com.sofka.setup.WebSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-
-import java.util.Date;
 
 import static co.com.sofka.setup.UrlLibrary.URL_HOME_DESPEGAR;
 import static co.com.sofka.util.util.stringToDate;
@@ -17,20 +15,22 @@ public class BusquedaVueloStepDefinition extends WebSetup {
 
     FormVueloPage formVueloPage;
 
-    FormularioBuscarVuelo form;
+    FormularioBuscarCommon form;
 
     @Given("que el usuario está en la página de inicio de Despegar.com desde el navegador {string}")
-    public void queElUsuarioEstáEnLaPáginaDeInicioDeDespegarComDesdeElNavegador(String string) {
+    public void queElUsuarioEstáEnLaPáginaDeInicioDeDespegarComDesdeElNavegador(String navegador) {
         try {
-            generalSetUp(1,URL_HOME_DESPEGAR);
+            generalSetUp(navegador,URL_HOME_DESPEGAR);
             formVueloPage= new FormVueloPage(driver);
-            form = new FormularioBuscarVuelo();
+            form = new FormularioBuscarCommon();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             quiteDriver();
             Assertions.fail();
         }
     }
+
+
     @When("el usuario ingresa el origen {string}, destino {string} del vuelo, fecha de ida {string} y de vuelta {string}")
     public void elUsuarioIngresaElOrigenDestinoDelVueloFechaDeIdaYDeVuelta(String origen, String destino, String ida, String vuelta) {
         try {

@@ -23,7 +23,7 @@ public class FormularioStepDefinition extends WebSetup {
     @Given("que el usuario esta en la pagina de registro")
     public void queElUsuarioEstaEnLaPaginaDeRegistro() {
         try {
-            generalSetUp(2,URL_REGISTRO_FORM);
+            generalSetUp("Edge",URL_REGISTRO_FORM);
         }catch (Exception e){
             System.out.println(e.getMessage());
             quiteDriver();
