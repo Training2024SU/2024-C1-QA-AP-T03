@@ -4,6 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Set;
 
 public class WebSetUp {
     private static final String LATAM_URL ="https://www.latamairlines.com/co/es";
@@ -39,5 +45,23 @@ public class WebSetUp {
 
     protected void maximize(){
         driver.manage().window().maximize();
+    }
+
+    protected void switchToNewTab() {
+        String mainWindowHandle = driver.getWindowHandle();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+        Set<String> allWindowHandles = driver.getWindowHandles();
+
+        String newWindowHandle = "";
+        for (String handle : allWindowHandles) {
+            if (!handle.equals(mainWindowHandle)) {
+                newWindowHandle = handle;
+                break;
+            }
+        }
+        driver.switchTo().window(newWindowHandle);
     }
 }

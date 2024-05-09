@@ -19,7 +19,7 @@ import static garcia.juan.page.util.Meses.obtenerPorNumero;
 public class MainPage extends FunctionsCommon {
 
     Meses meses;
-    protected final Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -67,12 +67,6 @@ public class MainPage extends FunctionsCommon {
     private String MES_ANHO= "//div[contains(@class, 'CalendarMonth') and @data-visible='true']/div[@class='CalendarMonth_caption CalendarMonth_caption_1']/strong[text()='%s']";
     private String DAY_PICKER = "//td[contains(@class, 'CalendarDay') and contains(@aria-label, '%s de %s')]";
 
-
-//    private String mesAnho;
-//    @CacheLookup
-//    @FindBy(xpath = "//div[contains(@class, 'CalendarMonth_caption')]/strong[text()='"+ mesAnho +"']")
-//    private WebElement MES_FECHA
-
     //Methods
 
     public void quedarseColombia(){
@@ -92,34 +86,26 @@ public class MainPage extends FunctionsCommon {
     }
 
     public void insertOrigenAndDestino(String origen,String destino) throws InterruptedException {
-
-        wait.until(ExpectedConditions.and(
-                ExpectedConditions.visibilityOf(ORIGEN_INPUT),
-                ExpectedConditions.elementToBeClickable(ORIGEN_INPUT)
-        ));
+        esperarClickable(ORIGEN_INPUT);
         clickSelection(ORIGEN_INPUT);
         typeInto(ORIGEN_INPUT,origen);
-        Thread.sleep(500);
+        esperarClickable(FIRST_AUTO_ORIGEN);
         clickSelection(FIRST_AUTO_ORIGEN);
         typeInto(DESTINO_INPUT,destino);
-        Thread.sleep(500);
-        wait.until(ExpectedConditions.and(
-                ExpectedConditions.visibilityOf(FIRST_AUTO_DESTINO),
-                ExpectedConditions.elementToBeClickable(FIRST_AUTO_DESTINO)
-        ));
+        esperarClickable(FIRST_AUTO_DESTINO);
         clickSelection(FIRST_AUTO_DESTINO);
     }
 
     public void buscarFecha(String fecha1,String fecha2) throws InterruptedException {
         clickSelection(DEPARTURE_DATE);
-        Thread.sleep(500);
+
         String[] partes1 = fecha1.split("-");
         int anho1 = Integer.parseInt(partes1[0]);
         int mes1 = Integer.parseInt(partes1[1]);
         String dia1 = partes1[2];
         Meses mesD = obtenerPorNumero(mes1);
         buscarMes(mesD.name()+" "+ anho1);
-        Thread.sleep(2000);
+
         pickDay(dia1, mesD.name());
         String[] partes2 = fecha2.split("-");
         int anho2 = Integer.parseInt(partes2[0]);
@@ -127,9 +113,7 @@ public class MainPage extends FunctionsCommon {
         int dia2 = Integer.parseInt(partes2[2]);
         Meses mesA = obtenerPorNumero(mes2);
         buscarMes(mesA.name()+" "+ anho2);
-        Thread.sleep(2000);
         pickDay(String.valueOf(dia2), mesA.name());
-
     }
 
     public void buscarMes(String mesBuscado){
@@ -137,8 +121,10 @@ public class MainPage extends FunctionsCommon {
         while (ciclo){
             try {
                 WebElement mesElement = driver.findElement(By.xpath(String.format(MES_ANHO,mesBuscado)));
+                esperarVisible(mesElement);
                 ciclo=false;
             }catch (Exception e){
+                esperarClickable(MONTH_RIGHT_NAVIGATION);
                 clickSelection(MONTH_RIGHT_NAVIGATION);
                 clickSelection(MONTH_RIGHT_NAVIGATION);
             }
@@ -146,12 +132,16 @@ public class MainPage extends FunctionsCommon {
     }
 
     public void pickDay(String dia, String mes){
+
         clickSelection(By.xpath(String.format(DAY_PICKER,dia,mes)));
     }
 
     public void realizaBusqueda() {
+        esperarClickable(SEARCH_BUTTON);
         clickSelection(SEARCH_BUTTON);
     }
+
+
 
 
 }
