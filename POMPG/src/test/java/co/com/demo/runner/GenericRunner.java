@@ -11,9 +11,10 @@ import org.junit.runner.RunWith;
         glue = "co.com.demo.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         //tags = "@CriticalPath"
-        //tags = "@PurchaseFlight
+        tags = "@PurchaseSeat"
         //tags = "@PurchaseLuggage"
-        tags = "@ChangeFlight"
+        //tags = "@ChangeFlight"
+        //tag = "Oneway"
 )
 
 public class GenericRunner {

@@ -22,23 +22,18 @@ public class SelectSeatPage  extends CommonFunctions {
         PageFactory.initElements(driver, this);
     }
 
-    @CacheLookup
-    @FindBy(css = "button[data-testid='button-seat-3E']")
-    private WebElement selectSeat;
 
     @CacheLookup
-    @FindBy(css = "button[data-testid='button-seat-4E']")
+    @FindBy(css = "button[data-testid*='seat-3E']")
+    private WebElement botonAsiento3E;
+
+    @CacheLookup
+    @FindBy(css = "button[data-testid*='seat-4E']")
     private WebElement selecAnothertSeat;
-
 
     @CacheLookup
     @FindBy(id = "btn-confirm-and-continue")
     private WebElement confirmSeats;
-
-    @CacheLookup
-    @FindBy(id = "")
-    private WebElement addContinue;
-
 
     @CacheLookup
     @FindBy(id = "btn-confirm-and-continue")
@@ -49,6 +44,12 @@ public class SelectSeatPage  extends CommonFunctions {
     private WebElement chooseLaterSeats;
 
     @CacheLookup
+    @FindBy(id = "buttonChooseNow")
+    private WebElement chooseNowSeats;
+
+
+
+    @CacheLookup
     @FindBy(id = "button9")
     private WebElement redirectSeatsSelection;
 
@@ -56,7 +57,9 @@ public class SelectSeatPage  extends CommonFunctions {
 
     public void selectSeats(){
         wait.until(ExpectedConditions.elementToBeClickable(redirectSeatsSelection)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(selectSeat)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueWithoutSeats)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(chooseNowSeats)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(botonAsiento3E)).click();
         wait.until(ExpectedConditions.elementToBeClickable(selecAnothertSeat)).click();
         wait.until(ExpectedConditions.elementToBeClickable(confirmSeats)).click();
     }
