@@ -24,12 +24,12 @@ public class BookFlightStepDefinitions extends WebSetup {
         passengerInformationPage = new PassengerInformationPage(driver);
     }
 
-    @When("the user searches for a one-way flight")
-    public void theUserSearchesForAOneWayFlight() {
-        // Use existing searchFlightPage instance to perform search
-        searchFlightPage.searchOneFlight();
+    @When("the user searches for a one-way flight from {string} to {string}")
+    public void theUserSearchesForAOneWayFlightFromTo(String origin, String destination) {
+        searchFlightPage.searchOneFlight(origin,destination);
         switchToNewTab();
     }
+
 
     @When("selects a flight")
     public void selectsAFlight() {

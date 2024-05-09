@@ -18,13 +18,13 @@ public class ChangeFlightStepDefinitions extends WebSetup {
         searchFlightPage = new SearchFlightPage(driver);
         selectFlightPage = new SelectFlightPage(driver);
     }
-    @When("the user searches for a one-way flight available")
-    public void theUserSearchesForAOneWayFlightAvailable() {
-        // Use existing searchFlightPage instance to perform search
-        searchFlightPage.searchOneFlight();
-        switchToNewTab();
 
+    @When("the user searches for a one-way flight available from {string} to {string}")
+    public void theUserSearchesForAOneWayFlightAvailableFromTo(String origin, String destination) {
+        searchFlightPage.searchOneFlight(origin,destination);
+        switchToNewTab();
     }
+
     @When("selects a new flight")
     public void selectsANewFlight() {
         // Use existing selectFlightPage instance to select a flight

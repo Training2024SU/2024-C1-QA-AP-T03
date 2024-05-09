@@ -119,20 +119,13 @@ public class SearchFlightPage extends CommonFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
     }
 
-    public void searchOneFlight() {
+    public void searchOneFlight(String origin, String destination) {
         selectOneWayTrip();
-        enterOrigin("medellin");
-        enterDestination("bogota");
+        enterOrigin(origin);
+        enterDestination(destination);
         selectDepartureDate();
         increasePassengers();
         clickSearch();
     }
 
-    public void searchRoundFlight() {
-        enterOrigin("medellin");
-        enterDestination("bogota");
-        selectDepartureAndReturnDate();
-        increasePassengers();
-        clickSearch();
-    }
 }

@@ -9,8 +9,14 @@ Feature: Buying luggage
 
   @PurchaseLuggage
   @CriticalPath
-  Scenario: Purchase luggage during the purchase process
-    When the user looking for a  flight
+  Scenario Outline: Purchase luggage during the purchase process
+    When the user looking for a  flight from "<origin>" to "<destination>"
     And choose a flight
     When the user adds luggage to the booking
     Then they should see the cost of the selected luggage
+
+    Examples:
+      | origin    | destination |
+      | Cali | Bogota      |
+
+

@@ -23,7 +23,7 @@ public class PurchaseLuggagePage extends CommonFunctions {
     }
 
     @CacheLookup
-    @FindBy(id = "btn-up-segment-MDE-BOG-bag-23-passenger-ADT_1")
+    @FindBy(id = "btn-up-segment-CLO-BOG-bag-23-passenger-ADT_1")
     private WebElement selectLuggage;
 
     @CacheLookup

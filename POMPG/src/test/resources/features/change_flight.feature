@@ -9,7 +9,12 @@ Feature: Selecting new flights
 
   @ChangeFlight
   @CriticalPath
-  Scenario: Change the flight during the purchase process
-    When the user searches for a one-way flight available
+  Scenario Outline: Change the flight during the purchase process
+    When the user searches for a one-way flight available from "<origin>" to "<destination>"
     And selects a new flight
     Then they should see the updated flight details
+
+    Examples:
+      | origin    | destination |
+      | Barranquilla  | Bogota      |
+

@@ -118,39 +118,6 @@ public class PassengerInformationPage extends CommonFunctions {
         phoneNumber.sendKeys(phoneUser);
     }
 
-    public void enterSecondName(String name) {
-        wait.until(ExpectedConditions.elementToBeClickable(secondFirstName)).click();
-        secondFirstName.sendKeys(name);
-    }
-
-    public void enterSecondLastName(String surname) {
-        wait.until(ExpectedConditions.elementToBeClickable(secondLastName)).click();
-        secondLastName.sendKeys(surname);
-    }
-
-    public void enterSecondDateOfBirth(String dateBirth) {
-        wait.until(ExpectedConditions.elementToBeClickable(seconddateOfBirth)).click();
-        seconddateOfBirth.sendKeys(dateBirth);
-    }
-
-    public void enterSecondIdentification(String id) {
-        scrollTo(secondIdentification);
-        clickSelection(secondIdentification);
-        secondIdentification.sendKeys(id);
-    }
-
-    public void enterSecondEmail(String emailUser) {
-        wait.until(ExpectedConditions.elementToBeClickable(secondEmail)).click();
-        secondEmail.sendKeys(emailUser);
-    }
-
-    public void enterSecondPhoneNumber(String phoneUser) {
-        wait.until(ExpectedConditions.elementToBeClickable(secondPhoneNumber)).click();
-        secondPhoneNumber.sendKeys(phoneUser);
-    }
-
-
-
     public void enterPassengerInformation(){
         enterName("Martin");
         enterLastName("Perez");
@@ -160,12 +127,6 @@ public class PassengerInformationPage extends CommonFunctions {
         enterPhoneNumber("324332456");
         clickSelection(reuseContactDataButton);
         clickSelection(saveDataButton);
-        enterSecondName("Andres");
-        enterSecondLastName("Jimenez");
-        enterSecondDateOfBirth("01-01-2000");
-        enterSecondIdentification("987654321");
-        clickSelection(secondSaveDataButton);
-
 
     }
 

@@ -21,11 +21,11 @@ public class PurchaseSeatStepDefinitions extends WebSetup {
         selectSeatPage = new SelectSeatPage(driver);
 
     }
-    @When("the user searches for a flight")
-    public void theUserSearchesForAFlight() {
-        searchFlightPage.searchOneFlight();
-        switchToNewTab();
 
+    @When("the user searches for a flight from {string} to {string}")
+    public void theUserSearchesForAFlightFromTo(String origin, String destination) {
+        searchFlightPage.searchOneFlight(origin,destination);
+        switchToNewTab();
     }
     @When("selects it")
     public void selectsIt() {

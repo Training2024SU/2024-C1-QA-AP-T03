@@ -8,9 +8,15 @@ Feature: Latam Airlines Flight Booking
     Given I am initiating a flight booking process 1 "https://www.latamairlines.com/co/es"
 
   @Oneway
-  Scenario: Book a one-way flight
-    When the user searches for a one-way flight
+  Scenario Outline: Book a one-way flight from one city to another
+    When the user searches for a one-way flight from "<origin>" to "<destination>"
     And selects a flight
     But does not purchase seats or luggage
     And adds passenger information and confirms it
     Then they should see a message with the details of the purchase
+
+    Examples:
+      | origin    | destination |
+      | Medellin  | Bogota      |
+      | Cali      | Pereira    |
+      | Barranquilla | Valledupar |

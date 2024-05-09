@@ -22,14 +22,15 @@ public class PurchaseLuggageStepDefinitions extends WebSetup {
         purchaseLuggagePage = new PurchaseLuggagePage(driver);
         selectSeatPage = new SelectSeatPage(driver);
 
-
     }
-    @When("the user looking for a  flight")
-    public void theUserLookingForAFlight() {
-        searchFlightPage.searchOneFlight();
+
+    @When("the user looking for a  flight from {string} to {string}")
+    public void theUserLookingForAFlightFromTo(String origin, String destination) {
+        searchFlightPage.searchOneFlight(origin,destination);
         switchToNewTab();
+        }
 
-    }
+
     @When("choose a flight")
     public void chooseAFlight() {
         selectFlightPage.selectFlight();
