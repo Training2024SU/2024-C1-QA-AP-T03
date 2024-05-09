@@ -11,3 +11,8 @@ Feature: Currency operations
       | crypto   | currency |
       | bitcoin  | usd      |
       | ethereum | eur      |
+
+  Scenario: Currencies list
+    When The system requests the list of supported cryptocurrencies
+    Then it should get a successful answer
+    And it should receive the complete list of currencies
