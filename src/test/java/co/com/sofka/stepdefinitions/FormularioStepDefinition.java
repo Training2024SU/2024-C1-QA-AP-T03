@@ -1,7 +1,6 @@
 package co.com.sofka.stepdefinitions;
 
 import co.com.sofka.model.FormularioModel;
-import co.com.sofka.page.FormularioPage;
 import co.com.sofka.page.FormularioPageFactory;
 import co.com.sofka.setup.WebSetup;
 import io.cucumber.java.en.Given;
@@ -16,7 +15,7 @@ import static co.com.sofka.util.util.crearUsuario;
 
 public class FormularioStepDefinition extends WebSetup {
 
-    FormularioPage formularioPage;
+//    FormularioPage formularioPage;
 
     FormularioPageFactory formularioPageFactory;
     FormularioModel formularioModel;
