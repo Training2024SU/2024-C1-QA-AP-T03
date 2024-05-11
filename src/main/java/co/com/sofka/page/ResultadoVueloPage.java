@@ -54,6 +54,31 @@ public class ResultadoVueloPage extends FunctionsCommon {
         return (origenVer && destinoVer);
 
     }
+    public String verificarOrigen(){
+        String comute =  getText(CAMPO_TITTLE);
+        boolean origenVer = comute.contains(origen);
+        if(origenVer){
+            ewait.until(ExpectedConditions.visibilityOf(CAMPO_TITTLE));
+            return origen;
+        }else{
+            return null;
+        }
+    }
+
+    public String verificarDestino(){
+        String comute =  getText(CAMPO_TITTLE);
+        boolean destinoVer = comute.contains(destino);
+        if(destinoVer){
+            ewait.until(ExpectedConditions.visibilityOf(CAMPO_TITTLE));
+            return destino;
+        }else{
+            return null;
+        }
+    }
+
+
+
+
 
 
 

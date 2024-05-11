@@ -33,7 +33,7 @@ public class WebSetup {
         }
 
         driver.get(url);
-//        maximize();
+        maximize();
 
     }
 

@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786f2df0-ad97-44d0-8a16-b8b7fecc704d" name="Changes" comment="data table save">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/Plan de pruebas/Matriz de riesgo proyecto éxito y despegar - Matriz de riegos.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/Plan de pruebas/Plan de Pruebas despegar.com y exito.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/model/FormPersonaModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/AgregarCarritoPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/DatosUsuarioPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/ServiciosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/ConstantesEjecucion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/DespegarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/DespegarTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/ExitoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/runner/ExitoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/UrlLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/UrlLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/WebSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/setup/WebSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/BusquedaAlojamientoStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/BusquedaAlojamientoStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/CompraExitoStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/CompraExitoStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/FormularioStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/ConstantesEjecucion.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/OrganizarVueloStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/OrganizarVueloStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/form.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/serviceCharacterMarvel.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/serviceCharacterMarvel.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/serviceComicMarver.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/serviceComicMarver.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/organizarresultadosvuelo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/organizarresultadosvuelo.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,47 +59,93 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "T03-C1-DANIEL-CHAPARRO-CANO",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/danie/Documents/2024-C1-QA-AP-T03/src/main/java/co/com/sofka",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/danie/Documents/Training/demoqatesting/src/main/java/co/com/sofka/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.22528736",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;T03-C1-DANIEL-CHAPARRO-CANO&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/2024-C1-QA-AP-T03/src/main/java/co/com/sofka&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/danie/Documents/Training/demoqatesting/src/main/java/co/com/sofka/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.22528736&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Documents\2024-C1-QA-AP-T03\src\main\java\co\com\sofka" />
       <recent name="C:\Users\danie\Documents\2024-C1-QA-AP-T03\src\main\java\co\com\sofka\util" />
       <recent name="C:\Users\danie\Documents\Training\demoqatesting\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiciosTest">
-    <configuration name="DespegarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Buscar vuelos de ida y vuelta organizados por menor duración">
+    <configuration name="Scenario: Buscar alojamiento" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/busquedaAlojamineto.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Buscar alojamiento$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Buscar alojamiento$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Buscar alojamiento" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="co.com.sofka.runner.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="co.com.sofka.runner" />
-      <option name="MAIN_CLASS_NAME" value="co.com.sofka.runner.DespegarTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Buscar un vuelo de ida y vuelta" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/busquedavuelo.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Buscar un vuelo de ida y vuelta$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Buscar un vuelo de ida y vuelta$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Buscar un vuelo de ida y vuelta" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Buscar vuelos de ida y vuelta organizados por menor duración" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/organizarresultadosvuelo.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Buscar vuelos de ida y vuelta organizados por menor duración$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Buscar vuelos de ida y vuelta organizados por menor duración$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Buscar vuelos de ida y vuelta organizados por menor duración" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,9 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Buscar vuelos de ida y vuelta organizados por menor duración" />
+        <item itemvalue="Cucumber Java.Scenario: Buscar alojamiento" />
+        <item itemvalue="Cucumber Java.Scenario: Buscar un vuelo de ida y vuelta" />
         <item itemvalue="JUnit.ServiciosTest" />
         <item itemvalue="JUnit.ExitoTest" />
-        <item itemvalue="JUnit.DespegarTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +206,10 @@
       <workItem from="1715105833126" duration="10951000" />
       <workItem from="1715168732571" duration="56027000" />
       <workItem from="1715234701765" duration="7723000" />
-      <workItem from="1715263372125" duration="19974000" />
+      <workItem from="1715263372125" duration="24082000" />
+      <workItem from="1715349586171" duration="110000" />
+      <workItem from="1715368620307" duration="3797000" />
+      <workItem from="1715448124159" duration="1842000" />
     </task>
     <task id="LOCAL-00001" summary="date picker">
       <option name="closed" value="true" />
@@ -194,6 +233,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
@@ -204,11 +254,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/co/com/sofka/page/FormularioAlojamientoPage.java</url>
           <line>95</line>

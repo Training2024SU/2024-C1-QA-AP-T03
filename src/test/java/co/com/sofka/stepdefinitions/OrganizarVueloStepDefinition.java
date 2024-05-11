@@ -7,8 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofka.setup.UrlLibrary.URL_REGISTRO_FORM;
 import static co.com.sofka.setup.UrlLibrary.URL_RESULT_VUELO;
+import static co.com.sofka.ConstantesEjecucion.ORIGEN;
 
 public class OrganizarVueloStepDefinition extends WebSetup {
 
@@ -17,7 +17,6 @@ public class OrganizarVueloStepDefinition extends WebSetup {
     public void queElUsuarioEstáEnLaPáginaResultadosDeVueloDeDespegarComDesdeElNavegador(String navegador) {
         try {
             generalSetUp(navegador,URL_RESULT_VUELO);
-//            Thread.sleep(10000);
         }catch (Exception e){
             System.out.println(e.getMessage());
             quiteDriver();
@@ -46,27 +45,18 @@ public class OrganizarVueloStepDefinition extends WebSetup {
         }
     }
     @Then("se deberían mostrar los resultados de vuelos de {string} a {string}")
-    public void seDeberíanMostrarLosResultadosDeVuelosDeA(String string, String string2) {
+    public void seDeberíanMostrarLosResultadosDeVuelosDeA(String origen, String destino) {
         try {
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            quiteDriver();
-            Assertions.fail();
-        }
-    }
-    @Then("se debería mostrar los resultados disponibles organizados por menor duración")
-    public void seDeberíaMostrarLosResultadosDisponiblesOrganizadosPorMenorDuración() throws InterruptedException {
-        try {
-
+            Assertions.assertEquals(origen,resultadoVueloPage.verificarOrigen());
+            Assertions.assertEquals(destino,resultadoVueloPage.verificarDestino());
         }catch (Exception e){
             System.out.println(e.getMessage());
             quiteDriver();
             Assertions.fail();
         }finally {
-//            Thread.sleep(10000);
             quiteDriver();
         }
     }
+
 
 }

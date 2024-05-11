@@ -13,4 +13,3 @@ Feature: Organización de resultados de vuelos por menor duración en Despegar.c
     When el usuario visualiza vuelos de ida y vuelta de "Bogotá" a "Cancún"
     And organiza los vuelos por menor duracion
     Then se deberían mostrar los resultados de vuelos de "Bogotá" a "Cancún"
-    And se debería mostrar los resultados disponibles organizados por menor duración
