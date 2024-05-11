@@ -8,14 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class PageFactoryMain extends CommonFunctions{
+public class PageFactoryDespegarMain extends CommonFunctions{
     @CacheLookup
     @FindBy(xpath = "//a[@title='Vuelos']//div[@class='button-content']")
     private WebElement FLY_REDIRECT_BTN;
 
 
 
-    public PageFactoryMain(WebDriver driver) {
+    public PageFactoryDespegarMain(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

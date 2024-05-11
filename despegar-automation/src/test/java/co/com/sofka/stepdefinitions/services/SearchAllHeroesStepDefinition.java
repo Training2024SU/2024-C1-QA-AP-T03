@@ -19,6 +19,7 @@ import static org.hamcrest.Matchers.*;
 
 public class SearchAllHeroesStepDefinition extends ServiceSetup {
     List<String> allHeroNames = new ArrayList<>();
+
     @Given("the user is connected to the Marvel Developer API")
     public void theUserIsConnectedToTheMarvelDeveloperAPI() {
         RestAssured.baseURI = BASE_URL;

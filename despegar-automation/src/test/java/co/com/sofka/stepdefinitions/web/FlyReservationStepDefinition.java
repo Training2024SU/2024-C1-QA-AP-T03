@@ -1,9 +1,9 @@
 package co.com.sofka.stepdefinitions.web;
 
 
-import co.com.sofka.page.PageFactoryFly;
-import co.com.sofka.page.PageFactoryFlyOptions;
+import co.com.sofka.page.PageFactoryDespegarFly;
 import co.com.sofka.setup.web.WebBrowser;
+import co.com.sofka.setup.web.WebPage;
 import co.com.sofka.setup.web.WebSetup;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -12,16 +12,16 @@ import io.cucumber.java.en.When;
 
 
 public class FlyReservationStepDefinition extends WebSetup {
-    private PageFactoryFly pageFactoryFly;
+    private PageFactoryDespegarFly pageFactoryFly;
 
     @Given("the User is on despegar.com using {string}")
     public void theUserIsOnDespegarComUsing(String webBrowser) {
-        generalSetup(WebBrowser.valueOf(webBrowser));
+        generalSetup(WebBrowser.valueOf(webBrowser), WebPage.DESPEGAR);
     }
 
     @When("navigates to fly page")
     public void navigatesToFlyPage() {
-        pageFactoryFly = new PageFactoryFly(driver);
+        pageFactoryFly = new PageFactoryDespegarFly(driver);
     }
 
     @When("selects a flight from {string} to {string}")
@@ -44,25 +44,18 @@ public class FlyReservationStepDefinition extends WebSetup {
 
     }
 
-    @When("confirms the chosen flight details")
-    public void confirmsTheChosenFlightDetails() throws InterruptedException {
-//        PageFactoryFlyOptions pageFactoryFlyOptions = new PageFactoryFlyOptions(driver);
-//        pageFactoryFlyOptions.confirmCookies();
-//        pageFactoryFlyOptions.selectRandomAirline();
-    }
-
-    @When("confirms their personal information")
-    public void confirmsTheirPersonalInformation() {
-
+    @When("confirms flight details")
+    public void confirmsFlightDetails() {
+        // Can not continue
     }
 
     @Then("should receive a confirmation message")
     public void shouldReceiveAConfirmationMessage() {
-
+        // Can not continue
     }
 
     @After
     public void tearDown() {
-        quiteDrive();
+        quitDriver();
     }
 }

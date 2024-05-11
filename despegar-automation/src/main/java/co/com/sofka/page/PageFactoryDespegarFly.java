@@ -2,7 +2,6 @@ package co.com.sofka.page;
 
 import co.com.sofka.util.CalendarConstants;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PageFactoryFly extends CommonFunctions {
+public class PageFactoryDespegarFly extends CommonFunctions {
 
     // from to
     @CacheLookup
@@ -23,9 +22,6 @@ public class PageFactoryFly extends CommonFunctions {
     @FindBy(xpath = "(//input[@placeholder='Ingresa hacia dónde viajas'])[1]")
     private WebElement DESTINY_INPUT;
 
-    @CacheLookup
-    @FindBy(xpath = "(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")
-    private WebElement FIRST_OPTION;
 
     @CacheLookup
     @FindBy(xpath = "(//div[@class = 'ac-container '])[1]")
@@ -70,40 +66,55 @@ public class PageFactoryFly extends CommonFunctions {
 
     private final Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
-    public PageFactoryFly(WebDriver driver) {
+    public PageFactoryDespegarFly(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
     public void selectSource(String source) {
+        waitToBeVisible(ORIGIN_INPUT);
         clickSelection(ORIGIN_INPUT);
         cleanField(ORIGIN_INPUT);
         typeInto(ORIGIN_INPUT, source);
-        wait.until(d -> FIRST_OPTION.isDisplayed());
-        clickSelection(FIRST_OPTION);
+        try {
+            waitToBeVisible(driver.findElement(By.xpath("(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")));
+            waitToBeClickable(driver.findElement(By.xpath("(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")));
+            clickSelection(driver.findElement(By.xpath("(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 
 
-    /**
-     * Selects a target option by typing it slowly into the DESTINY_INPUT field.
-     * This method utilizes Thread.sleep to pause the execution to simulate slow typing.
-     * The reason for using Thread.sleep is that typing too fast may cause the popup
-     * not to appear. Additionally, driver.manage.timeout does not work solely for
-     * waiting in this scenario.
-     * @param target The target option to be selected.
-     */
     public void selectTarget(String target) {
+        clickSelection(DESTINY_INPUT);
+        typeLetterByLetter(target);
         try {
-            clickSelection(DESTINY_INPUT);
-            for (int i = 0; i < target.length(); i++) {
-                char character = target.charAt(i);
-                typeInto(DESTINY_INPUT, String.valueOf(character));
-                Thread.sleep(100);
-            }
-            wait.until(d -> PIVOT_CITY_DIV.isDisplayed());
-            DESTINY_INPUT.sendKeys(Keys.ENTER);
+            waitToBeVisible(driver.findElement(By.xpath("(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")));
+            waitToBeClickable(driver.findElement(By.xpath("(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")));
+            clickSelection(driver.findElement(By.xpath("(//ul[@class = 'ac-group-items']/li[contains(@class, 'item')])[1]")));
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
+        }
+        clickSelection(DESTINY_INPUT);
+        DESTINY_INPUT.sendKeys(Keys.ENTER);
+    }
+
+    private void typeLetterByLetter(String target) {
+        for (int i = 0; i < target.length(); i++) {
+            char character = target.charAt(i);
+            typeInto(DESTINY_INPUT, String.valueOf(character));
+            customWait();
+        }
+    }
+
+    private synchronized void customWait() {
+        try {
+            wait(100);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 

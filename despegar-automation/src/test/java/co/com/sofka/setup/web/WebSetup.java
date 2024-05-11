@@ -9,46 +9,53 @@ import org.openqa.selenium.edge.EdgeOptions;
 
 public class WebSetup {
     private static final String DESPEGAR_URL = "https://www.despegar.com.co/";
+    private static final String EXITO_URL = "https://www.exito.com/";
+
     protected static WebDriver driver;
 
-    private void setupWebDriverUrl(WebBrowser webBrowser) {
+    private void setupWebDriverUrl(WebBrowser webBrowser, WebPage webPage) {
         switch (webBrowser) {
-            case CHROME -> chromeConfiguration();
-            case EDGE -> edgeConfiguration();
-            default -> System.out.println("Enter a valid option");
+            case CHROME -> chromeConfiguration(webPage);
+            case EDGE -> edgeConfiguration(webPage);
+            default -> throw new IllegalArgumentException("Enter a valid option");
         }
     }
 
-    private void edgeConfiguration() {
+    private void edgeConfiguration(WebPage webPage) {
         EdgeOptions edgeOptions = new EdgeOptions();
         edgeOptions.setCapability("ms:inPrivate", true);
         edgeOptions.setCapability("ms:edgeChromium", true);
         edgeOptions.setCapability("ms:edgeOptions", "--headless");
         driver = new EdgeDriver(edgeOptions);
-        configureBrowser();
+        configureBrowser(webPage);
     }
 
-    private void configureBrowser() {
-        driver.get(DESPEGAR_URL);
+    private void configureBrowser(WebPage webPage) {
+        switch (webPage){
+            case DESPEGAR:
+                driver.get(DESPEGAR_URL);
+                break;
+            case EXITO:
+                driver.get(EXITO_URL);
+                break;
+        }
         maximizeWindow();
     }
 
-    private void chromeConfiguration() {
+    private void chromeConfiguration(WebPage webPage) {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--disable-notifications");
-////        chromeOptions.addArguments("--headless");
-//        chromeOptions.addArguments("--use_subprocess");
         driver = new ChromeDriver(chromeOptions);
-        configureBrowser();
+        configureBrowser(webPage);
     }
 
-    protected void generalSetup(WebBrowser webBrowser) {
-        setupWebDriverUrl(webBrowser);
+    protected void generalSetup(WebBrowser webBrowser, WebPage webPage) {
+        setupWebDriverUrl(webBrowser, webPage);
     }
 
-    protected void quiteDrive() {
+    protected void quitDriver() {
         driver.quit();
     }
 

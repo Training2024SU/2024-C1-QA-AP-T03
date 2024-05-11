@@ -8,16 +8,12 @@ Feature: Flight Reservation on Despegar.com
     When navigates to fly page
     And selects a flight from <fromDestiny> to <toDestiny>
     And departs on <fromDate> returning on <toDate> for <nPassengers> passengers
-    And confirms the chosen flight details
-    And confirms their personal information
+    And confirms flight details
     Then should receive a confirmation message
     Examples:
       | webBrowser | fromDestiny | toDestiny     | fromDate   | toDate     | nPassengers |
-      | "CHROME"   | "Bogota"    | "Santa marta" | 2024-07-15 | 2024-07-25 | 3           |
-
-      #| "EDGE"     | "Bogota"    | "Santa marta" | 2024-07-15 | 2024-07-25 | 3           |
-      #| "EDGE"     | "Medellin"  | "Cancun"      | 2024-05-19 | 2024-07-25 | 4           |
-      #| "EDGE"     | "Ibague"  | "New York"      | 2024-05-19 | 2024-07-25 | 4           |
-
+      | "CHROME"   | "Bogota"    | "Santa marta" | 2024-6-15  | 2024-11-25 | 3           |
+      | "EDGE"     | "Medellin"  | "Cartagena"   | 2024-7-12  | 2024-9-25  | 2           |
+      | "EDGE"     | "Ibague"    | "Cancun"      | 2024-05-19 | 2024-12-25 | 4           |
 
 

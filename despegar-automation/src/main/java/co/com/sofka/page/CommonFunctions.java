@@ -1,9 +1,13 @@
 package co.com.sofka.page;
 
+import org.checkerframework.checker.units.qual.K;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.security.Key;
+import java.time.Duration;
 
 public class CommonFunctions {
     protected final WebDriver driver;
@@ -19,7 +23,17 @@ public class CommonFunctions {
     }
 
     protected void typeInto(WebElement element, String text) {
-        element.sendKeys(text, Keys.ENTER);
+        element.sendKeys(text);
+    }
+
+    protected void waitToBeVisible(WebElement webElement) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+    }
+
+    protected void waitToBeClickable(WebElement webElement) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
     protected void clickSelection(By locator) {
