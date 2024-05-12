@@ -7,9 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO;
-
-
+import static co.com.sofkau.util.constant.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO;
 public class AccesoExitosoStepDefinition extends WebSetup {
     FormularioAccesoPage formularioAccesoPage;
     FormularioRegistroPage formularioRegistroPage;
@@ -28,9 +26,10 @@ public class AccesoExitosoStepDefinition extends WebSetup {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            quiteDriver();
+            Assertions.fail();
         }
     }
-
     @Then("deberia ser redirigido a la pagina principal y le debe figurar la sesion iniciada")
     public void deberiaSerRedirigidoAlaPaginaPrincipalConLaSesionIniciada(){
         try{

@@ -8,7 +8,6 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 public class FunctionCommon {
     protected static WebDriver driver;
-    private WebElement locator;
 
     public FunctionCommon(WebDriver driver) {
         this.driver = driver;
@@ -29,7 +28,7 @@ public class FunctionCommon {
     }
 
     protected static void clickSelection(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }

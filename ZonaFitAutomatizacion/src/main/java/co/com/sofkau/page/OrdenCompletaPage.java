@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OrdenCompletaPage extends FunctionCommon {
+
     //Localizadores
     @CacheLookup
     @FindBy(css = "p.woocommerce-thankyou-order-received")

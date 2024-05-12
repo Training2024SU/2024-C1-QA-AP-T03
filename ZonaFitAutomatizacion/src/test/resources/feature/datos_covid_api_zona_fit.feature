@@ -1,3 +1,5 @@
+#Autor: Andreina Iglesias
+
 Feature: Listar datos sobre el COVID-19 con los Servicios API de Zona Fit
   Como usuario de Zona Fit
   Quiero poder ver información actualizada sobre COVID-19

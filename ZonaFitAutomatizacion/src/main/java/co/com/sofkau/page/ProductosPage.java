@@ -3,21 +3,16 @@ package co.com.sofkau.page;
 
 import co.com.sofkau.page.function.FunctionCommon;
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
+import static co.com.sofkau.constant.UrlConstant.URL;
 
 public class ProductosPage extends FunctionCommon {
 
-    private final static String URL = "https://zonafit.co/etiqueta-producto/200/";
-
-    private final String AUMENTAR_PRODUCTO_CARRITO_SELECTOR = "input[value='+']";
-
-    private final String CANTIDAD_PRODUCTO_CARRITO_SELECTOR = "input[type='number']";
     @CacheLookup
     @FindBy(xpath = "//a[contains(text(),'Añadir al carrito')]")
     private List<WebElement> productosDisponibles;
@@ -40,7 +35,6 @@ public class ProductosPage extends FunctionCommon {
     @CacheLookup
     @FindBy(css = "div.blockUI")
     private List<WebElement> carritoCargandoBlocks;
-
     private String selectorProductoCarritos = "//li[@class='woocommerce-mini-cart-item mini_cart_item']";
 
     public ProductosPage(WebDriver driver) {
@@ -75,18 +69,25 @@ public class ProductosPage extends FunctionCommon {
 
     public void modificarCarritoConProductoYCantidad(int producto, int cantidad){
 
-
-
         for(int i = 0 ; i < cantidad; i++){
-            WebElement productoAModiicar = driver.findElement(By.xpath(selectorProductoCarritos + "[" + producto + "]"));
-            agregarNuevoProductoACarrito(productoAModiicar);
+
+            WebElement aumentarCantidadProducto = driver.findElement(
+                    By.xpath("//li[@class='woocommerce-mini-cart-item mini_cart_item'][" + producto + "]//input[@value='+']"));
+
+            clickSelection(aumentarCantidadProducto);
+
+            esperarPorCargaDeCantidades();
+
         }
 
     }
 
     public int obtenerCantidadDeProduto(int producto) {
+        esperarPorCargaDeCantidades();
+
         WebElement productoARetornar = driver.findElement(By.xpath(selectorProductoCarritos + "[" + producto + "]"));
 
+        String CANTIDAD_PRODUCTO_CARRITO_SELECTOR = "input[type='number']";
         WebElement cantidadDeProducto = productoARetornar.findElement(By.cssSelector(CANTIDAD_PRODUCTO_CARRITO_SELECTOR));
 
         String valorCantidadProducto = cantidadDeProducto.getAttribute("value");
@@ -94,18 +95,12 @@ public class ProductosPage extends FunctionCommon {
         return Integer.parseInt(valorCantidadProducto);
     }
 
-    public void agregarNuevoProductoACarrito(WebElement producto){
-
-        WebElement aumentarCantidadProducto = producto.findElement(By.cssSelector(AUMENTAR_PRODUCTO_CARRITO_SELECTOR));
-
-        clickSelection(aumentarCantidadProducto);
-
+    private void esperarPorCargaDeCantidades(){
         List<WebElement> elementosCargando = driver.findElements(By.cssSelector("div.blockUI"));
 
         for (WebElement element : elementosCargando) {
             waitForElementInvisible(element);
         }
-
     }
 
     public double obtenerSumatoriaDePrecios(){
@@ -133,7 +128,6 @@ public class ProductosPage extends FunctionCommon {
         waitForElementVisible(BOTON_CARRITO);
         clickSelection(BOTON_CARRITO);
     }
-
 
     private void agregarProductoAlCarrito(WebElement producto){
         clickSelection(producto);

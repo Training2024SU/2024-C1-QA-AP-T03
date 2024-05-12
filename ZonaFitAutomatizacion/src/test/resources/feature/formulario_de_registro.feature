@@ -1,10 +1,11 @@
+#Autor: Andreina Iglesias
+
 Feature: Formulario de registro
   Yo, como usuario sin registrar en la pagina zona fit
   quiero llenar el formulario de registro
   para poder ingresar y obtener los beneficios de la página
 
 #Usar 1 para navegador Chrome y 2 para Edge
-#Escenario 1 es ruta critica
 
   Background:
     Given que el usuario selecciona el navegador 1 e ingresa a la pagina principal

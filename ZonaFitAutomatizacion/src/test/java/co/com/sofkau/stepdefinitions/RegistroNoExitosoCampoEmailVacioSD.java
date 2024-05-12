@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CAMPO_VACIO;
+import static co.com.sofkau.util.constant.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CAMPO_VACIO;
 
 
 public class RegistroNoExitosoCampoEmailVacioSD extends WebSetup{
@@ -29,6 +29,9 @@ public class RegistroNoExitosoCampoEmailVacioSD extends WebSetup{
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
+            quiteDriver();
+            Assertions.fail();
         }
     }
     @Then ("deberia visualizar un mensaje de error")

@@ -11,7 +11,6 @@ import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 
 public class ServicioStatesStepDefinition extends WebSetup {
     Faker faker = new Faker();
@@ -20,9 +19,17 @@ public class ServicioStatesStepDefinition extends WebSetup {
 
     @Given("el usuario ingresa un codigo de estado especifico")
     public void ingresarCodigoEstadoEspecifico() {
-        // Generar un código de estado aleatorio en minúscula utilizando Java Faker
-        StateCode = faker.address().stateAbbr().toLowerCase();
-        System.out.println("Código de estado: " + StateCode);
+        try{
+            // Generar un código de estado aleatorio en minúscula utilizando Java Faker
+            StateCode = faker.address().stateAbbr().toLowerCase();
+            System.out.println("Código de estado: " + StateCode);
+        }catch (Exception e){
+            System.out.println("Error al verificar el codigo de estado: " + e.getMessage());
+            e.printStackTrace();
+            quiteDriver();
+            Assertions.fail();
+        }
+
     }
 
     @When("realiza una solicitud GET para ver informacion sobre el Covid en dicho estado")
@@ -37,6 +44,8 @@ public class ServicioStatesStepDefinition extends WebSetup {
             response.then().log().all(); // Imprime el cuerpo de la respuesta
         } catch (Exception e) {
             System.out.println("Error al realizar la solicitud GET: " + e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
         }
     }
 
@@ -52,6 +61,8 @@ public class ServicioStatesStepDefinition extends WebSetup {
 
         } catch (Exception e) {
             System.out.println("Error al verificar la respuesta del servicio: " + e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
         }
     }
 }

@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_REGISTRO;
+import static co.com.sofkau.util.constant.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_REGISTRO;
 
 public class RegistroExitosoStepDefinition extends WebSetup{
     FormularioRegistroPage formularioRegistroPage;
@@ -19,10 +19,12 @@ public class RegistroExitosoStepDefinition extends WebSetup{
         try{
             generalSetUp(tipoDriver);
         } catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println("Error al seleccionar el navegador: " + e.getMessage());
+            e.printStackTrace();
+            quiteDriver();
+            Assertions.fail();
         }
     }
-
     @When("ingresa su informacion correctamente")
     public void ingresaSuInformacionCorrectamente() {
         try {
@@ -38,7 +40,10 @@ public class RegistroExitosoStepDefinition extends WebSetup{
             formularioRegistroPage.llenarFormularioRegistro(email, password, confirmPassword);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error al ingresar informacion correctamente: " + e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
+            quiteDriver();
         }
     }
     @Then("deberia ser redirigido a la pagina principal con la sesion iniciada")
@@ -47,7 +52,9 @@ public class RegistroExitosoStepDefinition extends WebSetup{
             Assertions.assertNotNull(formularioRegistroPage);
             Assertions.assertEquals(MENSAJE_ESPERADO_DE_REGISTRO, formularioRegistroPage.obtenerMensajeDeIngreso());
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println("Error al ser redirigido a la pagina principal: " + e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
         }finally {
             quiteDriver();
         }

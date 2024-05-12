@@ -1,12 +1,8 @@
 package co.com.sofkau.stepdefinitions;
 
-import co.com.sofkau.setup.WebSetup;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
@@ -18,9 +14,15 @@ public class ServicioStatesIncorrectoSP {
 
     @Given ("el usuario no ingresa un codigo de estado requerido")
     public void elUsuarioNoIngresCodigoDeEstadoRequerido(){
-        //Generar un código de estado aleatorio en minúscula utilizando Java Faker
-        randomStateCode = faker.address().stateAbbr().toLowerCase();
-        System.out.println("Código de estado: " + "");
+        try {
+            //Generar un código de estado aleatorio en minúscula utilizando Java Faker
+            randomStateCode = faker.address().stateAbbr().toLowerCase();
+            System.out.println("Código de estado: " + "");
+        }catch (Exception e){
+            System.out.println("Error al realizar la solicitud GET: " + e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
+        }
 
     }
     @Then ("el servicio deberia responder con un estado HTTP 404 y no recibiria los datos historicos para dicha zona")
@@ -30,6 +32,7 @@ public class ServicioStatesIncorrectoSP {
             Assertions.assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusCode(), "El servicio no respondió con el código de estado 404 OK");
         } catch (Exception e) {
             System.out.println("Error al verificar la respuesta del servicio: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

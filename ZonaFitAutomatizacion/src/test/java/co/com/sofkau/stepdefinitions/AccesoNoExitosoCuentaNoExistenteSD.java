@@ -7,7 +7,7 @@ import co.com.sofkau.setup.WebSetup;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CUENTA_NO_EXISTENTE;
+import static co.com.sofkau.util.constant.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CUENTA_NO_EXISTENTE;
 
 public class AccesoNoExitosoCuentaNoExistenteSD extends WebSetup {
     Faker faker = new Faker();
@@ -27,6 +27,9 @@ public class AccesoNoExitosoCuentaNoExistenteSD extends WebSetup {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
+            quiteDriver();
+            Assertions.fail();
         }
     }
     @Then("deberia visualizar un mensaje de error y no deberia iniciarse su sesion")
@@ -36,6 +39,8 @@ public class AccesoNoExitosoCuentaNoExistenteSD extends WebSetup {
             Assertions.assertEquals(MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CUENTA_NO_EXISTENTE, formularioAccesoPage.obtenerMensajeDeAccesoIncorrectoCuentaNoExistente());
         }catch (Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
         }finally {
             quiteDriver();
         }

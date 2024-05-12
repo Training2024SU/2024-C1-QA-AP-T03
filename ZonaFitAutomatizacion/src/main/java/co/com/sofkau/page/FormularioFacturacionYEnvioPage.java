@@ -1,23 +1,22 @@
 package co.com.sofkau.page;
 
+import co.com.sofkau.model.FormularioFacturacionYEnvioModel;
 import co.com.sofkau.page.function.FunctionCommon;
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.List;
 
 public class FormularioFacturacionYEnvioPage extends FunctionCommon{
+
+    private FormularioFacturacionYEnvioModel usuario;
+
     //Localizadores
-
-
     @CacheLookup
     @FindBy(xpath = "//*[@id='billing_myfield12']")
     private WebElement CAMPO_NUMERO_DOCUMENTO;
@@ -36,8 +35,6 @@ public class FormularioFacturacionYEnvioPage extends FunctionCommon{
     @CacheLookup
     @FindBy(xpath = "//*[@id='billing_state_field']/span")
     private WebElement SELECCIONAR_DEPARTAMENTO;
-
-
     @CacheLookup
     @FindBy(xpath = "//select[@id='billing_city']")
     private WebElement SELECCIONAR_CIUDAD;
@@ -61,23 +58,25 @@ public class FormularioFacturacionYEnvioPage extends FunctionCommon{
     private WebElement BOTON_DE_CONFIRMAR_ORDER;
 
 
-    public FormularioFacturacionYEnvioPage(WebDriver driver) {
+    public FormularioFacturacionYEnvioPage(WebDriver driver, FormularioFacturacionYEnvioModel usuario) {
         super(driver);
+        this.usuario = usuario;
         PageFactory.initElements(driver, this);
     }
 
-    public void llenarFormularioFacturacionYEnvio(String numeroDocumento, String nombre, String apellido, String email, String direccion, String numeroCelular) {
+    public void llenarFormularioFacturacionYEnvio() {
             tiempoDeEspera(); // Aplicar espera implícita antes de cada interacción
 
-            typeInto(CAMPO_NUMERO_DOCUMENTO, numeroDocumento);
+            typeInto(CAMPO_NUMERO_DOCUMENTO, usuario.getNumeroDocumento());
             scrollTo(CAMPO_EMAIL);
-            typeInto(CAMPO_EMAIL, email);
-            typeInto(CAMPO_NOMBRE, nombre);
-            typeInto(CAMPO_APELLIDO, apellido);
+            typeInto(CAMPO_EMAIL, usuario.getEmail());
+            typeInto(CAMPO_NOMBRE, usuario.getNombre());
+            typeInto(CAMPO_APELLIDO, usuario.getApellido());
             seleccionarDepartamento("Choco");
             seleccionarCiudad("Lloro");
-            typeInto(CAMPO_DIRECCION, direccion);
-            typeInto(CAMPO_NUMERO_CELULAR, numeroCelular);
+            scrollTo(CAMPO_DIRECCION);
+            typeInto(CAMPO_DIRECCION, usuario.getDireccion());
+            typeInto(CAMPO_NUMERO_CELULAR, usuario.getNumeroCelular());
 
     }
 
@@ -89,6 +88,7 @@ public class FormularioFacturacionYEnvioPage extends FunctionCommon{
 
     }
     private void seleccionarCiudad(String ciudad) {
+        scrollTo(SELECCIONAR_CIUDAD);
         clickSelection(SELECCIONAR_CIUDAD);
 
         typeInto(SELECCIONAR_CIUDAD, ciudad);
@@ -103,6 +103,7 @@ public class FormularioFacturacionYEnvioPage extends FunctionCommon{
     }
 
     private void seleccionarDepartamento(String departamento){
+        scrollTo(SELECCIONAR_DEPARTAMENTO);
 
         clickSelection(SELECCIONAR_DEPARTAMENTO);
 
@@ -135,14 +136,5 @@ public class FormularioFacturacionYEnvioPage extends FunctionCommon{
             numeroDeDepartamentos = obtenerNumeroDeOpciones();
             contador++;
         }
-    }
-
-    // Para generar números de celulares colombianos válidos
-    public String generarNumeroCelularColombiano(Faker faker) {
-        String[] prefixes = {"300", "301", "302", "303", "304", "305", "310", "311", "312", "313", "314", "315", "316", "317", "318", "320", "321", "322", "323", "350"}; // Prefijos de operadores colombianos
-        String prefijosRandom = prefixes[faker.number().numberBetween(0, prefixes.length)];
-        String number = faker.numerify("#######"); // 7 dígitos aleatorios
-
-        return prefijosRandom + number;
     }
 }

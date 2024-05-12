@@ -1,5 +1,7 @@
 package co.com.sofkau.model;
 
+import com.github.javafaker.Faker;
+
 public class FormularioFacturacionYEnvioModel {
     private String nombre;
     private String apellido;

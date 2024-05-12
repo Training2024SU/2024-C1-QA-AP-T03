@@ -5,7 +5,7 @@ import co.com.sofkau.setup.WebSetup;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CAMPO_VACIO;
+import static co.com.sofkau.util.constant.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_ACCESO_INCORRECTO_CAMPO_VACIO;
 
 public class AccesoNoExitosoCampoVacioSD extends WebSetup {
     FormularioAccesoPage formularioAccesoPage;
@@ -24,8 +24,10 @@ public class AccesoNoExitosoCampoVacioSD extends WebSetup {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
+            quiteDriver();
+            Assertions.fail();
         }
-
     }
     @Then("deberia recibir un mensaje de error y no deberia iniciarse su sesion")
     public void deberiaRecibirUnMensajeDeError(){
@@ -34,6 +36,8 @@ public class AccesoNoExitosoCampoVacioSD extends WebSetup {
                     obtenerMensajeDeAccesoIncorrectoCuentaCampoVacio());
         }catch (Exception e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
         }finally {
             quiteDriver();
         }

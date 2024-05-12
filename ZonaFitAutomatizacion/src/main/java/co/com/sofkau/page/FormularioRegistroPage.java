@@ -8,19 +8,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FormularioRegistroPage extends FunctionCommon {
+
     //Localizadores
     @CacheLookup
     @FindBy(xpath = "//span[contains(text(),'Acceder / Registrarse')]")
     private WebElement ACCEDER_REGISTRARSE;
-
     @CacheLookup
     @FindBy(xpath = "//input[@autocomplete='email']")
     private WebElement CAMPO_EMAIL;
-
     @CacheLookup
     @FindBy(xpath = "//*[@id='reg_password']")
     private WebElement CAMPO_PASSWORD;
-
     @CacheLookup
     @FindBy(xpath = "//*[@id='password_confirm']")
     private WebElement CAMPO_CONFIRM_PASSWORD;
@@ -37,8 +35,6 @@ public class FormularioRegistroPage extends FunctionCommon {
     @FindBy(xpath = "//div[@class = 'message-container container alert-color medium-text-center']")
     private WebElement MENSAJE_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE;
 
-
-
     //Constructor
     public FormularioRegistroPage(WebDriver driver) {
         super(driver);
@@ -54,6 +50,7 @@ public class FormularioRegistroPage extends FunctionCommon {
 
             scrollTo(CAMPO_EMAIL);
             typeInto(CAMPO_EMAIL, email);
+            scrollTo(CAMPO_PASSWORD);
             typeInto(CAMPO_PASSWORD, password);
             typeInto(CAMPO_CONFIRM_PASSWORD, confirmPassword);
             clickSelection(BOTON_REGISTRARSE);

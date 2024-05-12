@@ -43,6 +43,7 @@ public class FormularioAccesoPage extends FunctionCommon{
             scrollTo(CAMPO_EMAIL_REGISTRADO);
             typeInto(CAMPO_EMAIL_REGISTRADO, emailRegistrado);
             typeInto(CAMPO_PASSWORD_REGISTRADO, passwordUsuario);
+            scrollTo(BOTON_ACCEDER);
             clickSelection(BOTON_ACCEDER);
         } catch (Exception e) {
             System.out.println("Error al llenar el formulario de acceso: " + e.getMessage());

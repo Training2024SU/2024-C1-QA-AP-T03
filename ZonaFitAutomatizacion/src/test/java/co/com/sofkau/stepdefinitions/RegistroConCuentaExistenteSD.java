@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 
-import static co.com.sofkau.util.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE;
+import static co.com.sofkau.util.constant.ConstantesMensajeConfirmacion.MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE;
 
 public class RegistroConCuentaExistenteSD extends WebSetup {
     FormularioRegistroPage formularioRegistroPage;
@@ -26,7 +26,10 @@ public class RegistroConCuentaExistenteSD extends WebSetup {
             formularioRegistroPage.llenarFormularioRegistro(email, password, confirmPassword);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error al ingresar sus datos: " + e.getMessage());
+            e.printStackTrace();
+            quiteDriver();
+            Assertions.fail();
         }
     }
    @Then ("deberia visualizar un mensaje de error indicando que ya hay una cuenta registrada")
@@ -35,7 +38,9 @@ public class RegistroConCuentaExistenteSD extends WebSetup {
             Assertions.assertEquals(MENSAJE_ESPERADO_DE_REGISTRO_INCORRECTO_CUENTA_EXISTENTE, formularioRegistroPage.obtenerMensajeDeRegistroIncorrectoCuentaExistente());
 
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println("Error al visualizar mensaje de error: " + e.getMessage());
+            e.printStackTrace();
+            Assertions.fail();
         }finally {
             quiteDriver();
         }
