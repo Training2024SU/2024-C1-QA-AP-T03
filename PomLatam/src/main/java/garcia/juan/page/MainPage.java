@@ -105,7 +105,6 @@ public class MainPage extends FunctionsCommon {
         String dia1 = partes1[2];
         Meses mesD = obtenerPorNumero(mes1);
         buscarMes(mesD.name()+" "+ anho1);
-
         pickDay(dia1, mesD.name());
         String[] partes2 = fecha2.split("-");
         int anho2 = Integer.parseInt(partes2[0]);

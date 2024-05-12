@@ -75,7 +75,6 @@ public class CompraCompletaSD extends WebSetUp {
         try {
             metodoPagoPage=new MetodoPagoPage(driver);
             metodoPagoPage.seleccionarTarjeta(dataTable);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
             quiteDriver();
@@ -84,7 +83,8 @@ public class CompraCompletaSD extends WebSetUp {
     }
     @Then("deberia recibir el mensaje de que su reserva fue completada la información respectiva")
     public void deberiaRecibirElMensajeDeQueSuReservaFueCompletadaLaInformaciónRespectiva() throws InterruptedException {
-        Thread.sleep(10000); //para ver como termina
+        //Thread.sleep(10000); //para ver como termina
+        Assertions.assertEquals("Total a pagar",metodoPagoPage.getMensajePago());
         quiteDriver();
     }
 

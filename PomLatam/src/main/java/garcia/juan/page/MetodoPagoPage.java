@@ -29,6 +29,10 @@ public class MetodoPagoPage extends FunctionsCommon {
     @FindBy(id = "CVV--password__input--text-field")
     private WebElement CVV_CARD;
 
+    @CacheLookup
+    @FindBy(xpath = "//div[@class=\"sc-ba18765f-5 fFMrqO\"]\n")
+    private WebElement MENSAJE_PAGO;
+
 
     public MetodoPagoPage(WebDriver driver) {
         super(driver);
@@ -43,7 +47,11 @@ public class MetodoPagoPage extends FunctionsCommon {
         typeInto(DATE_CARD, dataTable.cell(1,2));
         esperarClickable(CVV_CARD);
         typeInto(CVV_CARD, dataTable.cell(1,3));
+    }
 
+    public String getMensajePago(){
+        String text=MENSAJE_PAGO.getText();
+        return text;
     }
 
 }
