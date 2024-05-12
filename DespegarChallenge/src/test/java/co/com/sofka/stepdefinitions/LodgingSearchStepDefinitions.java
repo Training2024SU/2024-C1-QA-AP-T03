@@ -1,7 +1,7 @@
 package co.com.sofka.stepdefinitions;
 
-import co.com.sofka.pages.HomePage;
-import co.com.sofka.pages.LodgingPage;
+import co.com.sofka.pages.despegarpages.HomePage;
+import co.com.sofka.pages.despegarpages.LodgingPage;
 import co.com.sofka.setup.WebSetUp;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;

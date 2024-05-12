@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -43,6 +44,9 @@ public class CommonFunctions {
     protected void typeTab(WebElement locator) {
         locator.sendKeys(Keys.TAB);
     }
+    protected void typeIntoAndTab(WebElement locator, String text){
+        locator.sendKeys(text, Keys.TAB);
+    }
     protected void typeIntoAndDown(WebElement locator, String text){
         locator.sendKeys(text, Keys.ARROW_DOWN, Keys.ENTER);
     }
@@ -66,8 +70,11 @@ public class CommonFunctions {
     protected void wait(int seconds){
         driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
     }
-
     protected void clear(WebElement locator) {
         locator.clear();
+    }
+    protected void select(WebElement locator, String value) {
+        Select select = new Select(locator);
+        select.selectByValue(value);
     }
 }

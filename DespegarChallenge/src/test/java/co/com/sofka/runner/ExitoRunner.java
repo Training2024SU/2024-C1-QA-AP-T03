@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/despegar.feature",
+        features = "src/test/resources/features/exito.feature",
         glue = "co.com.sofka.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@test1"
+        tags = "@test2"
 )
-public class DespegarRunner {
+public class ExitoRunner {
 }

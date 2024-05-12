@@ -1,7 +1,7 @@
 package co.com.sofka.stepdefinitions;
 
-import co.com.sofka.pages.FlightsPage;
-import co.com.sofka.pages.HomePage;
+import co.com.sofka.pages.despegarpages.FlightsPage;
+import co.com.sofka.pages.despegarpages.HomePage;
 import co.com.sofka.setup.WebSetUp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

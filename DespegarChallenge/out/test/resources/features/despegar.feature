@@ -5,7 +5,7 @@ Feature: Flight search on Despegar
   to buy tickets successfully
 
   Background:
-    Given the user is in the Despegar homepage in the 1
+    Given the user is in the Despegar homepage in the 2
 
   @test1
   Scenario Outline: Search for flights with different parameters
@@ -17,12 +17,18 @@ Feature: Flight search on Despegar
     Examples:
       | origin                        | destination                         | day | month | day2 | month2 | cantidadPersonas |  |  |
       | Bogotá, Bogotá D.C., Colombia | Madrid, Comunidad de Madrid, España | 11  | 05    | 17   | 05     | 3                |  |  |
-      #| Medellín | Bogotá       | 12  | Junio | 21   | Junio  | 5                |  |  |
-     # | Cali   | Buenos Aires | 13  | Junio | 31   | Junio  | 7                |  |  |
+     # | Medellín                      | Bogotá, Bogotá D.C., Colombia       | 12  | 06    | 21   | 06     | 5                |  |  |
+      #| Cali                          | Buenos Aires                        | 13  | 05    | 13   | 06     | 7                |  |  |
 
   @test2
   Scenario: Search for lodging
     When goes to lodging page to perform the search city "Praga, Praga, República Checa" from 15 05 to 25 06 and adults 3
     And selects the first lodging option
+
+  @test3
+  Scenario: Search cars
+    When goes to cars page to perform the search city "Praga, Praga, República Checa" from 15 05 to 25 06 and adults 3
+    And selects the first option
+
 
 
