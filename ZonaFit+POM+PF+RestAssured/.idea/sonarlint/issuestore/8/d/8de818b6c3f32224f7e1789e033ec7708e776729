@@ -1,0 +1,10 @@
+
+ 	java:S116"^Rename this field "BOTON_INICIO_SESION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÔ¼„8®¸™‰ö1J$5f91b46f-dc1a-420b-be20-d2de193a8995
+	java:S116!"[Rename this field "CAMPO_CONTRASENA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şî¯Å8¯¸™‰ö1J$8a9a29c0-4994-4c8f-88e0-f23e91c21d5c
+	java:S116$"VRename this field "CAMPO_EMAIL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ºíĞûÿÿÿÿ8¯¸™‰ö1J$005e4cbc-4c02-46fa-9919-49d3764800d1
+	java:S116'"WRename this field "BOTON_SUBMIT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Çº‘øÿÿÿÿ8¯¸™‰ö1J$30bce1cb-6741-4a1f-ad2b-4477bc726a46
+¤	java:S116*"bRename this field "MENSAJE_SESION_INICIADA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û—ˆ»8¯¸™‰ö1J$133bb6eb-a08e-450f-b39e-90cb26cd28b8
+£	java:S116-"\Rename this field "CARGO_IMG_ZONAFIT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â›ßõıÿÿÿÿ8°¸™‰ö1J$374a67f7-5666-489f-b362-2752de7da7b9
+ 	java:S1160"YRename this field "BOTON_MENOS200" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´Äì¤üÿÿÿÿ8°¸™‰ö1J$f32846db-324a-4c9c-85e5-cc4d5864659d
+–
+java:S1128	"NRemove this unused import 'org.openqa.selenium.support.ui.ExpectedConditions'.(û€Èéúÿÿÿÿ8˜²ÊÑö1J$9fdc77b4-53fb-4719-a525-20b38d69e1cf
