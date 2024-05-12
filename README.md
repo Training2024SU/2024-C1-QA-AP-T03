@@ -30,3 +30,6 @@ Consideraciones:
 - Todos los tiquetes deben ser para mas de dos  personas 
 - zona fit debe seleccionar almenos 3 productos diferentes y modificar las cantidades en el carrito. 
 - La automatización debe correr minimo en dos navegadores configurable desde el feature
+
+Enlace del video
+https://www.youtube.com/watch?v=sdLxQ6vXIeA
