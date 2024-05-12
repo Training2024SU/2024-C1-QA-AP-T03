@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="786f2df0-ad97-44d0-8a16-b8b7fecc704d" name="Changes" comment="data table save">
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/Plan de pruebas/video.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/model/FormPersonaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/model/FormPersonaModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/DatosUsuarioPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/DatosUsuarioPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/page/ResultadoVueloPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/functions/FunctionsCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/functions/FunctionsCommon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/sofka/util/util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/CompraExitoStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/com/sofka/stepdefinitions/CompraExitoStepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/CompraExito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/CompraExito.feature" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2fmNEiJ6kmW9KC9JgEWiqCV63hx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;T03-C1-DANIEL-CHAPARRO-CANO&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/2024-C1-QA-AP-T03/src/main/java/co/com/sofka&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/danie/Documents/Training/demoqatesting/src/main/java/co/com/sofka/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.22528736&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Documents\2024-C1-QA-AP-T03\src\main\java\co\com\sofka" />
+      <recent name="C:\Users\danie\Documents\2024-C1-QA-AP-T03\src\main\java\co\com\sofka\util" />
+      <recent name="C:\Users\danie\Documents\Training\demoqatesting\src\test\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: Consultar un cómic existente con ISBN por ID">
+    <configuration name="Scenario: Buscar un vuelo de ida y vuelta" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/busquedavuelo.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Buscar un vuelo de ida y vuelta$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Buscar un vuelo de ida y vuelta$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Buscar un vuelo de ida y vuelta" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Buscar vuelos de ida y vuelta organizados por menor duración" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/organizarresultadosvuelo.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Buscar vuelos de ida y vuelta organizados por menor duración$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Buscar vuelos de ida y vuelta organizados por menor duración$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Buscar vuelos de ida y vuelta organizados por menor duración" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Comprar un producto en promoción con envío a un almacén" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/CompraExito.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Comprar un producto en promoción con envío a un almacén$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Comprar un producto en promoción con envío a un almacén$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Comprar un producto en promoción con envío a un almacén" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Consultar un cómic existente con ISBN por ID" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/serviceComicMarver.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Consultar un cómic existente con ISBN por ID$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Consultar un cómic existente con ISBN por ID$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Consultar un cómic existente con ISBN por ID" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Consultar un personaje existente por ID" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/serviceCharacterMarvel.feature" />
+      <option name="GLUE" value="co.com.sofka.stepdefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoqatesting.test" />
+      <option name="NAME_FILTER" value="^Consultar un personaje existente por ID$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Consultar un personaje existente por ID$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Consultar un personaje existente por ID" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: Consultar un cómic existente con ISBN por ID" />
+        <item itemvalue="Cucumber Java.Scenario: Consultar un personaje existente por ID" />
+        <item itemvalue="Cucumber Java.Scenario: Buscar un vuelo de ida y vuelta" />
+        <item itemvalue="Cucumber Java.Scenario: Comprar un producto en promoción con envío a un almacén" />
+        <item itemvalue="Cucumber Java.Scenario: Buscar vuelos de ida y vuelta organizados por menor duración" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="786f2df0-ad97-44d0-8a16-b8b7fecc704d" name="Changes" comment="" />
+      <created>1714402188754</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714402188754</updated>
+      <workItem from="1714402189467" duration="60944000" />
+      <workItem from="1714480278895" duration="18599000" />
+      <workItem from="1714599636895" duration="22719000" />
+      <workItem from="1714665384329" duration="4923000" />
+      <workItem from="1715105276972" duration="375000" />
+      <workItem from="1715105833126" duration="10951000" />
+      <workItem from="1715168732571" duration="56027000" />
+      <workItem from="1715234701765" duration="7723000" />
+      <workItem from="1715263372125" duration="24082000" />
+      <workItem from="1715349586171" duration="110000" />
+      <workItem from="1715368620307" duration="3797000" />
+      <workItem from="1715448124159" duration="11859000" />
+      <workItem from="1715486445301" duration="10764000" />
+    </task>
+    <task id="LOCAL-00001" summary="date picker">
+      <option name="closed" value="true" />
+      <created>1714632246755</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714632246755</updated>
+    </task>
+    <task id="LOCAL-00002" summary="data table save">
+      <option name="closed" value="true" />
+      <created>1714634601022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714634601022</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="init" />
+    <MESSAGE value="date picker" />
+    <MESSAGE value="data table save" />
+    <option name="LAST_COMMIT_MESSAGE" value="data table save" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/com/sofka/page/FormularioAlojamientoPage.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/com/sofka/page/FormularioAlojamientoPage.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
