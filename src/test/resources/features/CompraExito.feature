@@ -8,6 +8,6 @@ Feature: Compra de producto en Éxito Online
   Scenario: Comprar un producto en promoción con envío a un almacén
     When el usuario elige un producto en promoción y lo agrega al carrito
     And el usuario indica la cantidad del producto y llena formulario de informacion personal
-    And selecciona la opción de envío "Reclamar en almacén"
+    And el usuario ingresa la información de envio
     And completa la información de pago
     Then se debería mostrar un mensaje de confirmación de la compra

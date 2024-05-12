@@ -54,10 +54,10 @@ public class CompraExitoStepDefinition extends WebSetup {
             Assertions.fail();
         }
     }
-    @When("selecciona la opción de envío {string}")
-    public void seleccionaLaOpciónDeEnvío(String string) {
+    @When("el usuario ingresa la información de envio")
+    public void ingresaInformacionEnvio() {
         try {
-
+            datosUsuarioPage.llenarFormularioRecogerPersona();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             quiteDriver();
@@ -67,7 +67,7 @@ public class CompraExitoStepDefinition extends WebSetup {
     @When("completa la información de pago")
     public void completaLaInformaciónDePago() {
         try {
-
+            Assertions.assertEquals(personaModel.getCiudad(),datosUsuarioPage.getTextEnvio());
         } catch (Exception e) {
             System.out.println(e.getMessage());
             quiteDriver();
@@ -77,7 +77,7 @@ public class CompraExitoStepDefinition extends WebSetup {
     @Then("se debería mostrar un mensaje de confirmación de la compra")
     public void seDeberíaMostrarUnMensajeDeConfirmaciónDeLaCompra() {
         try {
-//            Thread.sleep(20000);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             quiteDriver();

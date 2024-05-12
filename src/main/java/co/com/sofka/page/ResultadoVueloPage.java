@@ -76,11 +76,4 @@ public class ResultadoVueloPage extends FunctionsCommon {
         }
     }
 
-
-
-
-
-
-
-
 }

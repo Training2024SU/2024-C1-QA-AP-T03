@@ -162,15 +162,18 @@ public class util {
     }
 
     public static FormPersonaModel generarFormularioPersonaAleatorio() {
-        Faker faker = new Faker();
+        // Establecer la localidad en español latino
+        Locale locale = new Locale("es", "MX");
+        Faker faker = new Faker(locale);
 
         String correo = faker.internet().emailAddress();
         String nombre = faker.name().firstName();
         String apellido = faker.name().lastName();
         String numerodoc = "1"+faker.number().digits(9);
         String celular = "3"+faker.number().digits(9);
+        String ciudad = "Medellín";
 
-        return new FormPersonaModel(correo, nombre, apellido, numerodoc, celular);
+        return new FormPersonaModel(correo, nombre, apellido, numerodoc, celular, ciudad);
     }
 
 }

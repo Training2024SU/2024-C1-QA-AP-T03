@@ -7,12 +7,15 @@ public class FormPersonaModel {
     private String numerodoc;
     private String celular;
 
-    public FormPersonaModel(String correo, String nombre, String apellido, String numerodoc, String celular) {
+    private String ciudad;
+
+    public FormPersonaModel(String correo, String nombre, String apellido, String numerodoc, String celular, String ciudad) {
         this.correo = correo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.numerodoc = numerodoc;
         this.celular = celular;
+        this.ciudad = ciudad;
     }
 
     public String getCorreo() {
@@ -53,5 +56,13 @@ public class FormPersonaModel {
 
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 }

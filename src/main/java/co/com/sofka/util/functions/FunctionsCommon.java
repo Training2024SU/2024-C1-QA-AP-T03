@@ -56,6 +56,10 @@ public class FunctionsCommon {
         webElement.sendKeys(value);
     }
 
+    protected void typeKeys(WebElement webElement, Keys value ){
+        webElement.sendKeys(value);
+    }
+
     protected void clearInput(WebElement webElement) {
         webElement.clear();
     }
